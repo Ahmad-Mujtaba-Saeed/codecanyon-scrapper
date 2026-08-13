@@ -2,7 +2,8 @@
 
 const $ = (sel) => document.querySelector(sel);
 const state = { runId: null, report: null, groups: [],
-                sort: { key: "position", dir: 1 }, poll: null };
+                sort: { key: "position", dir: 1 }, poll: null,
+                busy: false, ai: null, draftCount: 0 };
 
 const emptyState = (title) => `
   <div class="empty">
@@ -380,21 +381,74 @@ async function loadDiff() {
 
 /* ------------------------------------------------------------------ collect */
 
+function updateStartButton() {
+  // Startable only with approved keywords in the draft and nothing running.
+  const btn = $("#start-btn");
+  btn.disabled = state.busy || !state.draftCount;
+  btn.title = state.busy ? "a run is already in progress"
+    : (state.draftCount ? "" : "add and approve at least one keyword first");
+}
+
 async function renderKeywordList() {
-  const rows = await api("/api/keywords");
-  const ai = await api("/api/ai-status");
+  // With a run selected, show what that run searched. With none, show the
+  // editable draft for the next one. They are different things: the draft
+  // changes between runs, so it cannot stand in for a run's own record.
+  const suffix = state.runId ? `?run=${encodeURIComponent(state.runId)}` : "";
+  const payload = await api("/api/keywords" + suffix);
+
+  const viewingRun = payload.mode === "run";
+  $("#run-keywords").classList.toggle("hidden", !viewingRun);
+  $("#draft-keywords").classList.toggle("hidden", viewingRun);
+
+  if (viewingRun) return renderRunKeywords(payload);
+  return renderDraftKeywords(payload.keywords);
+}
+
+function renderRunKeywords(payload) {
+  const rows = payload.keywords;
+  const zero = rows.filter((r) => r.zero_result).length;
+
+  $("#run-keywords-sub").innerHTML =
+    `Run <b>${esc(payload.run_id)}</b> searched ${num(rows.length)}
+     keyword${rows.length === 1 ? "" : "s"}${payload.topic
+       ? ` under the topic <b>${esc(payload.topic)}</b>` : ""}.
+     ${zero ? `${num(zero)} returned nothing, which is itself a
+       competition signal.` : ""}
+     This is the permanent record of what was searched — it does not change
+     when you edit the draft list for a new run.`;
+
+  $("#run-keyword-list").innerHTML = table(
+    ["Keyword", "Topic", "Results", "Products", "Pages", "Source", "Priority"],
+    rows.map((k) => [
+      `<span class="strong">${esc(k.keyword)}</span>` +
+        (k.zero_result ? ' <span class="badge zero">zero results</span>' : ""),
+      esc(k.parent_topic || ""), num(k.total_results),
+      num(k.unique_products), num(k.pages_crawled),
+      esc(k.source || ""), esc(k.priority || ""),
+    ]), [2, 3, 4]);
+
+  $("#reuse-status").textContent = "";
+}
+
+function renderDraftKeywords(rows) {
+  const ai = state.ai || { available: false, env_var: "OPENAI_API_KEY" };
 
   $("#generate-btn").disabled = !ai.available;
   $("#generate-btn").title = ai.available
     ? `Generate with ${ai.model}`
-    : `${ai.env_var} is not set — add keywords to keywords.csv by hand`;
+    : `${ai.env_var} is not set — add keywords by hand or paste a list`;
 
   const approved = rows.filter((r) => r.approved).length;
-  $("#keyword-status").textContent =
-    `${approved} of ${rows.length} approved` +
-    (ai.available ? "" : ` · ${ai.env_var} not set`);
+  $("#keyword-status").textContent = rows.length
+    ? `${approved} of ${rows.length} approved`
+      + (ai.available ? "" : ` · ${ai.env_var} not set`)
+    : "empty — add or paste keywords to begin";
 
-  $("#keyword-list").innerHTML = table(
+  state.draftCount = approved;
+  $("#clear-btn").disabled = !rows.length;
+  updateStartButton();
+
+  $("#keyword-list").innerHTML = rows.length ? table(
     ["Keyword", "Topic", "Source", "Approved", "Priority", ""],
     rows.map((k) => [
       `<span class="strong">${esc(k.keyword)}</span>`,
@@ -405,7 +459,9 @@ async function renderKeywordList() {
       `<button data-kw="${esc(k.keyword)}" data-approve="${!k.approved}">
         ${k.approved ? "Unapprove" : "Approve"}</button>
        <button data-kw="${esc(k.keyword)}" data-remove="true">Remove</button>`,
-    ]));
+    ]))
+    : '<p class="muted">No keywords yet. Add one above, paste a list, or '
+      + 'reuse the keywords from a past run.</p>';
 
   $("#keyword-list").querySelectorAll("button[data-kw]").forEach((btn) => {
     btn.onclick = async () => {
@@ -457,7 +513,8 @@ async function pollProgress() {
   $("#log").scrollTop = $("#log").scrollHeight;
   $("#collect-status").textContent = p.busy
     ? `running ${p.run_id}` : (p.run_id ? `${p.status} — ${p.run_id}` : "");
-  $("#start-btn").disabled = p.busy;
+  state.busy = p.busy;
+  updateStartButton();
 
   if (!p.busy && state.poll) {
     clearInterval(state.poll);
@@ -465,6 +522,7 @@ async function pollProgress() {
     // Select the run that just finished -- you asked for it, so show it.
     state.runId = p.run_id || null;
     await loadRuns({ keepSelection: true });
+    await renderKeywordList();
     renderOutputs();
   }
 }
@@ -544,7 +602,13 @@ function initTabs() {
 }
 
 function initControls() {
-  $("#run-picker").onchange = (e) => loadReport(e.target.value);
+  $("#run-picker").onchange = async (e) => {
+    await loadReport(e.target.value);
+    // The Collect tab is run-dependent too: it shows either that run's
+    // keyword record or the draft for a new one.
+    await renderKeywordList();
+    renderOutputs();
+  };
   $("#product-search").oninput = renderProducts;
 
   $("#export-btn").onclick = async () => {
@@ -640,16 +704,50 @@ function initControls() {
     renderKeywordList();
   };
 
+  $("#clear-btn").onclick = async () => {
+    const res = await api("/api/keywords/clear", { method: "POST" });
+    await renderKeywordList();
+    $("#keyword-status").textContent =
+      `cleared ${res.removed} keyword${res.removed === 1 ? "" : "s"}`;
+  };
+
+  $("#reuse-btn").onclick = async () => {
+    $("#reuse-btn").disabled = true;
+    try {
+      const res = await api("/api/keywords/reuse", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ run: state.runId }),
+      });
+      if (!res.ok) { $("#reuse-status").textContent = res.error; return; }
+      // Switch to the new-run view so the copied draft is what you see.
+      $("#run-picker").value = "";
+      await loadReport(null);
+      await renderKeywordList();
+      renderOutputs();
+      $("#keyword-status").textContent =
+        `copied ${res.added.length} keyword${res.added.length === 1 ? "" : "s"}`
+        + (res.skipped.length ? `, ${res.skipped.length} already in the draft` : "");
+      if (res.topic) $("#topic-input").value = res.topic;
+    } finally {
+      $("#reuse-btn").disabled = false;
+    }
+  };
+
   $("#analyze-btn").onclick = async () => {
+    if (!state.runId) {
+      $("#analyze-status").textContent = "select a run to analyse first";
+      return;
+    }
     $("#analyze-btn").disabled = true;
-    $("#collect-status").textContent = "building bundle…";
+    $("#analyze-status").textContent = "building bundle…";
     try {
       const res = await api("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ run: state.runId }),
       });
-      $("#collect-status").textContent = res.ok
+      $("#analyze-status").textContent = res.ok
         ? (res.analysis ? `wrote ${res.analysis}` : (res.reason || "bundle written"))
         : res.error;
       renderOutputs();
@@ -681,8 +779,14 @@ initControls();
 
 // Opens on Collect with nothing selected: the landing state is "start a run",
 // not somebody else's numbers.
-loadRuns()
-  .then(() => { renderKeywordList(); renderOutputs(); })
-  .catch((err) => { $("#run-meta").textContent = "Error: " + err.message; });
-
-pollProgress().catch(() => {});
+(async () => {
+  try {
+    state.ai = await api("/api/ai-status");
+    await loadRuns();
+    await renderKeywordList();
+    await renderOutputs();
+    await pollProgress();
+  } catch (err) {
+    $("#run-meta").textContent = "Error: " + err.message;
+  }
+})();

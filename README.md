@@ -93,6 +93,30 @@ run's numbers presented as if they were current. Pick a run from the header
 menu to look at past data; a run you start is selected automatically when it
 finishes.
 
+### Draft keywords versus a run's record
+
+These are two different things, and the Collect tab shows whichever applies:
+
+| Selected | Collect tab shows |
+|---|---|
+| **New run** (nothing selected) | The editable **draft** — add, paste, generate, approve, remove, clear. This is `keywords.csv`. |
+| **A past run** | What that run **actually searched**, with its result counts, pages crawled and topic. Read-only. |
+
+A run's record lives in the database (`keyword_results`), not in
+`keywords.csv`. That matters because the draft changes between runs: if the
+dashboard read the draft back, every old run would appear to have searched
+whatever you happen to be planning today.
+
+When a run finishes, its keywords are recorded against it and exported to its
+own `csv/<run_id>/keywords.csv`, and **the draft is emptied** so the next new
+run starts from a clean slate rather than silently inheriting the last one's
+list. Nothing is lost — **Reuse these keywords for a new run** copies them
+back into the draft, topic included.
+
+(The CLI does not clear the draft. There, `keywords.csv` is a config file you
+run repeatedly on purpose; in the dashboard it is a scratch list you build per
+run.)
+
 **Pasting a keyword list.** The Collect tab takes a whole list at once.
 Keywords separate on **commas, new lines, semicolons, tabs and pipes** —
 deliberately *not* spaces, because nearly every keyword here is a phrase and

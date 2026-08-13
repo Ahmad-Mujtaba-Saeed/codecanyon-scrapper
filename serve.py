@@ -94,6 +94,16 @@ class RunManager:
             exporters.export_all(store.conn, self.run_id, self.cfg.resolve("csv"))
             path = report_module.write_report(store.conn, self.run_id, self.cfg)
             self._log(f"exported CSVs and wrote {os.path.basename(path)}")
+
+            # The keywords now belong to this run, recorded in the database
+            # and exported to its own keywords.csv. Emptying the draft means
+            # the next new run starts from a clean slate instead of silently
+            # inheriting this one's list. Nothing is lost: "Reuse keywords"
+            # copies them back.
+            if self.status == "completed":
+                keyword_file.save(self.cfg.resolve("keywords"), [])
+                self._log("draft keyword list cleared; "
+                          "reuse them from this run if you want them again")
         except Exception as exc:                     # noqa: BLE001
             self.status = "failed"
             self._log(f"ERROR: {exc}")
@@ -266,7 +276,7 @@ class Handler(BaseHTTPRequestHandler):
             if route == "/api/products":
                 return self._send(200, self.api_products(query))
             if route == "/api/keywords":
-                return self._send(200, self.api_keywords())
+                return self._send(200, self.api_keywords(query))
             if route == "/api/progress":
                 return self._send(200, self.api_progress())
             if route == "/api/diff":
@@ -335,12 +345,38 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             store.close()
 
-    def api_keywords(self):
+    def api_keywords(self, query):
+        """Either a run's keyword record, or the draft for the next run.
+
+        With ?run=<id> this reports what that run searched, read from
+        keyword_results. Without it, the editable draft from keywords.csv.
+        The two are different things and conflating them made every run look
+        like it had searched whatever the draft happens to hold today.
+        """
+        run_id = self._run_id(query, fall_back=False)
+
+        if run_id:
+            store = self._store()
+            try:
+                run = store.get_run(run_id)
+                return {
+                    "mode": "run",
+                    "run_id": run_id,
+                    "topic": run["topic"] if run else None,
+                    "editable": False,
+                    "keywords": [dict(r) for r in
+                                 store.keywords_for_run(run_id)],
+                }
+            finally:
+                store.close()
+
         try:
-            return keyword_file.load(self.cfg.resolve("keywords"),
-                                     include_unapproved=True)
+            draft = keyword_file.load(self.cfg.resolve("keywords"),
+                                      include_unapproved=True)
         except FileNotFoundError:
-            return []
+            draft = []
+        return {"mode": "draft", "run_id": None, "topic": None,
+                "editable": True, "keywords": draft}
 
     def api_progress(self):
         snapshot = self.manager.snapshot()
@@ -442,6 +478,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, self.api_bulk_keywords(payload))
             if url.path == "/api/keywords/delete":
                 return self._send(200, self.api_delete_keyword(payload))
+            if url.path == "/api/keywords/clear":
+                return self._send(200, self.api_clear_keywords())
+            if url.path == "/api/keywords/reuse":
+                return self._send(200, self.api_reuse_keywords(payload))
             return self._send(404, {"error": "unknown endpoint"})
         except Exception as exc:                     # noqa: BLE001
             return self._send(500, {"error": str(exc)})
@@ -564,6 +604,45 @@ class Handler(BaseHTTPRequestHandler):
         kept = [r for r in rows if r["keyword"].lower() not in wanted]
         keyword_file.save(path, kept)
         return {"ok": True, "removed": len(rows) - len(kept)}
+
+    def api_clear_keywords(self):
+        """Empty the draft. Safe: past runs keep their own record."""
+        path = self.cfg.resolve("keywords")
+        try:
+            removed = len(keyword_file.load(path, include_unapproved=True))
+        except FileNotFoundError:
+            removed = 0
+        keyword_file.save(path, [])
+        return {"ok": True, "removed": removed}
+
+    def api_reuse_keywords(self, payload):
+        """Copy a past run's keywords into the draft for a new run."""
+        run_id = (payload.get("run") or "").strip()
+        if not run_id:
+            return {"ok": False, "error": "which run?"}
+
+        store = self._store()
+        try:
+            run = store.get_run(run_id)
+            rows = store.keywords_for_run(run_id)
+        finally:
+            store.close()
+
+        if not rows:
+            return {"ok": False, "error": f"{run_id} has no keywords recorded"}
+
+        topic = (payload.get("topic")
+                 or (run["topic"] if run else None))
+        added, skipped = keyword_file.merge(self.cfg.resolve("keywords"), [{
+            "keyword": row["keyword"],
+            "parent_topic": row["parent_topic"] or topic,
+            "source": row["source"] or "manual",
+            "approved": True,
+            "priority": row["priority"] or "medium",
+        } for row in rows])
+
+        return {"ok": True, "added": [r["keyword"] for r in added],
+                "skipped": [r["keyword"] for r in skipped], "topic": topic}
 
     def api_approve_keywords(self, payload):
         changed = keyword_file.set_approval(

@@ -178,6 +178,22 @@ class Store:
         )
         self.conn.commit()
 
+    def keywords_for_run(self, run_id):
+        """What a particular run actually searched.
+
+        keyword_results is the authoritative record: keywords.csv is a
+        working draft that changes between runs, so it cannot answer "what
+        did this run search" after the fact.
+        """
+        return self.conn.execute(
+            "SELECT kr.keyword, kr.total_results, kr.unique_products, "
+            "kr.zero_result, kr.pages_crawled, k.parent_topic, k.source, "
+            "k.priority FROM keyword_results kr "
+            "LEFT JOIN keywords k ON k.keyword = kr.keyword "
+            "WHERE kr.run_id=? ORDER BY kr.total_results DESC, kr.keyword",
+            (run_id,),
+        ).fetchall()
+
     # --------------------------------------------------------- resume gate
 
     def page_already_done(self, run_id, keyword, sort, page):
