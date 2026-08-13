@@ -124,6 +124,27 @@ class Crawler:
         pages_crawled = 0
         total_results = None
         product_ids = set()
+        failure = None
+
+        try:
+            page, pages_crawled, total_results, failure = self._crawl_pages(
+                keyword, sort, product_ids)
+        except (AbortRun, parser.ParserHealthError) as e:
+            # Record the keyword as failed before the run unwinds, otherwise
+            # it would leave no trace at all and look like it was skipped.
+            self._record_keyword(keyword, sort, None, 0, "failed", str(e))
+            raise
+
+        return self._record_keyword(
+            keyword, sort, total_results, pages_crawled,
+            "failed" if failure else "completed", failure)
+
+    def _crawl_pages(self, keyword, sort, product_ids):
+        page = 1
+        referer = None
+        pages_crawled = 0
+        total_results = None
+        failure = None
 
         while page <= self.max_pages:
             url = search_url(self.cfg.base_url, keyword, sort, page)
@@ -148,6 +169,7 @@ class Crawler:
             if result.error:
                 self.pages_failed += 1
                 self.log(f"  ! page {page} failed: {result.error}")
+                failure = f"page {page}: {result.error}"
                 break
 
             self.pages_fetched += 1
@@ -170,6 +192,10 @@ class Crawler:
         else:
             self.log(f"  ! hit max_pages_per_keyword={self.max_pages}")
 
+        return page, pages_crawled, total_results, failure
+
+    def _record_keyword(self, keyword, sort, total_results, pages_crawled,
+                        status, error):
         # Counts come from storage, not from the in-memory set: on a resumed
         # run most pages are skipped and parse nothing, so the set would be
         # empty and every keyword would be misfiled as zero-result.
@@ -185,9 +211,15 @@ class Crawler:
             self.run_id, keyword, sort,
             total_results=total_results if total_results is not None else 0,
             pages_crawled=pages_crawled,
-            unique_products=unique_products)
+            unique_products=unique_products,
+            status=status, error=error)
 
-        if not unique_products:
+        if status == "failed":
+            self.log(f"  ! {keyword!r} marked FAILED: {error}")
+            self.log(f"    retry it from the dashboard, or: "
+                     f"python run.py scrape --resume {self.run_id} "
+                     f'--keyword "{keyword}"')
+        elif not unique_products:
             self.log(f"  = zero results for {keyword!r} - recorded as a "
                      f"competition signal")
 

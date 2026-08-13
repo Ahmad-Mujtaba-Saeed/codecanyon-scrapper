@@ -225,7 +225,7 @@ class TestExports(StatsTestCase):
 
     def test_products_csv_is_grouped_by_keyword(self):
         exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
-        rows = self.read("products.csv")
+        rows = [r for r in self.read("products.csv") if r["product_id"]]
         self.assertEqual(len(rows), 5)
         self.assertEqual({r["keyword"] for r in rows}, {"ultimate pos"})
         self.assertEqual([r["position"] for r in rows],
@@ -243,6 +243,29 @@ class TestExports(StatsTestCase):
                      "author_name", "price", "sales", "rating",
                      "review_count", "category", "framework", "last_updated"):
             self.assertIn(kept, header)
+
+    def test_zero_result_keyword_gets_one_blank_row(self):
+        """It ran and returned nothing. Omitting it would read as 'never
+        searched', which is a different and wrong claim."""
+        exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
+        rows = self.read("products.csv")
+
+        empty = [r for r in rows if r["keyword"] == "ultimate pos quantum"]
+        self.assertEqual(len(empty), 1, "exactly one row, not zero and not many")
+
+        row = empty[0]
+        self.assertEqual(row["keyword"], "ultimate pos quantum")
+        for column in ("position", "product_id", "title", "author_name",
+                       "price", "sales", "rating", "last_updated"):
+            self.assertEqual(row[column], "", f"{column} should be blank")
+
+    def test_zero_result_rows_do_not_disturb_the_real_ones(self):
+        exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
+        rows = self.read("products.csv")
+        self.assertEqual(len(rows), 6)          # 5 products + 1 empty keyword
+        with_products = [r for r in rows if r["product_id"]]
+        self.assertEqual(len(with_products), 5)
+        self.assertEqual(sum(int(r["sales"]) for r in with_products), 1130)
 
     def test_product_under_two_keywords_appears_under_each(self):
         """The file answers 'what did this search return', so a shared product
@@ -289,7 +312,9 @@ class TestExports(StatsTestCase):
         base = self.cfg.resolve("csv")
         self.assertTrue(os.path.isdir(os.path.join(base, self.RUN)))
         self.assertTrue(os.path.isdir(os.path.join(base, "run2")))
-        self.assertEqual(len(self.read("products.csv")), 5)
+        # The first run's file still holds its own five products.
+        self.assertEqual(
+            len([r for r in self.read("products.csv") if r["product_id"]]), 5)
 
 
 class TestProductsByKeyword(StatsTestCase):

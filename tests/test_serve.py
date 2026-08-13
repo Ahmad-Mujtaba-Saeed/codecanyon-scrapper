@@ -11,6 +11,7 @@ import shutil
 import sys
 import tempfile
 import threading
+import time
 import unittest
 import urllib.error
 import urllib.request
@@ -268,6 +269,73 @@ class TestKeywordsAreRunScoped(ServeTestCase):
 
     def test_reuse_without_a_run_is_an_error(self):
         self.assertFalse(self.post("/api/keywords/reuse", {})["ok"])
+
+
+class TestRetryEndpoint(ServeTestCase):
+    def setUp(self):
+        super().setUp()
+        store = Store(self.cfg.resolve("db"))
+        store.start_run("r1", "Perfex CRM", "{}")
+        store.record_keyword_result("r1", "perfex api", "relevance",
+                                    total_results=46, pages_crawled=2,
+                                    unique_products=30, status="failed",
+                                    error="page 3: HTTP 503")
+        store.record_keyword_result("r1", "perfex mcp", "relevance",
+                                    total_results=2, pages_crawled=1,
+                                    unique_products=2)
+        store.finish_run("r1")
+        store.close()
+
+    def post(self, path, payload=None):
+        request = urllib.request.Request(
+            f"http://127.0.0.1:{self.port}{path}", method="POST",
+            data=json.dumps(payload or {}).encode(),
+            headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(request, timeout=10) as r:
+            return json.loads(r.read())
+
+    def test_failed_status_is_visible_in_the_run_record(self):
+        rows = {k["keyword"]: k for k in
+                json.loads(self.get("/api/keywords?run=r1")[1])["keywords"]}
+        self.assertEqual(rows["perfex api"]["status"], "failed")
+        self.assertEqual(rows["perfex api"]["error"], "page 3: HTTP 503")
+        self.assertEqual(rows["perfex mcp"]["status"], "completed")
+
+    def test_retry_without_a_keyword_retries_everything_that_failed(self):
+        res = self.post("/api/keywords/retry", {"run": "r1"})
+        self.assertTrue(res["ok"])
+        self.assertEqual(res["keywords"], ["perfex api"])
+        self.assertEqual(res["run_id"], "r1", "retries stay in the same run")
+
+    def test_retry_refuses_a_keyword_that_did_not_fail(self):
+        res = self.post("/api/keywords/retry",
+                        {"run": "r1", "keywords": ["perfex mcp"]})
+        self.assertFalse(res["ok"])
+        self.assertIn("not marked failed", res["error"])
+
+    def test_retry_needs_a_run(self):
+        self.assertFalse(self.post("/api/keywords/retry", {})["ok"])
+
+    def test_retry_of_an_unknown_run_is_rejected(self):
+        res = self.post("/api/keywords/retry", {"run": "nope"})
+        self.assertFalse(res["ok"])
+        self.assertIn("no such run", res["error"])
+
+    def test_retry_does_not_clear_the_draft_keyword_list(self):
+        """A retry re-crawls inside an old run; it has nothing to do with the
+        list being assembled for the next one."""
+        keyword_file.save(self.cfg.resolve("keywords"), [
+            {"keyword": "worksuite crm", "parent_topic": "Worksuite",
+             "source": "manual", "approved": True, "priority": "high"}])
+
+        self.post("/api/keywords/retry", {"run": "r1"})
+        for _ in range(40):
+            if not serve.Handler.manager.busy:
+                break
+            time.sleep(0.1)
+
+        draft = json.loads(self.get("/api/keywords")[1])["keywords"]
+        self.assertEqual([k["keyword"] for k in draft], ["worksuite crm"])
 
 
 class TestProductsEndpoint(ServeTestCase):

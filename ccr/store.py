@@ -108,6 +108,8 @@ CREATE TABLE IF NOT EXISTS keyword_results (
     unique_products INTEGER,
     zero_result     INTEGER,
     completed_at    TEXT,
+    status          TEXT,       -- completed | failed
+    error           TEXT,
     PRIMARY KEY (run_id, keyword, sort)
 );
 
@@ -129,7 +131,28 @@ class Store:
         self.conn.execute("PRAGMA journal_mode=WAL")
         self.conn.execute("PRAGMA foreign_keys=ON")
         self.conn.executescript(SCHEMA)
+        self._migrate()
         self.conn.commit()
+
+    def _migrate(self):
+        """Bring an older database up to the current schema.
+
+        CREATE TABLE IF NOT EXISTS leaves an existing table untouched, so
+        columns added later have to be applied by hand. Databases from
+        earlier runs are worth keeping -- they hold the history the whole
+        cross-run comparison depends on.
+        """
+        columns = {row["name"] for row in
+                   self.conn.execute("PRAGMA table_info(keyword_results)")}
+        for name, ddl in (("status", "TEXT"), ("error", "TEXT")):
+            if name not in columns:
+                self.conn.execute(
+                    f"ALTER TABLE keyword_results ADD COLUMN {name} {ddl}")
+
+        # Rows written before the column existed finished normally, or the
+        # run would have been marked aborted.
+        self.conn.execute(
+            "UPDATE keyword_results SET status='completed' WHERE status IS NULL")
 
     def close(self):
         self.conn.close()
@@ -187,8 +210,8 @@ class Store:
         """
         return self.conn.execute(
             "SELECT kr.keyword, kr.total_results, kr.unique_products, "
-            "kr.zero_result, kr.pages_crawled, k.parent_topic, k.source, "
-            "k.priority FROM keyword_results kr "
+            "kr.zero_result, kr.pages_crawled, kr.status, kr.error, "
+            "k.parent_topic, k.source, k.priority FROM keyword_results kr "
             "LEFT JOIN keywords k ON k.keyword = kr.keyword "
             "WHERE kr.run_id=? ORDER BY kr.total_results DESC, kr.keyword",
             (run_id,),
@@ -320,15 +343,23 @@ class Store:
         return row[0] if row else None
 
     def record_keyword_result(self, run_id, keyword, sort, total_results,
-                              pages_crawled, unique_products):
+                              pages_crawled, unique_products,
+                              status="completed", error=None):
         self.conn.execute(
             "INSERT OR REPLACE INTO keyword_results (run_id, keyword, sort, "
             "total_results, pages_crawled, unique_products, zero_result, "
-            "completed_at) VALUES (?,?,?,?,?,?,?,?)",
+            "completed_at, status, error) VALUES (?,?,?,?,?,?,?,?,?,?)",
             (run_id, keyword, sort, total_results, pages_crawled,
-             unique_products, 1 if not unique_products else 0, utcnow()),
+             unique_products, 1 if not unique_products else 0, utcnow(),
+             status, error),
         )
         self.conn.commit()
+
+    def failed_keywords(self, run_id):
+        return self.conn.execute(
+            "SELECT keyword, sort, error, pages_crawled, unique_products "
+            "FROM keyword_results WHERE run_id=? AND status='failed' "
+            "ORDER BY keyword", (run_id,)).fetchall()
 
     # ------------------------------------------------------------- reading
 
@@ -353,4 +384,7 @@ class Store:
             "zero_result_keywords": c.execute(
                 "SELECT COUNT(*) FROM keyword_results "
                 "WHERE run_id=? AND zero_result=1", (run_id,)).fetchone()[0],
+            "failed_keywords": c.execute(
+                "SELECT COUNT(*) FROM keyword_results "
+                "WHERE run_id=? AND status='failed'", (run_id,)).fetchone()[0],
         }

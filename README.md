@@ -93,6 +93,28 @@ run's numbers presented as if they were current. Pick a run from the header
 menu to look at past data; a run you start is selected automatically when it
 finishes.
 
+### Failed keywords
+
+A keyword can break mid-crawl — an HTTP 503 on page 3, a robots rule, a
+parser health error. It is recorded as **failed** with the error, rather than
+being left to look like a keyword that legitimately had three pages. That
+distinction matters: a search that broke at page 3 of 10 has partial numbers,
+and reading them as a completed search would understate the market.
+
+Failed keywords appear in the run view with a banner, the error, how many
+pages were collected before it broke, and a **Retry** button (plus **Retry all
+failed**). From the CLI they are listed at the end of the run summary.
+
+Retrying rides the ordinary resume path: pages that already succeeded are
+skipped without touching the network, and the crawl picks up from the page
+that broke. It re-crawls **inside the same run**, so the run's numbers get
+completed rather than split across two runs. On success the failed mark
+clears and the CSVs and report are re-exported.
+
+```bash
+python run.py scrape --resume <RUN_ID> --keyword "perfex webhook"
+```
+
 ### Draft keywords versus a run's record
 
 These are two different things, and the Collect tab shows whichever applies:

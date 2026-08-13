@@ -62,7 +62,7 @@ class RunManager:
         self.log_lines.append(message)
         del self.log_lines[:-400]
 
-    def start(self, words, topic, resume=None):
+    def start(self, words, topic, resume=None, clear_draft=True):
         with self.lock:
             if self.busy:
                 return None, "a run is already in progress"
@@ -71,15 +71,16 @@ class RunManager:
 
             self.run_id = resume or new_run_id()
             self.status = "running"
-            self.log_lines = [f"run {self.run_id} starting",
-                              f"keywords: {', '.join(words)}"]
+            self.log_lines = [
+                f"{'retrying in' if resume else 'run'} {self.run_id}",
+                f"keywords: {', '.join(words)}"]
 
             self.thread = threading.Thread(
-                target=self._run, args=(words, topic), daemon=True)
+                target=self._run, args=(words, topic, clear_draft), daemon=True)
             self.thread.start()
             return self.run_id, None
 
-    def _run(self, words, topic):
+    def _run(self, words, topic, clear_draft=True):
         store = None
         try:
             store = Store(self.cfg.resolve("db"))
@@ -100,7 +101,11 @@ class RunManager:
             # the next new run starts from a clean slate instead of silently
             # inheriting this one's list. Nothing is lost: "Reuse keywords"
             # copies them back.
-            if self.status == "completed":
+            #
+            # A retry must not do this: it re-crawls one keyword inside an
+            # existing run and has nothing to do with the draft you may be
+            # assembling for the next one.
+            if clear_draft and self.status == "completed":
                 keyword_file.save(self.cfg.resolve("keywords"), [])
                 self._log("draft keyword list cleared; "
                           "reuse them from this run if you want them again")
@@ -482,6 +487,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, self.api_clear_keywords())
             if url.path == "/api/keywords/reuse":
                 return self._send(200, self.api_reuse_keywords(payload))
+            if url.path == "/api/keywords/retry":
+                return self._send(200, self.api_retry_keywords(payload))
             return self._send(404, {"error": "unknown endpoint"})
         except Exception as exc:                     # noqa: BLE001
             return self._send(500, {"error": str(exc)})
@@ -604,6 +611,49 @@ class Handler(BaseHTTPRequestHandler):
         kept = [r for r in rows if r["keyword"].lower() not in wanted]
         keyword_file.save(path, kept)
         return {"ok": True, "removed": len(rows) - len(kept)}
+
+    def api_retry_keywords(self, payload):
+        """Re-crawl keywords that failed, inside the run they failed in.
+
+        This rides the ordinary resume path: pages that already succeeded are
+        skipped without touching the network, and the crawl picks up from the
+        page that broke.
+        """
+        run_id = (payload.get("run") or "").strip()
+        keywords = payload.get("keywords") or []
+        if payload.get("keyword"):
+            keywords = [payload["keyword"]]
+        keywords = [k.strip() for k in keywords if k and k.strip()]
+
+        if not run_id:
+            return {"ok": False, "error": "which run?"}
+
+        store = self._store()
+        try:
+            run = store.get_run(run_id)
+            if not run:
+                return {"ok": False, "error": f"no such run: {run_id}"}
+            failed = [r["keyword"] for r in store.failed_keywords(run_id)]
+            topic = run["topic"]
+        finally:
+            store.close()
+
+        if not keywords:
+            keywords = failed          # retry everything that failed
+        if not keywords:
+            return {"ok": False, "error": "nothing failed in this run"}
+
+        unknown = [k for k in keywords if k not in failed]
+        if unknown:
+            return {"ok": False,
+                    "error": f"not marked failed in this run: "
+                             f"{', '.join(unknown)}"}
+
+        started, error = self.manager.start(keywords, topic, resume=run_id,
+                                            clear_draft=False)
+        if error:
+            return {"ok": False, "error": error}
+        return {"ok": True, "run_id": started, "keywords": keywords}
 
     def api_clear_keywords(self):
         """Empty the draft. Safe: past runs keep their own record."""

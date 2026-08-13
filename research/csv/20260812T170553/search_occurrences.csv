@@ -1,29 +1,29 @@
 ﻿product_id,title,keyword,sort,page,position,sales,scraped_at
 61820857,FlexSocial - Perfex AI Social Media Management and Marketing Module,perfex ai,relevance,1,1,35,2026-08-12T12:17:01+00:00
 64257372,Perfex MCP - AI Integration Bridge for Perfex CRM,perfex ai,relevance,1,2,4,2026-08-12T12:17:01+00:00
-63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex ai,relevance,1,3,27,2026-08-12T12:17:01+00:00
+63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex ai,relevance,1,3,28,2026-08-12T12:17:01+00:00
 45928441,PrediX - AI Module For Perfex CRM,perfex ai,relevance,1,4,192,2026-08-12T12:17:01+00:00
 63853557,AI Assistant Module For Perfex CRM,perfex ai,relevance,1,5,1,2026-08-12T12:17:01+00:00
 62237887,AI Reports Module for Perfex CRM,perfex ai,relevance,1,6,17,2026-08-12T12:17:01+00:00
 64408383,FlexVisual — AI Visual Collaboration Boards for Perfex CRM,perfex ai,relevance,1,7,0,2026-08-12T12:17:01+00:00
 62096561,AI Lead Scoring for Perfex CRM,perfex ai,relevance,1,8,17,2026-08-12T12:17:01+00:00
-61890097,M ai lbox AI - Webm ai l + AI Assistant For Perfex CRM,perfex ai,relevance,1,9,51,2026-08-12T12:17:01+00:00
+61890097,MailboxAI - Webmail + AI Assistant For Perfex CRM,perfex ai,relevance,1,9,51,2026-08-12T12:17:01+00:00
 62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,perfex ai,relevance,1,10,52,2026-08-12T12:17:01+00:00
-43421742,Perfex Ai Writer - AI Content Generator And AI Ticket Reply Module,perfex ai,relevance,1,11,166,2026-08-12T12:17:01+00:00
-50559370,Em ai l Manager with AI Assistant for Perfex CRM,perfex ai,relevance,1,12,197,2026-08-12T12:17:01+00:00
+43421742,Perfex AiWriter - AI Content Generator And AI Ticket Reply Module,perfex ai,relevance,1,11,166,2026-08-12T12:17:01+00:00
+50559370,Email Manager with AI Assistant for Perfex CRM,perfex ai,relevance,1,12,197,2026-08-12T12:17:01+00:00
 59512445,Anna – AI Copilot & MCP Integration for Perfex CRM,perfex ai,relevance,1,13,27,2026-08-12T12:17:01+00:00
 47387865,PublishX - AI Powered CMS For Perfex CRM,perfex ai,relevance,1,14,43,2026-08-12T12:17:01+00:00
-59065356,AI -Powered Natural-Language Reporting Module for Perfex CRM,perfex ai,relevance,1,15,21,2026-08-12T12:17:01+00:00
+59065356,AI-Powered Natural-Language Reporting Module for Perfex CRM,perfex ai,relevance,1,15,21,2026-08-12T12:17:01+00:00
 58656663,FexCall – Smart AI Call Assistant & Lead Automation Module for Perfex CRM,perfex ai,relevance,1,16,51,2026-08-12T12:17:01+00:00
 53052338,"WhatsBot - WhatsApp Marketing, Bot, Chat & AI Personal Assistant Module for Perfex CRM",perfex ai,relevance,1,17,399,2026-08-12T12:17:01+00:00
-60345015,Open AI Agents & Workflows for Perfex CRM,perfex ai,relevance,1,18,31,2026-08-12T12:17:01+00:00
+60345015,OpenAI Agents & Workflows for Perfex CRM,perfex ai,relevance,1,18,31,2026-08-12T12:17:01+00:00
 60448824,ParsePilot - Lightning OCR & Auto-Fill Toolkit for Perfex CRM,perfex ai,relevance,1,19,30,2026-08-12T12:17:01+00:00
 52034853,Swiss QR Bill Module For Perfex CRM,perfex ai,relevance,1,20,28,2026-08-12T12:17:01+00:00
 49529560,StyleFlow - Invoice Templates For Perfex CRM,perfex ai,relevance,1,21,20,2026-08-12T12:17:01+00:00
 23555097,Perfex CRM Chat,perfex ai,relevance,1,22,1800,2026-08-12T12:17:01+00:00
-63426906,D ai lyBrief — Staff D ai ly Digest for Perfex CRM,perfex ai,relevance,1,23,4,2026-08-12T12:17:01+00:00
+63426906,DailyBrief — Staff Daily Digest for Perfex CRM,perfex ai,relevance,1,23,5,2026-08-12T12:17:01+00:00
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex ai,relevance,1,24,176,2026-08-12T12:17:01+00:00
-48680733,Synth AI - AI Module For Rise CRM,perfex ai,relevance,1,25,36,2026-08-12T12:17:01+00:00
+48680733,SynthAI - AI Module For Rise CRM,perfex ai,relevance,1,25,36,2026-08-12T12:17:01+00:00
 47633218,"LiveSmart Server Video - Online Conference and Streaming, Live AI",perfex ai,relevance,1,26,205,2026-08-12T12:17:01+00:00
 58676259,FaceLogin for Perfex CRM – Facial Recognition Login,perfex ai,relevance,1,27,13,2026-08-12T12:17:01+00:00
 58630012,Project Management and Automation Bundle Modules for Perfex CRM,perfex ai,relevance,1,28,2,2026-08-12T12:17:01+00:00
@@ -46,10 +46,10 @@
 63896621,Perfex CRM Guardian,perfex api,relevance,1,17,6,2026-08-12T12:08:13+00:00
 62619212,Secure Messages for Perfex CRM,perfex api,relevance,1,18,5,2026-08-12T12:08:13+00:00
 38350010,Webhooks Automation Module for Perfex CRM,perfex api,relevance,1,19,634,2026-08-12T12:08:13+00:00
-59065356,AI -Powered Natural-Language Reporting Module for Perfex CRM,perfex api,relevance,1,20,21,2026-08-12T12:08:13+00:00
+59065356,AI-Powered Natural-Language Reporting Module for Perfex CRM,perfex api,relevance,1,20,21,2026-08-12T12:08:13+00:00
 61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,perfex api,relevance,1,21,25,2026-08-12T12:08:13+00:00
-63426906,D ai lyBrief — Staff D ai ly Digest for Perfex CRM,perfex api,relevance,1,22,4,2026-08-12T12:08:13+00:00
-63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex api,relevance,1,23,27,2026-08-12T12:08:13+00:00
+63426906,DailyBrief — Staff Daily Digest for Perfex CRM,perfex api,relevance,1,22,5,2026-08-12T12:08:13+00:00
+63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex api,relevance,1,23,28,2026-08-12T12:08:13+00:00
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex api,relevance,1,24,176,2026-08-12T12:08:13+00:00
 51300246,Flutex - Perfex CRM Customer Mobile App,perfex api,relevance,1,25,111,2026-08-12T12:08:13+00:00
 53297436,"Google Workspace Integration module for Perfex CRM - Google Drive, Sheets, Docs, Forms & Slides",perfex api,relevance,1,26,268,2026-08-12T12:08:13+00:00
@@ -97,7 +97,7 @@
 62053398,Scheduled Maintenance Mode for Perfex CRM,perfex automation,relevance,1,22,4,2026-08-12T12:09:17+00:00
 59692795,WHMCS Connector & Smart Data Synchronization for Perfex CRM,perfex automation,relevance,1,23,22,2026-08-12T12:09:17+00:00
 63853557,AI Assistant Module For Perfex CRM,perfex automation,relevance,1,24,1,2026-08-12T12:09:17+00:00
-43421742,Perfex Ai Writer - AI Content Generator And AI Ticket Reply Module,perfex automation,relevance,1,25,166,2026-08-12T12:09:17+00:00
+43421742,Perfex AiWriter - AI Content Generator And AI Ticket Reply Module,perfex automation,relevance,1,25,166,2026-08-12T12:09:17+00:00
 62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,perfex automation,relevance,1,26,52,2026-08-12T12:09:17+00:00
 50001400,Wallet Module for Perfex CRM - Smart Invoice Payment,perfex automation,relevance,1,27,61,2026-08-12T12:09:17+00:00
 29799509,Perfex CRM Chat & Tickets App for Support Board,perfex automation,relevance,1,28,978,2026-08-12T12:09:17+00:00
@@ -112,7 +112,7 @@
 24915950,WhatsApp Chat Module - Internal Client & Staff Support for Perfex CRM,perfex automation,relevance,2,37,199,2026-08-12T12:09:24+00:00
 61686467,Policy and Claims Management for Perfex CRM,perfex automation,relevance,2,38,16,2026-08-12T12:09:24+00:00
 57583455,Testimonials and Reviews for Perfex CRM,perfex automation,relevance,2,39,16,2026-08-12T12:09:24+00:00
-62595906,Gym Management Module for Perfex CRM,perfex automation,relevance,2,40,2,2026-08-12T12:09:24+00:00
+62595906,Gym Management Module for Perfex CRM,perfex automation,relevance,2,40,3,2026-08-12T12:09:24+00:00
 62096561,AI Lead Scoring for Perfex CRM,perfex automation,relevance,2,41,17,2026-08-12T12:09:24+00:00
 59512445,Anna – AI Copilot & MCP Integration for Perfex CRM,perfex automation,relevance,2,42,27,2026-08-12T12:09:24+00:00
 63032352,"WooSync — WooCommerce Orders, Customers & Invoices Sync for Perfex CRM",perfex automation,relevance,2,43,5,2026-08-12T12:09:24+00:00
@@ -148,7 +148,7 @@
 53420896,Fleet Management module for Perfex CRM,perfex automation,relevance,3,73,129,2026-08-12T12:09:31+00:00
 60296713,Quality Management module for Perfex CRM,perfex automation,relevance,3,74,16,2026-08-12T12:09:31+00:00
 53691837,Warranty Management module for Perfex CRM,perfex automation,relevance,3,75,41,2026-08-12T12:09:31+00:00
-49053979,XML Toolkit With E-Invoice export for Perfex CRM.,perfex automation,relevance,3,76,96,2026-08-12T12:09:31+00:00
+49053979,XML Toolkit With E-Invoice export for Perfex CRM .,perfex automation,relevance,3,76,96,2026-08-12T12:09:31+00:00
 30494100,Perfex integration with LexOffice,perfex integration,relevance,1,1,44,2026-08-12T12:05:56+00:00
 64257372,Perfex MCP - AI Integration Bridge for Perfex CRM,perfex integration,relevance,1,2,4,2026-08-12T12:05:56+00:00
 25421122,WordFex - Smart WordPress to Perfex CRM Integration,perfex integration,relevance,1,3,240,2026-08-12T12:05:56+00:00
@@ -186,7 +186,7 @@
 23980227,Google Analytics Integration module for Perfex CRM - Smart Traffic Insights,perfex integration,relevance,2,35,85,2026-08-12T12:06:06+00:00
 23994943,Facebook Pixel Integration module for Perfex CRM - Smart Conversion Tracking,perfex integration,relevance,2,36,41,2026-08-12T12:06:06+00:00
 59692795,WHMCS Connector & Smart Data Synchronization for Perfex CRM,perfex integration,relevance,2,37,22,2026-08-12T12:06:06+00:00
-64235819,PWA & Push Notifications Module for Perfex CRM,perfex integration,relevance,2,38,10,2026-08-12T12:06:06+00:00
+64235819,PWA & Push Notifications Module for Perfex CRM,perfex integration,relevance,2,38,11,2026-08-12T12:06:06+00:00
 24025081,Perfex CRM Custom JS Module,perfex integration,relevance,2,39,159,2026-08-12T12:06:06+00:00
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex integration,relevance,2,40,176,2026-08-12T12:06:06+00:00
 56303965,Square Payment Gateway for Perfex CRM,perfex integration,relevance,2,41,22,2026-08-12T12:06:06+00:00
@@ -204,13 +204,13 @@
 51504146,BannerCraft - Dynamic Banner Management & News Ticker Module for Perfex CRM,perfex integration,relevance,2,53,61,2026-08-12T12:06:06+00:00
 62331077,Media Library & File Manager for Perfex CRM,perfex integration,relevance,2,54,6,2026-08-12T12:06:06+00:00
 58358414,Iyzipay Payment Gateway for Perfex CRM,perfex integration,relevance,2,55,3,2026-08-12T12:06:06+00:00
-60590690,FlexiNote for Perfex CRM,perfex integration,relevance,2,56,39,2026-08-12T12:06:06+00:00
+60590690,FlexiNote for Perfex CRM,perfex integration,relevance,2,56,40,2026-08-12T12:06:06+00:00
 52698607,Glofex Clients Mobile APP for perfex,perfex integration,relevance,2,57,6,2026-08-12T12:06:06+00:00
 54272663,Expense Subcategory Module For Perfex CRM,perfex integration,relevance,2,58,35,2026-08-12T12:06:06+00:00
 42314050,MailChimp Module for Perfex CRM,perfex integration,relevance,2,59,44,2026-08-12T12:06:06+00:00
 50095991,Affiliate Module for Perfex CRM - Simple and Effective,perfex integration,relevance,2,60,76,2026-08-12T12:06:06+00:00
 58896062,Login as Staff or Customers – Impersonation Module for Perfex CRM,perfex integration,relevance,3,61,55,2026-08-12T12:06:14+00:00
-58629456,Business Bundle Module s for Perfex CRM,perfex integration,relevance,3,62,3,2026-08-12T12:06:14+00:00
+58629456,Business Bundle Modules for Perfex CRM,perfex integration,relevance,3,62,3,2026-08-12T12:06:14+00:00
 57443179,PhonePe Payment Gateway for Perfex CRM,perfex integration,relevance,3,63,0,2026-08-12T12:06:14+00:00
 62053398,Scheduled Maintenance Mode for Perfex CRM,perfex integration,relevance,3,64,4,2026-08-12T12:06:14+00:00
 58054103,Promo Codes & Discount Module for Perfex CRM with Client Segment Export,perfex integration,relevance,3,65,16,2026-08-12T12:06:14+00:00
@@ -229,7 +229,7 @@
 49922588,Perfex SaaS Bundle - Multi-Tenancy & Automation,perfex integration,relevance,3,78,70,2026-08-12T12:06:14+00:00
 28895343,"XERO module for Perfex CRM - Synchronize Invoices, Payments",perfex integration,relevance,3,79,57,2026-08-12T12:06:14+00:00
 61372175,"FormSync – Automated Form to Lead, Customer & Ticket Sync for Perfex CRM",perfex integration,relevance,3,80,31,2026-08-12T12:06:14+00:00
-62595906,Gym Management Module for Perfex CRM,perfex integration,relevance,3,81,2,2026-08-12T12:06:14+00:00
+62595906,Gym Management Module for Perfex CRM,perfex integration,relevance,3,81,3,2026-08-12T12:06:14+00:00
 59253668,Passkey Login Module for Perfex CRM,perfex integration,relevance,3,82,15,2026-08-12T12:06:14+00:00
 58739983,"2FA Authenticator Module for Perfex CRM – Compatible with Google, Microsoft, Authy & More",perfex integration,relevance,3,83,32,2026-08-12T12:06:14+00:00
 27515681,QuickBooks® Online Module for Perfex CRM - Real Time and Scheduled Synchronization,perfex integration,relevance,3,84,150,2026-08-12T12:06:14+00:00
@@ -240,21 +240,21 @@
 51516561,Share / Hide Task Comments Module for Perfex CRM,perfex integration,relevance,3,89,11,2026-08-12T12:06:14+00:00
 47020035,Page Builder Pro for Perfex CRM with Landing Page Control,perfex integration,relevance,3,90,109,2026-08-12T12:06:14+00:00
 62256564,Whereby Meetings Module for Perfex CRM,perfex integration,relevance,4,91,1,2026-08-12T12:06:23+00:00
-49908170,Project Management & Freelancer Business Module s Bundle for Perfex CRM,perfex integration,relevance,4,92,25,2026-08-12T12:06:23+00:00
+49908170,Project Management & Freelancer Business Modules Bundle for Perfex CRM,perfex integration,relevance,4,92,25,2026-08-12T12:06:23+00:00
 25236502,Flutterwave Payment Gateway for Perfex CRM,perfex integration,relevance,4,93,23,2026-08-12T12:06:23+00:00
 58344793,Paddle Payment Gateway for Perfex CRM,perfex integration,relevance,4,94,0,2026-08-12T12:06:23+00:00
 58503519,SSLCommerz Payment Gateway for Perfex CRM,perfex integration,relevance,4,95,2,2026-08-12T12:06:23+00:00
 54836716,Client One-Time Password Module For Perfex CRM,perfex integration,relevance,4,96,25,2026-08-12T12:06:23+00:00
 53052338,"WhatsBot - WhatsApp Marketing, Bot, Chat & AI Personal Assistant Module for Perfex CRM",perfex integration,relevance,4,97,399,2026-08-12T12:06:23+00:00
 63011268,Image Editor Module For Perfex CRM,perfex integration,relevance,4,98,0,2026-08-12T12:06:23+00:00
-49908117,Business Tools Module s Bundle - Perfex CRM Productivity Pack,perfex integration,relevance,4,99,17,2026-08-12T12:06:23+00:00
-49908080,"E-commerce Business Module s Bundle for Perfex CRM - POS, Inventory & other smart tools",perfex integration,relevance,4,100,13,2026-08-12T12:06:23+00:00
+49908117,Business Tools Modules Bundle - Perfex CRM Productivity Pack,perfex integration,relevance,4,99,17,2026-08-12T12:06:23+00:00
+49908080,"E-commerce Business Modules Bundle for Perfex CRM - POS, Inventory & other smart tools",perfex integration,relevance,4,100,13,2026-08-12T12:06:23+00:00
 61686467,Policy and Claims Management for Perfex CRM,perfex integration,relevance,4,101,16,2026-08-12T12:06:23+00:00
 63032352,"WooSync — WooCommerce Orders, Customers & Invoices Sync for Perfex CRM",perfex integration,relevance,4,102,5,2026-08-12T12:06:23+00:00
 59912180,Aamarpay Payment Gateway for Perfex CRM,perfex integration,relevance,4,103,0,2026-08-12T12:06:23+00:00
 24915950,WhatsApp Chat Module - Internal Client & Staff Support for Perfex CRM,perfex integration,relevance,4,104,199,2026-08-12T12:06:23+00:00
 58990551,NoteBoard – Notes & Broadcast Module for Perfex CRM,perfex integration,relevance,4,105,14,2026-08-12T12:06:23+00:00
-50406188,Marketing Business Module s Bundle - Perfex CRM Smart Tools,perfex integration,relevance,4,106,13,2026-08-12T12:06:23+00:00
+50406188,Marketing Business Modules Bundle - Perfex CRM Smart Tools,perfex integration,relevance,4,106,13,2026-08-12T12:06:23+00:00
 28734726,"MNS - Perfex CRM Application para MacOS, Windows, Linux",perfex integration,relevance,4,107,145,2026-08-12T12:06:23+00:00
 61557558,PayTR Payment Gateway for Perfex CRM,perfex integration,relevance,4,108,1,2026-08-12T12:06:23+00:00
 33990019,Mailwizz EMA - Campaign Builder Module for Perfex CRM,perfex integration,relevance,4,109,58,2026-08-12T12:06:23+00:00
@@ -280,7 +280,7 @@
 35742698,Paytm Payment Gateway Plugin for Perfex CRM,perfex integration,relevance,5,129,10,2026-08-12T12:06:29+00:00
 54496463,Toast Master for Perfex CRM,perfex integration,relevance,5,130,17,2026-08-12T12:06:29+00:00
 58607301,Appointment Booking and Scheduling module for Perfex,perfex integration,relevance,5,131,13,2026-08-12T12:06:29+00:00
-49053979,XML Toolkit With E-Invoice export for Perfex CRM.,perfex integration,relevance,5,132,96,2026-08-12T12:06:29+00:00
+49053979,XML Toolkit With E-Invoice export for Perfex CRM .,perfex integration,relevance,5,132,96,2026-08-12T12:06:29+00:00
 24003506,Razorpay Payment Gateway for Perfex CRM,perfex integration,relevance,5,133,116,2026-08-12T12:06:29+00:00
 24219858,Custom JavaScript module for Perfex,perfex integration,relevance,5,134,132,2026-08-12T12:06:29+00:00
 24076921,Paystack Payment Gateway for Perfex CRM,perfex integration,relevance,5,135,43,2026-08-12T12:06:29+00:00
@@ -303,16 +303,16 @@
 59512445,Anna – AI Copilot & MCP Integration for Perfex CRM,perfex mcp,relevance,1,2,27,2026-08-12T12:10:12+00:00
 46161326,ProjectSpot - Projects Showcase For Clients Perfex Module,perfex module,relevance,1,1,25,2026-08-12T12:12:29+00:00
 64745705,"ScreenCapture – Screen Capture, Recording & Annotation Module for Perfex CRM",perfex module,relevance,1,2,0,2026-08-12T12:12:29+00:00
-64235819,PWA & Push Notifications Module for Perfex CRM,perfex module,relevance,1,3,10,2026-08-12T12:12:29+00:00
-47427853,Perfex CRM module s bundle,perfex module,relevance,1,4,18,2026-08-12T12:12:29+00:00
+64235819,PWA & Push Notifications Module for Perfex CRM,perfex module,relevance,1,3,11,2026-08-12T12:12:29+00:00
+47427853,Perfex CRM modules bundle,perfex module,relevance,1,4,18,2026-08-12T12:12:29+00:00
 63426623,Approval Workflow Module for Perfex CRM,perfex module,relevance,1,5,9,2026-08-12T12:12:29+00:00
 25337376,WooCommerce Module for Perfex CRM,perfex module,relevance,1,6,536,2026-08-12T12:12:29+00:00
 45847256,Mpesa Gateway - Perfex CRM module,perfex module,relevance,1,7,19,2026-08-12T12:12:29+00:00
-31317939,HR Records module for Perfex CRM,perfex module,relevance,1,8,946,2026-08-12T12:12:29+00:00
+31317939,HR Records module for Perfex CRM,perfex module,relevance,1,8,947,2026-08-12T12:12:29+00:00
 27260667,Recruitment Management module for Perfex CRM,perfex module,relevance,1,9,697,2026-08-12T12:12:29+00:00
 55055074,Appointment Module for Perfex CRM,perfex module,relevance,1,10,101,2026-08-12T12:12:29+00:00
 27465701,Inventory Management module for Perfex CRM,perfex module,relevance,1,11,1900,2026-08-12T12:12:29+00:00
-33392459,Lead Manager Module for Perfex CRM,perfex module,relevance,1,12,580,2026-08-12T12:12:29+00:00
+33392459,Lead Manager  Module for Perfex CRM,perfex module,relevance,1,12,580,2026-08-12T12:12:29+00:00
 27462292,Purchase Management module for Perfex CRM,perfex module,relevance,1,13,1700,2026-08-12T12:12:29+00:00
 31540126,Accounting and Bookkeeping module for Perfex CRM,perfex module,relevance,1,14,1600,2026-08-12T12:12:29+00:00
 50192137,PDF Customizer module for Perfex CRM,perfex module,relevance,1,15,206,2026-08-12T12:12:29+00:00
@@ -329,7 +329,7 @@
 38350010,Webhooks Automation Module for Perfex CRM,perfex module,relevance,1,26,634,2026-08-12T12:12:29+00:00
 33053316,Add-on Statuses Module for Perfex CRM,perfex module,relevance,1,27,363,2026-08-12T12:12:29+00:00
 37233985,Manufacturing Management module for Perfex CRM,perfex module,relevance,1,28,429,2026-08-12T12:12:29+00:00
-62255627,Repair Management Module for Perfex CRM,perfex module,relevance,1,29,10,2026-08-12T12:12:29+00:00
+62255627,Repair Management Module for Perfex CRM,perfex module,relevance,1,29,11,2026-08-12T12:12:29+00:00
 53506708,Document Management module for Perfex CRM,perfex module,relevance,1,30,207,2026-08-12T12:12:29+00:00
 47996439,Flexible Backup and Restore Module for Perfex,perfex module,relevance,2,31,228,2026-08-12T12:12:36+00:00
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex module,relevance,2,32,176,2026-08-12T12:12:36+00:00
@@ -358,7 +358,7 @@
 62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,perfex module,relevance,2,55,52,2026-08-12T12:12:36+00:00
 55734584,Task Signature Module - Perfex CRM,perfex module,relevance,2,56,33,2026-08-12T12:12:36+00:00
 59277736,Favorite Links Module For Perfex CRM,perfex module,relevance,2,57,27,2026-08-12T12:12:36+00:00
-62595906,Gym Management Module for Perfex CRM,perfex module,relevance,2,58,2,2026-08-12T12:12:36+00:00
+62595906,Gym Management Module for Perfex CRM,perfex module,relevance,2,58,3,2026-08-12T12:12:36+00:00
 54202997,Sketchboard Module for Perfex CRM,perfex module,relevance,2,59,31,2026-08-12T12:12:36+00:00
 33744597,Dynamic Customized Theme Module for Perfex CRM,perfex module,relevance,2,60,327,2026-08-12T12:12:36+00:00
 50079462,Workflow Rules and Automation Module for Perfex,perfex module,relevance,3,61,145,2026-08-12T12:12:43+00:00
@@ -443,7 +443,7 @@
 49531619,Event Management and Ticket Booking Module for Perfex,perfex module,relevance,5,140,90,2026-08-12T12:13:42+00:00
 47254047,Perfect SaaS - Powerful Multi-Tenancy Module for Perfex CRM,perfex module,relevance,5,141,175,2026-08-12T12:13:42+00:00
 52362027,Payfast Payment Gateway Module for Perfex CRM,perfex module,relevance,5,142,18,2026-08-12T12:13:42+00:00
-36115399,Elite Download Module s for Perfex CRM,perfex module,relevance,5,143,27,2026-08-12T12:13:42+00:00
+36115399,Elite Download Modules for Perfex CRM,perfex module,relevance,5,143,27,2026-08-12T12:13:42+00:00
 52004114,WhatsApp Official Cloud API Chat & Marketing Automation module for Perfex CRM,perfex module,relevance,5,144,425,2026-08-12T12:13:42+00:00
 60296638,Product Lifecycle Management module for Perfex CRM,perfex module,relevance,5,145,11,2026-08-12T12:13:42+00:00
 27169285,"Perfex Shop - eCommerce, POS & Inventory Management Module for Products & Services",perfex module,relevance,5,146,623,2026-08-12T12:13:42+00:00
@@ -452,12 +452,12 @@
 23832484,Live Chat module for Perfex CRM - Smart Customer Support,perfex module,relevance,5,149,153,2026-08-12T12:13:42+00:00
 51624054,LogTracker - The Powerful Error Tracking Module for Perfex CRM,perfex module,relevance,5,150,62,2026-08-12T12:13:42+00:00
 54341289,Slack Alert module for Perfex CRM,perfex module,relevance,6,151,10,2026-08-12T12:13:51+00:00
-58629456,Business Bundle Module s for Perfex CRM,perfex module,relevance,6,152,3,2026-08-12T12:13:51+00:00
+58629456,Business Bundle Modules for Perfex CRM,perfex module,relevance,6,152,3,2026-08-12T12:13:51+00:00
 54869954,Perfex GraphQL API - Smart Data Query & Custom Modules Access,perfex module,relevance,6,153,70,2026-08-12T12:13:51+00:00
 61043239,GoCardless Workflow Integration Module for Perfex CRM,perfex module,relevance,6,154,2,2026-08-12T12:13:51+00:00
 59642653,Password Rotation & Expiry – Security Module for Perfex CRM,perfex module,relevance,6,155,9,2026-08-12T12:13:51+00:00
 25690233,Stripe ACH module for Perfex CRM,perfex module,relevance,6,156,32,2026-08-12T12:13:51+00:00
-43421742,Perfex Ai Writer - AI Content Generator And AI Ticket Reply Module,perfex module,relevance,6,157,166,2026-08-12T12:13:51+00:00
+43421742,Perfex AiWriter - AI Content Generator And AI Ticket Reply Module,perfex module,relevance,6,157,166,2026-08-12T12:13:51+00:00
 50001400,Wallet Module for Perfex CRM - Smart Invoice Payment,perfex module,relevance,6,158,61,2026-08-12T12:13:51+00:00
 57359861,Advanced Social Media Analytics module for Perfex CRM,perfex module,relevance,6,159,40,2026-08-12T12:13:51+00:00
 29084049,SAGE® Module for Perfex CRM,perfex module,relevance,6,160,34,2026-08-12T12:13:51+00:00
@@ -468,9 +468,9 @@
 31272203,Elite Custom JS and CSS module for Perfex CRM,perfex module,relevance,6,165,97,2026-08-12T12:13:51+00:00
 63102893,Event Management & Ticket Booking Module for Perfex CRM with Attendees and Check-in,perfex module,relevance,6,166,3,2026-08-12T12:13:51+00:00
 32605041,Advanced Support Ticket Filters Module for Perfex CRM,perfex module,relevance,6,167,117,2026-08-12T12:13:51+00:00
-29356890,Export Customer Details (KYC Compliance) Module for Perfex CRM,perfex module,relevance,6,168,141,2026-08-12T12:13:51+00:00
+29356890,Export Customer Details (KYC Compliance)  Module for Perfex CRM,perfex module,relevance,6,168,141,2026-08-12T12:13:51+00:00
 34127976,SMS Gateway Hub Module for Perfex CRM,perfex module,relevance,6,169,21,2026-08-12T12:13:51+00:00
-59065356,AI -Powered Natural-Language Reporting Module for Perfex CRM,perfex module,relevance,6,170,21,2026-08-12T12:13:51+00:00
+59065356,AI-Powered Natural-Language Reporting Module for Perfex CRM,perfex module,relevance,6,170,21,2026-08-12T12:13:51+00:00
 52203746,Xendit Payment Gateway Module for Perfex CRM,perfex module,relevance,6,171,7,2026-08-12T12:13:51+00:00
 51289294,Deposit Invoice and Sales Item Customization Module for Perfex CRM,perfex module,relevance,6,172,90,2026-08-12T12:13:51+00:00
 62517563,Cloud Storage Module for Perfex CRM – S3 Compatible Sync and Active Upload,perfex module,relevance,6,173,5,2026-08-12T12:13:51+00:00
@@ -480,10 +480,10 @@
 47592024,Tap Payment Gateway Module for Perfex CRM,perfex module,relevance,6,177,12,2026-08-12T12:13:51+00:00
 25269490,"Chat Support Module - WhatsApp, Messenger & Viber Integration for Perfex CRM",perfex module,relevance,6,178,145,2026-08-12T12:13:51+00:00
 36139176,Myfatoorah Payment Gateway Module for Perfex CRM,perfex module,relevance,6,179,16,2026-08-12T12:13:51+00:00
-49908170,Project Management & Freelancer Business Module s Bundle for Perfex CRM,perfex module,relevance,6,180,25,2026-08-12T12:13:51+00:00
+49908170,Project Management & Freelancer Business Modules Bundle for Perfex CRM,perfex module,relevance,6,180,25,2026-08-12T12:13:51+00:00
 26413678,Task Bookmarks - Smart Task Organization Module for Perfex CRM,perfex module,relevance,7,181,139,2026-08-12T12:13:59+00:00
 33990019,Mailwizz EMA - Campaign Builder Module for Perfex CRM,perfex module,relevance,7,182,58,2026-08-12T12:13:59+00:00
-49908117,Business Tools Module s Bundle - Perfex CRM Productivity Pack,perfex module,relevance,7,183,17,2026-08-12T12:13:59+00:00
+49908117,Business Tools Modules Bundle - Perfex CRM Productivity Pack,perfex module,relevance,7,183,17,2026-08-12T12:13:59+00:00
 53297436,"Google Workspace Integration module for Perfex CRM - Google Drive, Sheets, Docs, Forms & Slides",perfex module,relevance,7,184,268,2026-08-12T12:13:59+00:00
 32949433,Social Media Login module for Perfex - Register and Log-in using social networks,perfex module,relevance,7,185,198,2026-08-12T12:13:59+00:00
 26761482,Project Roadmap with Reporting & Workflow Automation module for Perfex CRM Projects,perfex module,relevance,7,186,543,2026-08-12T12:13:59+00:00
@@ -496,7 +496,7 @@
 28066674,Business Process Modelling 1.0.6. module for Perfex CRM,perfex module,relevance,7,193,70,2026-08-12T12:13:59+00:00
 56109655,Hopper Tools - Utility Module for Perfex CRM,perfex module,relevance,7,194,5,2026-08-12T12:13:59+00:00
 27111428,"QuickBooks Integration module for Perfex CRM - Sync Invoices, Payments & Expenses",perfex module,relevance,7,195,252,2026-08-12T12:13:59+00:00
-50406188,Marketing Business Module s Bundle - Perfex CRM Smart Tools,perfex module,relevance,7,196,13,2026-08-12T12:13:59+00:00
+50406188,Marketing Business Modules Bundle - Perfex CRM Smart Tools,perfex module,relevance,7,196,13,2026-08-12T12:13:59+00:00
 24451975,Brevo SMS notification Module for Perfex CRM formerly SendInBlue,perfex module,relevance,7,197,71,2026-08-12T12:13:59+00:00
 31254267,Decision Model and Notation(DMN) Module for Perfex CRM,perfex module,relevance,7,198,28,2026-08-12T12:13:59+00:00
 47659280,Tradeindia Leads Integration Module For Perfex CRM,perfex module,relevance,7,199,5,2026-08-12T12:13:59+00:00
@@ -527,18 +527,18 @@
 53148119,Cashbill Payment Gateway Module for Perfex CRM,perfex module,relevance,8,224,0,2026-08-12T12:14:05+00:00
 54636335,WhatsBot REST API Module for Perfex CRM - Connect your WhatsBot with third party applications,perfex module,relevance,8,225,28,2026-08-12T12:14:05+00:00
 28902724,Xero® Online Module for Perfex CRM - Spend less time on the books,perfex module,relevance,8,226,54,2026-08-12T12:14:05+00:00
-49908080,"E-commerce Business Module s Bundle for Perfex CRM - POS, Inventory & other smart tools",perfex module,relevance,8,227,13,2026-08-12T12:14:05+00:00
+49908080,"E-commerce Business Modules Bundle for Perfex CRM - POS, Inventory & other smart tools",perfex module,relevance,8,227,13,2026-08-12T12:14:05+00:00
 56960536,"3D Studio Module for Perfex CRM – Create, Manage, and Showcase 3D Designs",perfex module,relevance,8,228,4,2026-08-12T12:14:05+00:00
 52769004,Flutex - Perfex CRM Admin/Staff Mobile App for Android & IOS | Flutter App with API Module Included,perfex module,relevance,8,229,159,2026-08-12T12:14:05+00:00
 63896621,Perfex CRM Guardian,perfex module,relevance,8,230,6,2026-08-12T12:14:05+00:00
 63210613,Work Orders for Perfex CRM,perfex module,relevance,8,231,12,2026-08-12T12:14:05+00:00
-63133110,ServiceDesk - Repair & Work Order Manager for Perfex CRM,perfex module,relevance,8,232,19,2026-08-12T12:14:05+00:00
-63426906,D ai lyBrief — Staff D ai ly Digest for Perfex CRM,perfex module,relevance,8,233,4,2026-08-12T12:14:05+00:00
+63133110,ServiceDesk - Repair & Work Order Manager for Perfex CRM,perfex module,relevance,8,232,20,2026-08-12T12:14:05+00:00
+63426906,DailyBrief — Staff Daily Digest for Perfex CRM,perfex module,relevance,8,233,5,2026-08-12T12:14:05+00:00
 26621431,Products and services for Perfex CRM,perfex module,relevance,8,234,505,2026-08-12T12:14:05+00:00
 46022362,PerfShield - Security & Monitoring Toolset for Perfex CRM,perfex module,relevance,8,235,251,2026-08-12T12:14:05+00:00
 58758720,Perfex GO - Native Mobile App Integration for Perfex CRM,perfex module,relevance,8,236,47,2026-08-12T12:14:05+00:00
 63164662,DupliGuard - Duplicate Detector for Perfex CRM,perfex module,relevance,8,237,3,2026-08-12T12:14:05+00:00
-27597035,Sales Commission Program for Perfex CRM,perfex module,relevance,8,238,585,2026-08-12T12:14:05+00:00
+27597035,Sales Commission Program for Perfex CRM,perfex module,relevance,8,238,586,2026-08-12T12:14:05+00:00
 29526843,Spreadsheet Online for Perfex CRM,perfex module,relevance,8,239,409,2026-08-12T12:14:05+00:00
 63032352,"WooSync — WooCommerce Orders, Customers & Invoices Sync for Perfex CRM",perfex module,relevance,8,240,5,2026-08-12T12:14:05+00:00
 54061000,AWS S3 Integration for Perfex CRM,perfex module,relevance,9,241,93,2026-08-12T12:14:13+00:00
@@ -552,7 +552,7 @@
 45916466,Customers REST API - Third-Party Integration for Perfex CRM,perfex module,relevance,9,249,157,2026-08-12T12:14:13+00:00
 27065429,Mention and Tag for Perfex CRM,perfex module,relevance,9,250,251,2026-08-12T12:14:13+00:00
 31491233,Perfex Landing - LandingPage builder for Perfex CRM,perfex module,relevance,9,251,331,2026-08-12T12:14:13+00:00
-60345015,Open AI Agents & Workflows for Perfex CRM,perfex module,relevance,9,252,31,2026-08-12T12:14:13+00:00
+60345015,OpenAI Agents & Workflows for Perfex CRM,perfex module,relevance,9,252,31,2026-08-12T12:14:13+00:00
 48238609,Custom Data Tables for Perfex CRM,perfex module,relevance,9,253,326,2026-08-12T12:14:13+00:00
 61242675,Additional Fields Builder for Perfex CRM,perfex module,relevance,9,254,17,2026-08-12T12:14:13+00:00
 62584980,Audit & Change Log Tracking for Perfex CRM,perfex module,relevance,9,255,5,2026-08-12T12:14:13+00:00
@@ -610,20 +610,20 @@
 23555097,Perfex CRM Chat,perfex module,relevance,11,307,1800,2026-08-12T12:15:18+00:00
 61264795,TallySync – Tally Forms to Perfex CRM Integration,perfex module,relevance,11,308,3,2026-08-12T12:15:18+00:00
 62297963,"Data Builder — Visual Reporting, REST API & GraphQL for Perfex CRM",perfex module,relevance,11,309,12,2026-08-12T12:15:18+00:00
-60590690,FlexiNote for Perfex CRM,perfex module,relevance,11,310,39,2026-08-12T12:15:18+00:00
+60590690,FlexiNote for Perfex CRM,perfex module,relevance,11,310,40,2026-08-12T12:15:18+00:00
 63521612,Trash Bin for Perfex CRM with One-Click Restore,perfex module,relevance,11,311,4,2026-08-12T12:15:18+00:00
 25801372,Pesapal Payment Gateway for Perfex CRM,perfex module,relevance,11,312,16,2026-08-12T12:15:18+00:00
 49529560,StyleFlow - Invoice Templates For Perfex CRM,perfex module,relevance,11,313,20,2026-08-12T12:15:18+00:00
 25280191,Perfex CRM Office Theme,perfex module,relevance,11,314,536,2026-08-12T12:15:18+00:00
 62096561,AI Lead Scoring for Perfex CRM,perfex module,relevance,11,315,17,2026-08-12T12:15:18+00:00
 56303965,Square Payment Gateway for Perfex CRM,perfex module,relevance,11,316,22,2026-08-12T12:15:18+00:00
-61890097,M ai lbox AI - Webm ai l + AI Assistant For Perfex CRM,perfex module,relevance,11,317,51,2026-08-12T12:15:18+00:00
+61890097,MailboxAI - Webmail + AI Assistant For Perfex CRM,perfex module,relevance,11,317,51,2026-08-12T12:15:18+00:00
 63427133,SLA Guard — Ticket SLA & Escalation Manager for Perfex CRM,perfex module,relevance,11,318,7,2026-08-12T12:15:18+00:00
 63799075,Sales Quotas Module for Prefex CRM,perfex module,relevance,11,319,2,2026-08-12T12:15:18+00:00
 54450947,Advanced Status Manager for Perfex CRM,perfex module,relevance,11,320,56,2026-08-12T12:15:18+00:00
 48461789,Staff Approvals Management For Perfex CRM,perfex module,relevance,11,321,123,2026-08-12T12:15:18+00:00
 28889201,Zoom Meeting Manager,perfex module,relevance,11,322,194,2026-08-12T12:15:18+00:00
-50559370,Em ai l Manager with AI Assistant for Perfex CRM,perfex module,relevance,11,323,197,2026-08-12T12:15:18+00:00
+50559370,Email Manager with AI Assistant for Perfex CRM,perfex module,relevance,11,323,197,2026-08-12T12:15:18+00:00
 63526864,FlagGuard — Rule Engine & Smart Alerts for Perfex CRM,perfex module,relevance,11,324,8,2026-08-12T12:15:18+00:00
 63050579,"Perfex CRM Renewal Manager – Track Contracts, Subscriptions & Revenue Recovery",perfex module,relevance,11,325,6,2026-08-12T12:15:18+00:00
 62619212,Secure Messages for Perfex CRM,perfex module,relevance,11,326,5,2026-08-12T12:15:18+00:00
@@ -635,7 +635,7 @@
 41921554,DiveshFlow - Android|IOS CRM Companion for Perfex,perfex module,relevance,12,332,55,2026-08-12T12:15:25+00:00
 29242977,Multi-Page Web to Lead Form Module,perfex module,relevance,12,333,200,2026-08-12T12:15:25+00:00
 47753619,Deals Management for Perfex CRM,perfex module,relevance,12,334,166,2026-08-12T12:15:25+00:00
-63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex module,relevance,12,335,27,2026-08-12T12:15:25+00:00
+63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex module,relevance,12,335,28,2026-08-12T12:15:25+00:00
 61085524,Dynamic CRUD & Form Builder for Perfex CRM,perfex module,relevance,12,336,8,2026-08-12T12:15:25+00:00
 38288487,Custom Links for Perfex CRM,perfex module,relevance,12,337,451,2026-08-12T12:15:25+00:00
 57443179,PhonePe Payment Gateway for Perfex CRM,perfex module,relevance,12,338,0,2026-08-12T12:15:25+00:00
@@ -673,7 +673,7 @@
 54038935,Login Attempt Guard for Perfex CRM,perfex module,relevance,13,370,18,2026-08-12T12:15:32+00:00
 58315556,"Perfex CRM Payment Gateway Bundle – PayU, CoinGate, Shift4",perfex module,relevance,13,371,1,2026-08-12T12:15:32+00:00
 48619366,Flexible Backup & Restore Module for Rise CRM,perfex module,relevance,13,372,81,2026-08-12T12:15:32+00:00
-48680733,Synth AI - AI Module For Rise CRM,perfex module,relevance,13,373,36,2026-08-12T12:15:32+00:00
+48680733,SynthAI - AI Module For Rise CRM,perfex module,relevance,13,373,36,2026-08-12T12:15:32+00:00
 24620910,GoCardless Payment Gateway Integration for Perfex CRM,perfex module,relevance,13,374,111,2026-08-12T12:15:32+00:00
 59512445,Anna – AI Copilot & MCP Integration for Perfex CRM,perfex module,relevance,13,375,27,2026-08-12T12:15:32+00:00
 48685403,Task Templates for Perfex CRM,perfex module,relevance,13,376,155,2026-08-12T12:15:32+00:00
@@ -685,7 +685,7 @@
 58558594,"Google Workspace Integration Module for Concord CRM - Google Drive, Sheets, Docs, Forms & Slides",perfex module,relevance,13,382,21,2026-08-12T12:15:32+00:00
 58558546,Custom SMS module for Concord CRM - Automated and On-demand Messages,perfex module,relevance,13,383,20,2026-08-12T12:15:32+00:00
 58558629,Assets Management Module for Concord CRM - Manage Company and Customer Assets,perfex module,relevance,13,384,11,2026-08-12T12:15:32+00:00
-49053979,XML Toolkit With E-Invoice export for Perfex CRM.,perfex module,relevance,13,385,96,2026-08-12T12:15:32+00:00
+49053979,XML Toolkit With E-Invoice export for Perfex CRM .,perfex module,relevance,13,385,96,2026-08-12T12:15:32+00:00
 49952430,Flexible Keep In Touch For Perfex,perfex module,relevance,13,386,63,2026-08-12T12:15:32+00:00
 54473299,MeetLink Manager for Perfex CRM,perfex module,relevance,13,387,27,2026-08-12T12:15:32+00:00
 52358890,Xrise Admin/Staff Mobile App for Rise CRM,perfex module,relevance,13,388,27,2026-08-12T12:15:32+00:00
@@ -710,14 +710,14 @@
 24915950,WhatsApp Chat Module - Internal Client & Staff Support for Perfex CRM,perfex whatsapp,relevance,1,4,199,2026-08-12T12:12:01+00:00
 25269490,"Chat Support Module - WhatsApp, Messenger & Viber Integration for Perfex CRM",perfex whatsapp,relevance,1,5,145,2026-08-12T12:12:01+00:00
 29799509,Perfex CRM Chat & Tickets App for Support Board,perfex whatsapp,relevance,1,6,978,2026-08-12T12:12:01+00:00
-63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex whatsapp,relevance,1,7,27,2026-08-12T12:12:01+00:00
+63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex whatsapp,relevance,1,7,28,2026-08-12T12:12:01+00:00
 62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,perfex whatsapp,relevance,1,8,52,2026-08-12T12:12:01+00:00
 62619212,Secure Messages for Perfex CRM,perfex whatsapp,relevance,1,9,5,2026-08-12T12:12:01+00:00
 54636335,WhatsBot REST API Module for Perfex CRM - Connect your WhatsBot with third party applications,perfex whatsapp,relevance,1,10,28,2026-08-12T12:12:01+00:00
-33392459,Lead Manager Module for Perfex CRM,perfex whatsapp,relevance,1,11,580,2026-08-12T12:12:01+00:00
+33392459,Lead Manager  Module for Perfex CRM,perfex whatsapp,relevance,1,11,580,2026-08-12T12:12:01+00:00
 24851275,Custom SMS & Email Notifications Automation for Perfex CRM,perfex whatsapp,relevance,1,12,690,2026-08-12T12:12:01+00:00
-50406188,Marketing Business Module s Bundle - Perfex CRM Smart Tools,perfex whatsapp,relevance,1,13,13,2026-08-12T12:12:01+00:00
+50406188,Marketing Business Modules Bundle - Perfex CRM Smart Tools,perfex whatsapp,relevance,1,13,13,2026-08-12T12:12:01+00:00
 31483023,Multichannel Two Factor Authentication for Perfex CRM,perfex whatsapp,relevance,1,14,230,2026-08-12T12:12:01+00:00
 51924816,Extra Settings Module For Perfex CRM,perfex whatsapp,relevance,1,15,144,2026-08-12T12:12:01+00:00
-63130507,"SmartDesk – The Complete CRM, HRM, Projects, and Analytics Management Solution",perfex whatsapp,relevance,1,16,1,2026-08-12T12:12:01+00:00
+63130507,"SmartDesk – The Complete CRM , HRM, Projects, and Analytics Management Solution",perfex whatsapp,relevance,1,16,1,2026-08-12T12:12:01+00:00
 58607295,LoginFlow – Otpless for Perfex CRM,perfex whatsapp,relevance,1,17,2,2026-08-12T12:12:01+00:00

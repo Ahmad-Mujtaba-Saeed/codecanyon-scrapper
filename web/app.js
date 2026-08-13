@@ -406,7 +406,8 @@ async function renderKeywordList() {
 
 function renderRunKeywords(payload) {
   const rows = payload.keywords;
-  const zero = rows.filter((r) => r.zero_result).length;
+  const zero = rows.filter((r) => r.zero_result && r.status !== "failed").length;
+  const failed = rows.filter((r) => r.status === "failed");
 
   $("#run-keywords-sub").innerHTML =
     `Run <b>${esc(payload.run_id)}</b> searched ${num(rows.length)}
@@ -417,17 +418,70 @@ function renderRunKeywords(payload) {
      This is the permanent record of what was searched — it does not change
      when you edit the draft list for a new run.`;
 
+  // Failures get their own banner: a keyword that broke at page 3 of 10 has
+  // partial numbers, and reading them as if the search finished would be
+  // worse than knowing it did not.
+  $("#failed-banner").innerHTML = !failed.length ? "" : `
+    <div class="card" style="margin-bottom:14px">
+      <p class="sub" style="margin:0 0 10px">
+        <b>${num(failed.length)} keyword${failed.length === 1 ? "" : "s"}
+        failed.</b> ${failed.length === 1 ? "Its" : "Their"} results are
+        incomplete — whatever pages had been collected are kept, but the
+        search did not finish, so treat
+        ${failed.length === 1 ? "its count" : "those counts"} as a floor
+        rather than a total. Retrying resumes from the page that broke; pages
+        already collected are not refetched.
+      </p>
+      ${table(["Keyword", "Pages done", "Products so far", "Error", ""],
+        failed.map((k) => [
+          `<span class="strong">${esc(k.keyword)}</span>`,
+          num(k.pages_crawled), num(k.unique_products),
+          `<span class="muted">${esc(k.error || "unknown")}</span>`,
+          `<button data-retry="${esc(k.keyword)}">Retry</button>`,
+        ]), [1, 2])}
+      <div class="controls" style="margin:12px 0 0">
+        <button id="retry-all-btn">Retry all failed</button>
+        <span class="meta" id="retry-status"></span>
+      </div>
+    </div>`;
+
   $("#run-keyword-list").innerHTML = table(
-    ["Keyword", "Topic", "Results", "Products", "Pages", "Source", "Priority"],
+    ["Keyword", "Topic", "Status", "Results", "Products", "Pages", "Priority"],
     rows.map((k) => [
-      `<span class="strong">${esc(k.keyword)}</span>` +
-        (k.zero_result ? ' <span class="badge zero">zero results</span>' : ""),
-      esc(k.parent_topic || ""), num(k.total_results),
-      num(k.unique_products), num(k.pages_crawled),
-      esc(k.source || ""), esc(k.priority || ""),
-    ]), [2, 3, 4]);
+      `<span class="strong">${esc(k.keyword)}</span>`,
+      esc(k.parent_topic || ""),
+      k.status === "failed" ? '<span class="badge zero">failed</span>'
+        : (k.zero_result ? '<span class="badge">zero results</span>'
+                         : '<span class="badge fresh">ok</span>'),
+      num(k.total_results), num(k.unique_products), num(k.pages_crawled),
+      esc(k.priority || ""),
+    ]), [3, 4, 5]);
 
   $("#reuse-status").textContent = "";
+  bindRetryButtons(payload.run_id);
+}
+
+function bindRetryButtons(runId) {
+  const fire = async (keywords) => {
+    $("#retry-status").textContent = "starting…";
+    const res = await api("/api/keywords/retry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ run: runId, keywords }),
+    });
+    if (!res.ok) { $("#retry-status").textContent = res.error; return; }
+
+    $("#retry-status").textContent = `retrying ${res.keywords.join(", ")}`;
+    if (state.poll) clearInterval(state.poll);
+    state.poll = setInterval(pollProgress, 1500);
+    pollProgress();
+  };
+
+  document.querySelectorAll("#failed-banner button[data-retry]").forEach((b) => {
+    b.onclick = () => fire([b.dataset.retry]);
+  });
+  const all = $("#retry-all-btn");
+  if (all) all.onclick = () => fire([]);
 }
 
 function renderDraftKeywords(rows) {

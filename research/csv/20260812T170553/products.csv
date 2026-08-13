@@ -1,16 +1,16 @@
 ﻿keyword,position,product_id,title,author_name,price,sales,rating,review_count,category,subcategory,software_version,framework,file_types,last_updated
 perfex module,1,46161326,ProjectSpot - Projects Showcase For Clients Perfex Module,lenzcreativee,49.0,25,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2023-06-13
 perfex module,2,64745705,"ScreenCapture – Screen Capture, Recording & Annotation Module for Perfex CRM",codeonstring,29.0,0,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JSON, HTML, CSS, PHP",2026-08-11
-perfex module,3,64235819,PWA & Push Notifications Module for Perfex CRM,codeonstring,19.0,10,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-07-19
-perfex module,4,47427853,Perfex CRM module s bundle,ulutfa,199.0,18,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"PHP, SQL",2026-05-15
+perfex module,3,64235819,PWA & Push Notifications Module for Perfex CRM,codeonstring,19.0,11,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-07-19
+perfex module,4,47427853,Perfex CRM modules bundle,ulutfa,199.0,18,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"PHP, SQL",2026-05-15
 perfex module,5,63426623,Approval Workflow Module for Perfex CRM,ticempresarial,25.0,9,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
 perfex module,6,25337376,WooCommerce Module for Perfex CRM,Techy4m,49.0,536,3.5,24,php-scripts,add-ons,"PHP 7.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, PHP",2026-04-30
 perfex module,7,45847256,Mpesa Gateway - Perfex CRM module,ulutfa,49.0,19,4.33,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2024-07-16
-perfex module,8,31317939,HR Records module for Perfex CRM,GreenTech_Solutions,99.0,946,4.95,40,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-08-01
+perfex module,8,31317939,HR Records module for Perfex CRM,GreenTech_Solutions,99.0,947,4.95,40,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-08-01
 perfex module,9,27260667,Recruitment Management module for Perfex CRM,GreenTech_Solutions,89.0,697,4.78,41,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-08-01
 perfex module,10,55055074,Appointment Module for Perfex CRM,zonvoir,40.0,101,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-07-28
 perfex module,11,27465701,Inventory Management module for Perfex CRM,GreenTech_Solutions,99.0,1900,4.89,100,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-22
-perfex module,12,33392459,Lead Manager Module for Perfex CRM,zonvoir,42.0,580,4.45,20,php-scripts,add-ons,"PHP 7.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-09-22
+perfex module,12,33392459,Lead Manager  Module for Perfex CRM,zonvoir,42.0,580,4.45,20,php-scripts,add-ons,"PHP 7.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-09-22
 perfex module,13,27462292,Purchase Management module for Perfex CRM,GreenTech_Solutions,99.0,1700,4.91,109,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-22
 perfex module,14,31540126,Accounting and Bookkeeping module for Perfex CRM,GreenTech_Solutions,109.0,1600,4.73,93,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-22
 perfex module,15,50192137,PDF Customizer module for Perfex CRM,themesic,59.0,206,4.29,7,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-10
@@ -27,7 +27,7 @@ perfex module,25,24219858,Custom JavaScript module for Perfex,themesic,39.0,132,
 perfex module,26,38350010,Webhooks Automation Module for Perfex CRM,themesic,59.0,634,4.75,8,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-27
 perfex module,27,33053316,Add-on Statuses Module for Perfex CRM,sejalinfotech,30.0,363,5.0,9,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-27
 perfex module,28,37233985,Manufacturing Management module for Perfex CRM,GreenTech_Solutions,99.0,429,5.0,22,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-23
-perfex module,29,62255627,Repair Management Module for Perfex CRM,zegapps,44.0,10,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-03-06
+perfex module,29,62255627,Repair Management Module for Perfex CRM,zegapps,44.0,11,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-03-06
 perfex module,30,53506708,Document Management module for Perfex CRM,GreenTech_Solutions,89.0,207,4.64,11,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-25
 perfex module,31,47996439,Flexible Backup and Restore Module for Perfex,flexibyte88,49.0,228,4.2,10,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-04-09
 perfex module,32,53317745,Zapier module for Perfex CRM - Workflow Automation,themesic,59.0,176,5.0,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
@@ -56,7 +56,7 @@ perfex module,54,59253668,Passkey Login Module for Perfex CRM,codeonstring,29.0,
 perfex module,55,62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,themesic,59.0,52,4.2,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-08-06
 perfex module,56,55734584,Task Signature Module - Perfex CRM,halilaltndg,35.0,33,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS",2025-05-27
 perfex module,57,59277736,Favorite Links Module For Perfex CRM,sejalinfotech,25.0,27,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-08-03
-perfex module,58,62595906,Gym Management Module for Perfex CRM,Hopperstack,59.0,2,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
+perfex module,58,62595906,Gym Management Module for Perfex CRM,Hopperstack,59.0,3,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex module,59,54202997,Sketchboard Module for Perfex CRM,Hopperstack,49.0,31,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-04-24
 perfex module,60,33744597,Dynamic Customized Theme Module for Perfex CRM,sejalinfotech,49.0,327,4.8,10,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-08-10
 perfex module,61,50079462,Workflow Rules and Automation Module for Perfex,flexibyte88,49.0,145,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-05-05
@@ -141,7 +141,7 @@ perfex module,139,62682109,Service Management Module + Technician Mobile App for
 perfex module,140,49531619,Event Management and Ticket Booking Module for Perfex,flexibyte88,49.0,90,2.33,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-04-10
 perfex module,141,47254047,Perfect SaaS - Powerful Multi-Tenancy Module for Perfex CRM,unique_coder,119.0,175,3.5,32,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2024-11-17
 perfex module,142,52362027,Payfast Payment Gateway Module for Perfex CRM,7edgetech,29.0,18,5.0,4,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2024-05-22
-perfex module,143,36115399,Elite Download Module s for Perfex CRM,wpeliteplugins,29.0,27,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2022-02-08
+perfex module,143,36115399,Elite Download Modules for Perfex CRM,wpeliteplugins,29.0,27,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2022-02-08
 perfex module,144,52004114,WhatsApp Official Cloud API Chat & Marketing Automation module for Perfex CRM,themesic,59.0,425,3.67,15,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-09
 perfex module,145,60296638,Product Lifecycle Management module for Perfex CRM,GreenTech_Solutions,79.0,11,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-28
 perfex module,146,27169285,"Perfex Shop - eCommerce, POS & Inventory Management Module for Products & Services",themesic,69.0,623,4.86,14,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-08-05
@@ -150,12 +150,12 @@ perfex module,148,37170358,Perfex CRM ClickSend SMS Module,Techy4m,29.0,15,,,php
 perfex module,149,23832484,Live Chat module for Perfex CRM - Smart Customer Support,themesic,39.0,153,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex module,150,51624054,LogTracker - The Powerful Error Tracking Module for Perfex CRM,corbitaltech,29.0,62,4.2,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-01-05
 perfex module,151,54341289,Slack Alert module for Perfex CRM,Hopperstack,19.0,10,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-09-14
-perfex module,152,58629456,Business Bundle Module s for Perfex CRM,flexibyte88,199.0,3,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, Sass, PHP, SQL",2025-06-21
+perfex module,152,58629456,Business Bundle Modules for Perfex CRM,flexibyte88,199.0,3,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, Sass, PHP, SQL",2025-06-21
 perfex module,153,54869954,Perfex GraphQL API - Smart Data Query & Custom Modules Access,themesic,49.0,70,4.8,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
 perfex module,154,61043239,GoCardless Workflow Integration Module for Perfex CRM,zegapps,50.0,2,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-12-10
 perfex module,155,59642653,Password Rotation & Expiry – Security Module for Perfex CRM,codeonstring,29.0,9,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2025-09-06
 perfex module,156,25690233,Stripe ACH module for Perfex CRM,volgot,159.0,32,,,plugins,,"PHP 7.x, MySQL 5.x",,"JavaScript JS, JavaScript JSON, PHP, JavaScript JS, JavaScript JSON",2020-07-15
-perfex module,157,43421742,Perfex Ai Writer - AI Content Generator And AI Ticket Reply Module,spagreen,49.0,166,3.0,6,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2024-06-30
+perfex module,157,43421742,Perfex AiWriter - AI Content Generator And AI Ticket Reply Module,spagreen,49.0,166,3.0,6,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2024-06-30
 perfex module,158,50001400,Wallet Module for Perfex CRM - Smart Invoice Payment,ulutfa,49.0,61,4.75,4,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2025-12-05
 perfex module,159,57359861,Advanced Social Media Analytics module for Perfex CRM,GreenTech_Solutions,89.0,40,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-28
 perfex module,160,29084049,SAGE® Module for Perfex CRM,by8e,35.0,34,,,php-scripts,add-ons,PHP 5.6,CodeIgniter,"JavaScript JS, HTML, CSS",2020-10-24
@@ -166,9 +166,9 @@ perfex module,164,25278359,REST API module for Perfex CRM - Connect Apps and Aut
 perfex module,165,31272203,Elite Custom JS and CSS module for Perfex CRM,wpeliteplugins,29.0,97,5.0,4,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-04-30
 perfex module,166,63102893,Event Management & Ticket Booking Module for Perfex CRM with Attendees and Check-in,by8e,34.0,3,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-04-28
 perfex module,167,32605041,Advanced Support Ticket Filters Module for Perfex CRM,sejalinfotech,25.0,117,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-27
-perfex module,168,29356890,Export Customer Details (KYC Compliance) Module for Perfex CRM,sejalinfotech,24.0,141,5.0,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-27
+perfex module,168,29356890,Export Customer Details (KYC Compliance)  Module for Perfex CRM,sejalinfotech,24.0,141,5.0,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-27
 perfex module,169,34127976,SMS Gateway Hub Module for Perfex CRM,sejalinfotech,25.0,21,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, PHP",2026-08-03
-perfex module,170,59065356,AI -Powered Natural-Language Reporting Module for Perfex CRM,lenzcreativee,59.0,21,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-07-23
+perfex module,170,59065356,AI-Powered Natural-Language Reporting Module for Perfex CRM,lenzcreativee,59.0,21,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-07-23
 perfex module,171,52203746,Xendit Payment Gateway Module for Perfex CRM,7edgetech,29.0,7,5.0,4,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2024-05-12
 perfex module,172,51289294,Deposit Invoice and Sales Item Customization Module for Perfex CRM,ulutfa,49.0,90,4.2,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-03-29
 perfex module,173,62517563,Cloud Storage Module for Perfex CRM – S3 Compatible Sync and Active Upload,ulutfa,99.0,5,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-06-01
@@ -178,10 +178,10 @@ perfex module,176,54836716,Client One-Time Password Module For Perfex CRM,halila
 perfex module,177,47592024,Tap Payment Gateway Module for Perfex CRM,tenchology,20.0,12,,,plugins,expressionengine/add-ons,,,PHP,2023-08-21
 perfex module,178,25269490,"Chat Support Module - WhatsApp, Messenger & Viber Integration for Perfex CRM",themesic,49.0,145,5.0,3,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, PHP",2026-05-04
 perfex module,179,36139176,Myfatoorah Payment Gateway Module for Perfex CRM,tenchology,21.0,16,,,php-scripts,add-ons,PHP 7.x,CodeIgniter,PHP,2024-03-08
-perfex module,180,49908170,Project Management & Freelancer Business Module s Bundle for Perfex CRM,themesic,199.0,25,4.33,6,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, XML, CSS, PHP, SQL",2026-07-09
+perfex module,180,49908170,Project Management & Freelancer Business Modules Bundle for Perfex CRM,themesic,199.0,25,4.33,6,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, XML, CSS, PHP, SQL",2026-07-09
 perfex module,181,26413678,Task Bookmarks - Smart Task Organization Module for Perfex CRM,themesic,49.0,139,5.0,3,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-09
 perfex module,182,33990019,Mailwizz EMA - Campaign Builder Module for Perfex CRM,by8e,38.0,58,1.0,4,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2022-10-11
-perfex module,183,49908117,Business Tools Module s Bundle - Perfex CRM Productivity Pack,themesic,299.0,17,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, XML, CSS, PHP, SQL",2026-07-09
+perfex module,183,49908117,Business Tools Modules Bundle - Perfex CRM Productivity Pack,themesic,299.0,17,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, XML, CSS, PHP, SQL",2026-07-09
 perfex module,184,53297436,"Google Workspace Integration module for Perfex CRM - Google Drive, Sheets, Docs, Forms & Slides",themesic,59.0,268,4.43,7,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-08
 perfex module,185,32949433,Social Media Login module for Perfex - Register and Log-in using social networks,themesic,59.0,198,5.0,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-09
 perfex module,186,26761482,Project Roadmap with Reporting & Workflow Automation module for Perfex CRM Projects,themesic,59.0,543,5.0,5,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-09
@@ -194,7 +194,7 @@ perfex module,192,26620578,Human Resources Management (HRM) & Workforce Automati
 perfex module,193,28066674,Business Process Modelling 1.0.6. module for Perfex CRM,weebdigital,30.0,70,,,php-scripts,,PHP 7.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, XML, CSS",2021-02-24
 perfex module,194,56109655,Hopper Tools - Utility Module for Perfex CRM,Hopperstack,39.0,5,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS",2025-06-15
 perfex module,195,27111428,"QuickBooks Integration module for Perfex CRM - Sync Invoices, Payments & Expenses",themesic,59.0,252,5.0,5,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
-perfex module,196,50406188,Marketing Business Module s Bundle - Perfex CRM Smart Tools,themesic,299.0,13,5.0,4,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
+perfex module,196,50406188,Marketing Business Modules Bundle - Perfex CRM Smart Tools,themesic,299.0,13,5.0,4,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
 perfex module,197,24451975,Brevo SMS notification Module for Perfex CRM formerly SendInBlue,Techy4m,29.0,71,,,php-scripts,add-ons,"PHP 7.x, MySQL 5.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, PHP",2024-11-23
 perfex module,198,31254267,Decision Model and Notation(DMN) Module for Perfex CRM,zonvoir,20.0,28,,,php-scripts,,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2021-04-21
 perfex module,199,47659280,Tradeindia Leads Integration Module For Perfex CRM,sejalinfotech,30.0,5,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-08-03
@@ -225,18 +225,18 @@ perfex module,223,52426427,YooKassa / YooMoney Payment Gateway Module for Perfex
 perfex module,224,53148119,Cashbill Payment Gateway Module for Perfex CRM,7edgetech,29.0,0,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2024-07-04
 perfex module,225,54636335,WhatsBot REST API Module for Perfex CRM - Connect your WhatsBot with third party applications,corbitaltech,17.0,28,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, CSS, PHP, SQL",2024-11-30
 perfex module,226,28902724,Xero® Online Module for Perfex CRM - Spend less time on the books,Swivernet,45.0,54,2.5,8,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS",2021-09-09
-perfex module,227,49908080,"E-commerce Business Module s Bundle for Perfex CRM - POS, Inventory & other smart tools",themesic,299.0,13,5.0,3,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
+perfex module,227,49908080,"E-commerce Business Modules Bundle for Perfex CRM - POS, Inventory & other smart tools",themesic,299.0,13,5.0,3,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
 perfex module,228,56960536,"3D Studio Module for Perfex CRM – Create, Manage, and Showcase 3D Designs",Hopperstack,49.0,4,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2025-02-25
 perfex module,229,52769004,Flutex - Perfex CRM Admin/Staff Mobile App for Android & IOS | Flutter App with API Module Included,Branditta,69.0,159,3.38,8,mobile,flutter/full-applications,Flutter 3.x,,"Dart, YAML, JavaScript JSON, .java, .kotlin, .plist",2025-10-14
 perfex module,230,63896621,Perfex CRM Guardian,i-Dev,59.0,6,,,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-06-17
 perfex module,231,63210613,Work Orders for Perfex CRM,wipxio,25.0,12,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-05-14
-perfex module,232,63133110,ServiceDesk - Repair & Work Order Manager for Perfex CRM,by8e,40.0,19,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-08-08
-perfex module,233,63426906,D ai lyBrief — Staff D ai ly Digest for Perfex CRM,ticempresarial,25.0,4,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
+perfex module,232,63133110,ServiceDesk - Repair & Work Order Manager for Perfex CRM,by8e,40.0,20,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-08-08
+perfex module,233,63426906,DailyBrief — Staff Daily Digest for Perfex CRM,ticempresarial,25.0,5,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
 perfex module,234,26621431,Products and services for Perfex CRM,Techy4m,39.0,505,4.41,17,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, PHP, SQL",2025-03-04
 perfex module,235,46022362,PerfShield - Security & Monitoring Toolset for Perfex CRM,themesic,59.0,251,4.9,10,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-10
 perfex module,236,58758720,Perfex GO - Native Mobile App Integration for Perfex CRM,designingmedia,149.0,47,4.8,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-04-04
 perfex module,237,63164662,DupliGuard - Duplicate Detector for Perfex CRM,ticempresarial,25.0,3,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
-perfex module,238,27597035,Sales Commission Program for Perfex CRM,GreenTech_Solutions,79.0,585,4.97,35,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2021-03-28
+perfex module,238,27597035,Sales Commission Program for Perfex CRM,GreenTech_Solutions,79.0,586,4.97,35,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2021-03-28
 perfex module,239,29526843,Spreadsheet Online for Perfex CRM,GreenTech_Solutions,79.0,409,4.62,21,php-scripts,add-ons,PHP 7.x,CodeIgniter,"HTML, CSS, PHP, SQL",2021-05-18
 perfex module,240,63032352,"WooSync — WooCommerce Orders, Customers & Invoices Sync for Perfex CRM",polyxgo,39.0,5,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-05-02
 perfex module,241,54061000,AWS S3 Integration for Perfex CRM,ManissDev,19.0,93,5.0,6,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, PHP, SQL",2026-03-01
@@ -250,7 +250,7 @@ perfex module,248,27386413,Staff Workload for Perfex CRM,GreenTech_Solutions,79.
 perfex module,249,45916466,Customers REST API - Third-Party Integration for Perfex CRM,themesic,59.0,157,5.0,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-10
 perfex module,250,27065429,Mention and Tag for Perfex CRM,GreenTech_Solutions,69.0,251,5.0,8,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2020-07-11
 perfex module,251,31491233,Perfex Landing - LandingPage builder for Perfex CRM,techfago_scripts,59.0,331,4.0,9,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-05-03
-perfex module,252,60345015,Open AI Agents & Workflows for Perfex CRM,lenzcreativee,69.0,31,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-10-16
+perfex module,252,60345015,OpenAI Agents & Workflows for Perfex CRM,lenzcreativee,69.0,31,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-10-16
 perfex module,253,48238609,Custom Data Tables for Perfex CRM,themesic,59.0,326,4.09,11,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, PHP",2026-07-10
 perfex module,254,61242675,Additional Fields Builder for Perfex CRM,codeonstring,39.0,17,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JSON, HTML, CSS, PHP",2026-07-12
 perfex module,255,62584980,Audit & Change Log Tracking for Perfex CRM,flexibyte88,49.0,5,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-08-11
@@ -308,20 +308,20 @@ perfex module,306,54817706,Rescue Mode For Perfex CRM,lenzcreativee,49.0,19,,,ph
 perfex module,307,23555097,Perfex CRM Chat,i-Dev,69.0,1800,4.64,77,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-06-20
 perfex module,308,61264795,TallySync – Tally Forms to Perfex CRM Integration,LiquidApps,15.0,3,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-12-29
 perfex module,309,62297963,"Data Builder — Visual Reporting, REST API & GraphQL for Perfex CRM",polyxgo,59.0,12,,,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-05-28
-perfex module,310,60590690,FlexiNote for Perfex CRM,polyxgo,34.0,39,5.0,3,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, CSS, PHP",2026-05-05
+perfex module,310,60590690,FlexiNote for Perfex CRM,polyxgo,34.0,40,5.0,3,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, CSS, PHP",2026-05-05
 perfex module,311,63521612,Trash Bin for Perfex CRM with One-Click Restore,Hopperstack,29.0,4,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-21
 perfex module,312,25801372,Pesapal Payment Gateway for Perfex CRM,Swivernet,29.0,16,,,php-scripts,add-ons,PHP 7.x,CodeIgniter,"HTML, CSS, PHP",2020-06-23
 perfex module,313,49529560,StyleFlow - Invoice Templates For Perfex CRM,lenzcreativee,49.0,20,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2023-11-28
 perfex module,314,25280191,Perfex CRM Office Theme,i-Dev,39.0,536,4.33,12,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-02-02
 perfex module,315,62096561,AI Lead Scoring for Perfex CRM,ManissDev,19.0,17,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-02-28
 perfex module,316,56303965,Square Payment Gateway for Perfex CRM,Hopperstack,49.0,22,4.67,3,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, PHP, SQL",2025-01-16
-perfex module,317,61890097,M ai lbox AI - Webm ai l + AI Assistant For Perfex CRM,lenzcreativee,79.0,51,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-02-07
+perfex module,317,61890097,MailboxAI - Webmail + AI Assistant For Perfex CRM,lenzcreativee,79.0,51,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-02-07
 perfex module,318,63427133,SLA Guard — Ticket SLA & Escalation Manager for Perfex CRM,ticempresarial,25.0,7,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
 perfex module,319,63799075,Sales Quotas Module for Prefex CRM,flexibyte88,49.0,2,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS",2026-06-10
 perfex module,320,54450947,Advanced Status Manager for Perfex CRM,UnlimitechDev,29.0,56,,,plugins,miscellaneous,Other,,PHP,2025-01-17
 perfex module,321,48461789,Staff Approvals Management For Perfex CRM,lenzcreativee,69.0,123,5.0,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-05-09
 perfex module,322,28889201,Zoom Meeting Manager,i-Dev,49.0,194,4.2,5,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-06-24
-perfex module,323,50559370,Em ai l Manager with AI Assistant for Perfex CRM,halilaltndg,49.0,197,5.0,15,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-31
+perfex module,323,50559370,Email Manager with AI Assistant for Perfex CRM,halilaltndg,49.0,197,5.0,15,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-31
 perfex module,324,63526864,FlagGuard — Rule Engine & Smart Alerts for Perfex CRM,ticempresarial,25.0,8,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
 perfex module,325,63050579,"Perfex CRM Renewal Manager – Track Contracts, Subscriptions & Revenue Recovery",by8e,35.0,6,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-19
 perfex module,326,62619212,Secure Messages for Perfex CRM,Joomill,39.0,5,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-06
@@ -333,7 +333,7 @@ perfex module,331,28734726,"MNS - Perfex CRM Application para MacOS, Windows, Li
 perfex module,332,41921554,DiveshFlow - Android|IOS CRM Companion for Perfex,divesh_ahuja_1,99.0,55,4.2,5,mobile,android/full-applications,"Kotlin 1.x, Android 9.0 - 15.0",,".apk, .java, .xml, PHP",2026-06-12
 perfex module,333,29242977,Multi-Page Web to Lead Form Module,Swivernet,29.0,200,4.25,4,php-scripts,add-ons,,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2020-12-03
 perfex module,334,47753619,Deals Management for Perfex CRM,unique_coder,39.0,166,3.31,13,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-03-27
-perfex module,335,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,27,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
+perfex module,335,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,28,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
 perfex module,336,61085524,Dynamic CRUD & Form Builder for Perfex CRM,codeonstring,39.0,8,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JSON, HTML, CSS, PHP",2026-04-02
 perfex module,337,38288487,Custom Links for Perfex CRM,qualifinic,19.0,451,5.0,18,php-scripts,add-ons,"PHP 7.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-02-04
 perfex module,338,57443179,PhonePe Payment Gateway for Perfex CRM,Hopperstack,29.0,0,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-04-01
@@ -371,7 +371,7 @@ perfex module,369,24315892,Skrill Payment Gateway Integration for Perfex CRM,the
 perfex module,370,54038935,Login Attempt Guard for Perfex CRM,Hopperstack,29.0,18,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-09-05
 perfex module,371,58315556,"Perfex CRM Payment Gateway Bundle – PayU, CoinGate, Shift4",codeonstring,29.0,1,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JSON, HTML, CSS, PHP",2025-09-29
 perfex module,372,48619366,Flexible Backup & Restore Module for Rise CRM,corbitaltech,29.0,81,4.55,11,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-10-02
-perfex module,373,48680733,Synth AI - AI Module For Rise CRM,lenzcreativee,79.0,36,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2023-10-16
+perfex module,373,48680733,SynthAI - AI Module For Rise CRM,lenzcreativee,79.0,36,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2023-10-16
 perfex module,374,24620910,GoCardless Payment Gateway Integration for Perfex CRM,themesic,49.0,111,5.0,3,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-09
 perfex module,375,59512445,Anna – AI Copilot & MCP Integration for Perfex CRM,designingmedia,134.0,27,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-15
 perfex module,376,48685403,Task Templates for Perfex CRM,qualifinic,21.0,155,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, PHP",2024-09-15
@@ -383,7 +383,7 @@ perfex module,381,54839892,Shortly - Perfex URL Shortener,flexibyte88,49.0,28,3.
 perfex module,382,58558594,"Google Workspace Integration Module for Concord CRM - Google Drive, Sheets, Docs, Forms & Slides",themesic,49.0,21,4.0,4,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",Laravel,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
 perfex module,383,58558546,Custom SMS module for Concord CRM - Automated and On-demand Messages,themesic,49.0,20,5.0,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",Laravel,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
 perfex module,384,58558629,Assets Management Module for Concord CRM - Manage Company and Customer Assets,themesic,49.0,11,5.0,4,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",Laravel,"JavaScript JS, JavaScript JSON, HTML, XML, CSS, PHP, SQL",2026-07-09
-perfex module,385,49053979,XML Toolkit With E-Invoice export for Perfex CRM.,Techy4m,39.0,96,3.5,8,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, XML, PHP, Layered PNG",2025-03-05
+perfex module,385,49053979,XML Toolkit With E-Invoice export for Perfex CRM .,Techy4m,39.0,96,3.5,8,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, XML, PHP, Layered PNG",2025-03-05
 perfex module,386,49952430,Flexible Keep In Touch For Perfex,flexibyte88,39.0,63,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2023-12-21
 perfex module,387,54473299,MeetLink Manager for Perfex CRM,Hopperstack,29.0,27,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-09-24
 perfex module,388,52358890,Xrise Admin/Staff Mobile App for Rise CRM,xessglobal,59.0,27,,,mobile,flutter/full-applications,Flutter 3.x,,"Dart, YAML, PHP, HTML",2024-09-19
@@ -424,7 +424,7 @@ perfex integration,34,62458373,KRA eTIMS Integration Module for Perfex CRM – K
 perfex integration,35,23980227,Google Analytics Integration module for Perfex CRM - Smart Traffic Insights,themesic,39.0,85,,,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex integration,36,23994943,Facebook Pixel Integration module for Perfex CRM - Smart Conversion Tracking,themesic,39.0,41,,,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex integration,37,59692795,WHMCS Connector & Smart Data Synchronization for Perfex CRM,themesic,49.0,22,5.0,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
-perfex integration,38,64235819,PWA & Push Notifications Module for Perfex CRM,codeonstring,19.0,10,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-07-19
+perfex integration,38,64235819,PWA & Push Notifications Module for Perfex CRM,codeonstring,19.0,11,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-07-19
 perfex integration,39,24025081,Perfex CRM Custom JS Module,i-Dev,32.0,159,,,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2019-11-09
 perfex integration,40,53317745,Zapier module for Perfex CRM - Workflow Automation,themesic,59.0,176,5.0,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
 perfex integration,41,56303965,Square Payment Gateway for Perfex CRM,Hopperstack,49.0,22,4.67,3,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, PHP, SQL",2025-01-16
@@ -442,13 +442,13 @@ perfex integration,52,61500332,Mattermost Notifications Module for Perfex CRM,ze
 perfex integration,53,51504146,BannerCraft - Dynamic Banner Management & News Ticker Module for Perfex CRM,corbitaltech,29.0,61,4.9,10,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-01-02
 perfex integration,54,62331077,Media Library & File Manager for Perfex CRM,unique_coder,28.0,6,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, PHP, SQL",2026-03-13
 perfex integration,55,58358414,Iyzipay Payment Gateway for Perfex CRM,JDevStudio,29.0,3,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-06-01
-perfex integration,56,60590690,FlexiNote for Perfex CRM,polyxgo,34.0,39,5.0,3,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, CSS, PHP",2026-05-05
+perfex integration,56,60590690,FlexiNote for Perfex CRM,polyxgo,34.0,40,5.0,3,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, CSS, PHP",2026-05-05
 perfex integration,57,52698607,Glofex Clients Mobile APP for perfex,xessglobal,45.0,6,,,mobile,flutter/full-applications,Flutter 3.x,,"Dart, YAML, PHP",2025-01-22
 perfex integration,58,54272663,Expense Subcategory Module For Perfex CRM,halilaltndg,29.0,35,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS",2025-09-27
 perfex integration,59,42314050,MailChimp Module for Perfex CRM,zonvoir,30.0,44,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2023-01-18
 perfex integration,60,50095991,Affiliate Module for Perfex CRM - Simple and Effective,ulutfa,49.0,76,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, PHP, SQL",2025-10-23
 perfex integration,61,58896062,Login as Staff or Customers – Impersonation Module for Perfex CRM,codeonstring,29.0,55,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2025-12-03
-perfex integration,62,58629456,Business Bundle Module s for Perfex CRM,flexibyte88,199.0,3,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, Sass, PHP, SQL",2025-06-21
+perfex integration,62,58629456,Business Bundle Modules for Perfex CRM,flexibyte88,199.0,3,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, Sass, PHP, SQL",2025-06-21
 perfex integration,63,57443179,PhonePe Payment Gateway for Perfex CRM,Hopperstack,29.0,0,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-04-01
 perfex integration,64,62053398,Scheduled Maintenance Mode for Perfex CRM,codeonstring,19.0,4,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JSON, HTML, CSS, PHP",2026-02-20
 perfex integration,65,58054103,Promo Codes & Discount Module for Perfex CRM with Client Segment Export,ulutfa,49.0,16,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, PHP",2025-11-13
@@ -467,7 +467,7 @@ perfex integration,77,33111828,Aircall.io ® module for Perfex crm,by8e,30.0,23,
 perfex integration,78,49922588,Perfex SaaS Bundle - Multi-Tenancy & Automation,themesic,249.0,70,4.2,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
 perfex integration,79,28895343,"XERO module for Perfex CRM - Synchronize Invoices, Payments",by8e,45.0,57,4.0,4,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, HTML, XML, CSS",2024-12-05
 perfex integration,80,61372175,"FormSync – Automated Form to Lead, Customer & Ticket Sync for Perfex CRM",LiquidApps,39.0,31,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-03-07
-perfex integration,81,62595906,Gym Management Module for Perfex CRM,Hopperstack,59.0,2,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
+perfex integration,81,62595906,Gym Management Module for Perfex CRM,Hopperstack,59.0,3,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex integration,82,59253668,Passkey Login Module for Perfex CRM,codeonstring,29.0,15,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, PHP",2025-09-28
 perfex integration,83,58739983,"2FA Authenticator Module for Perfex CRM – Compatible with Google, Microsoft, Authy & More",codeonstring,29.0,32,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2025-07-03
 perfex integration,84,27515681,QuickBooks® Online Module for Perfex CRM - Real Time and Scheduled Synchronization,Swivernet,49.0,150,3.75,8,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2023-02-20
@@ -478,21 +478,21 @@ perfex integration,88,58607295,LoginFlow – Otpless for Perfex CRM,Hopperstack,
 perfex integration,89,51516561,Share / Hide Task Comments Module for Perfex CRM,UnlimitechDev,22.0,11,,,plugins,miscellaneous,PHP 7.x - 8.0.x,,"JavaScript JS, CSS, PHP, JavaScript JS, CSS",2025-01-15
 perfex integration,90,47020035,Page Builder Pro for Perfex CRM with Landing Page Control,ulutfa,49.0,109,2.25,8,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-02-03
 perfex integration,91,62256564,Whereby Meetings Module for Perfex CRM,Hopperstack,39.0,1,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-03-06
-perfex integration,92,49908170,Project Management & Freelancer Business Module s Bundle for Perfex CRM,themesic,199.0,25,4.33,6,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, XML, CSS, PHP, SQL",2026-07-09
+perfex integration,92,49908170,Project Management & Freelancer Business Modules Bundle for Perfex CRM,themesic,199.0,25,4.33,6,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, XML, CSS, PHP, SQL",2026-07-09
 perfex integration,93,25236502,Flutterwave Payment Gateway for Perfex CRM,Techy4m,39.0,23,5.0,4,php-scripts,add-ons,PHP 7.x,CodeIgniter,PHP,2024-11-06
 perfex integration,94,58344793,Paddle Payment Gateway for Perfex CRM,JDevStudio,29.0,0,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-05-31
 perfex integration,95,58503519,SSLCommerz Payment Gateway for Perfex CRM,Bottal,29.0,2,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"HTML, PHP",2025-06-12
 perfex integration,96,54836716,Client One-Time Password Module For Perfex CRM,halilaltndg,29.0,25,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-12-22
 perfex integration,97,53052338,"WhatsBot - WhatsApp Marketing, Bot, Chat & AI Personal Assistant Module for Perfex CRM",corbitaltech,59.0,399,4.69,36,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-05-06
 perfex integration,98,63011268,Image Editor Module For Perfex CRM,sejalinfotech,20.0,0,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-08-03
-perfex integration,99,49908117,Business Tools Module s Bundle - Perfex CRM Productivity Pack,themesic,299.0,17,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, XML, CSS, PHP, SQL",2026-07-09
-perfex integration,100,49908080,"E-commerce Business Module s Bundle for Perfex CRM - POS, Inventory & other smart tools",themesic,299.0,13,5.0,3,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
+perfex integration,99,49908117,Business Tools Modules Bundle - Perfex CRM Productivity Pack,themesic,299.0,17,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, XML, CSS, PHP, SQL",2026-07-09
+perfex integration,100,49908080,"E-commerce Business Modules Bundle for Perfex CRM - POS, Inventory & other smart tools",themesic,299.0,13,5.0,3,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
 perfex integration,101,61686467,Policy and Claims Management for Perfex CRM,Vital_Hosting,39.0,16,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-02-16
 perfex integration,102,63032352,"WooSync — WooCommerce Orders, Customers & Invoices Sync for Perfex CRM",polyxgo,39.0,5,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-05-02
 perfex integration,103,59912180,Aamarpay Payment Gateway for Perfex CRM,Bottal,29.0,0,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"HTML, PHP",2025-09-23
 perfex integration,104,24915950,WhatsApp Chat Module - Internal Client & Staff Support for Perfex CRM,themesic,49.0,199,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex integration,105,58990551,NoteBoard – Notes & Broadcast Module for Perfex CRM,codeonstring,19.0,14,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2025-08-06
-perfex integration,106,50406188,Marketing Business Module s Bundle - Perfex CRM Smart Tools,themesic,299.0,13,5.0,4,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
+perfex integration,106,50406188,Marketing Business Modules Bundle - Perfex CRM Smart Tools,themesic,299.0,13,5.0,4,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
 perfex integration,107,28734726,"MNS - Perfex CRM Application para MacOS, Windows, Linux",MNSSOCIAL,39.0,145,3.9,10,apps,mac,,,,2023-11-28
 perfex integration,108,61557558,PayTR Payment Gateway for Perfex CRM,PixelPerfect-Themes,54.0,1,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",,"JavaScript JS, HTML, CSS, PHP",2026-01-22
 perfex integration,109,33990019,Mailwizz EMA - Campaign Builder Module for Perfex CRM,by8e,38.0,58,1.0,4,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2022-10-11
@@ -518,7 +518,7 @@ perfex integration,128,28622550,Timesheets and Leave Management module for Perfe
 perfex integration,129,35742698,Paytm Payment Gateway Plugin for Perfex CRM,DelgonTechnologies,29.0,10,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, PHP",2024-03-22
 perfex integration,130,54496463,Toast Master for Perfex CRM,Hopperstack,19.0,17,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-09-27
 perfex integration,131,58607301,Appointment Booking and Scheduling module for Perfex,flexibyte88,59.0,13,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2025-09-26
-perfex integration,132,49053979,XML Toolkit With E-Invoice export for Perfex CRM.,Techy4m,39.0,96,3.5,8,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, XML, PHP, Layered PNG",2025-03-05
+perfex integration,132,49053979,XML Toolkit With E-Invoice export for Perfex CRM .,Techy4m,39.0,96,3.5,8,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, XML, PHP, Layered PNG",2025-03-05
 perfex integration,133,24003506,Razorpay Payment Gateway for Perfex CRM,MSTdev,26.0,116,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2024-01-05
 perfex integration,134,24219858,Custom JavaScript module for Perfex,themesic,39.0,132,5.0,5,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex integration,135,24076921,Paystack Payment Gateway for Perfex CRM,Techy4m,39.0,43,5.0,3,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JSON, HTML, PHP",2026-04-13
@@ -561,7 +561,7 @@ perfex automation,21,58630012,Project Management and Automation Bundle Modules f
 perfex automation,22,62053398,Scheduled Maintenance Mode for Perfex CRM,codeonstring,19.0,4,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JSON, HTML, CSS, PHP",2026-02-20
 perfex automation,23,59692795,WHMCS Connector & Smart Data Synchronization for Perfex CRM,themesic,49.0,22,5.0,3,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
 perfex automation,24,63853557,AI Assistant Module For Perfex CRM,halilaltndg,39.0,1,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-20
-perfex automation,25,43421742,Perfex Ai Writer - AI Content Generator And AI Ticket Reply Module,spagreen,49.0,166,3.0,6,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2024-06-30
+perfex automation,25,43421742,Perfex AiWriter - AI Content Generator And AI Ticket Reply Module,spagreen,49.0,166,3.0,6,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2024-06-30
 perfex automation,26,62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,themesic,59.0,52,4.2,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-08-06
 perfex automation,27,50001400,Wallet Module for Perfex CRM - Smart Invoice Payment,ulutfa,49.0,61,4.75,4,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2025-12-05
 perfex automation,28,29799509,Perfex CRM Chat & Tickets App for Support Board,Schiocco,9.0,978,4.76,21,php-scripts,help-and-support-tools,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-12-09
@@ -576,7 +576,7 @@ perfex automation,36,53297436,"Google Workspace Integration module for Perfex CR
 perfex automation,37,24915950,WhatsApp Chat Module - Internal Client & Staff Support for Perfex CRM,themesic,49.0,199,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex automation,38,61686467,Policy and Claims Management for Perfex CRM,Vital_Hosting,39.0,16,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-02-16
 perfex automation,39,57583455,Testimonials and Reviews for Perfex CRM,flexibyte88,59.0,16,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2025-10-21
-perfex automation,40,62595906,Gym Management Module for Perfex CRM,Hopperstack,59.0,2,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
+perfex automation,40,62595906,Gym Management Module for Perfex CRM,Hopperstack,59.0,3,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex automation,41,62096561,AI Lead Scoring for Perfex CRM,ManissDev,19.0,17,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-02-28
 perfex automation,42,59512445,Anna – AI Copilot & MCP Integration for Perfex CRM,designingmedia,134.0,27,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-15
 perfex automation,43,63032352,"WooSync — WooCommerce Orders, Customers & Invoices Sync for Perfex CRM",polyxgo,39.0,5,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-05-02
@@ -612,7 +612,7 @@ perfex automation,72,53506708,Document Management module for Perfex CRM,GreenTec
 perfex automation,73,53420896,Fleet Management module for Perfex CRM,GreenTech_Solutions,99.0,129,5.0,10,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-25
 perfex automation,74,60296713,Quality Management module for Perfex CRM,GreenTech_Solutions,79.0,16,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-29
 perfex automation,75,53691837,Warranty Management module for Perfex CRM,GreenTech_Solutions,79.0,41,5.0,4,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-26
-perfex automation,76,49053979,XML Toolkit With E-Invoice export for Perfex CRM.,Techy4m,39.0,96,3.5,8,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, XML, PHP, Layered PNG",2025-03-05
+perfex automation,76,49053979,XML Toolkit With E-Invoice export for Perfex CRM .,Techy4m,39.0,96,3.5,8,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"HTML, XML, PHP, Layered PNG",2025-03-05
 perfex api,1,54869954,Perfex GraphQL API - Smart Data Query & Custom Modules Access,themesic,49.0,70,4.8,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
 perfex api,2,61902641,API Integration Manager Module for Perfex CRM,codeonstring,59.0,10,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-02-09
 perfex api,3,45916466,Customers REST API - Third-Party Integration for Perfex CRM,themesic,59.0,157,5.0,5,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-10
@@ -632,10 +632,10 @@ perfex api,16,64257372,Perfex MCP - AI Integration Bridge for Perfex CRM,flexiby
 perfex api,17,63896621,Perfex CRM Guardian,i-Dev,59.0,6,,,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-06-17
 perfex api,18,62619212,Secure Messages for Perfex CRM,Joomill,39.0,5,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-06
 perfex api,19,38350010,Webhooks Automation Module for Perfex CRM,themesic,59.0,634,4.75,8,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-27
-perfex api,20,59065356,AI -Powered Natural-Language Reporting Module for Perfex CRM,lenzcreativee,59.0,21,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-07-23
+perfex api,20,59065356,AI-Powered Natural-Language Reporting Module for Perfex CRM,lenzcreativee,59.0,21,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-07-23
 perfex api,21,61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,corbitaltech,39.0,25,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, PHP",2026-05-09
-perfex api,22,63426906,D ai lyBrief — Staff D ai ly Digest for Perfex CRM,ticempresarial,25.0,4,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
-perfex api,23,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,27,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
+perfex api,22,63426906,DailyBrief — Staff Daily Digest for Perfex CRM,ticempresarial,25.0,5,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
+perfex api,23,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,28,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
 perfex api,24,53317745,Zapier module for Perfex CRM - Workflow Automation,themesic,59.0,176,5.0,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
 perfex api,25,51300246,Flutex - Perfex CRM Customer Mobile App,Branditta,49.0,111,5.0,6,mobile,flutter/full-applications,Flutter 3.x,,"Dart, YAML, .kotlin, .swift",2025-02-28
 perfex api,26,53297436,"Google Workspace Integration module for Perfex CRM - Google Drive, Sheets, Docs, Forms & Slides",themesic,59.0,268,4.43,7,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-08
@@ -661,29 +661,29 @@ perfex api,45,46175176,Stripe SEPA Direct Debit Gateway Integration for Perfex,t
 perfex api,46,25623248,Facebook & Instagram Leads Synchronization module for Perfex CRM - Marketing Automation for Meta Ads,themesic,59.0,617,4.43,7,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
 perfex ai,1,61820857,FlexSocial - Perfex AI Social Media Management and Marketing Module,flexibyte88,59.0,35,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-03-03
 perfex ai,2,64257372,Perfex MCP - AI Integration Bridge for Perfex CRM,flexibyte88,69.0,4,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-19
-perfex ai,3,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,27,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
+perfex ai,3,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,28,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
 perfex ai,4,45928441,PrediX - AI Module For Perfex CRM,lenzcreativee,79.0,192,5.0,12,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-02-21
 perfex ai,5,63853557,AI Assistant Module For Perfex CRM,halilaltndg,39.0,1,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-20
 perfex ai,6,62237887,AI Reports Module for Perfex CRM,ManissDev,19.0,17,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-05-03
 perfex ai,7,64408383,FlexVisual — AI Visual Collaboration Boards for Perfex CRM,flexibyte88,69.0,0,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-22
 perfex ai,8,62096561,AI Lead Scoring for Perfex CRM,ManissDev,19.0,17,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-02-28
-perfex ai,9,61890097,M ai lbox AI - Webm ai l + AI Assistant For Perfex CRM,lenzcreativee,79.0,51,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-02-07
+perfex ai,9,61890097,MailboxAI - Webmail + AI Assistant For Perfex CRM,lenzcreativee,79.0,51,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-02-07
 perfex ai,10,62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,themesic,59.0,52,4.2,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-08-06
-perfex ai,11,43421742,Perfex Ai Writer - AI Content Generator And AI Ticket Reply Module,spagreen,49.0,166,3.0,6,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2024-06-30
-perfex ai,12,50559370,Em ai l Manager with AI Assistant for Perfex CRM,halilaltndg,49.0,197,5.0,15,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-31
+perfex ai,11,43421742,Perfex AiWriter - AI Content Generator And AI Ticket Reply Module,spagreen,49.0,166,3.0,6,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2024-06-30
+perfex ai,12,50559370,Email Manager with AI Assistant for Perfex CRM,halilaltndg,49.0,197,5.0,15,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-31
 perfex ai,13,59512445,Anna – AI Copilot & MCP Integration for Perfex CRM,designingmedia,134.0,27,,,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-15
 perfex ai,14,47387865,PublishX - AI Powered CMS For Perfex CRM,lenzcreativee,49.0,43,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2023-08-07
-perfex ai,15,59065356,AI -Powered Natural-Language Reporting Module for Perfex CRM,lenzcreativee,59.0,21,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-07-23
+perfex ai,15,59065356,AI-Powered Natural-Language Reporting Module for Perfex CRM,lenzcreativee,59.0,21,,,php-scripts,,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-07-23
 perfex ai,16,58656663,FexCall – Smart AI Call Assistant & Lead Automation Module for Perfex CRM,designingmedia,99.0,51,5.0,6,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-03-13
 perfex ai,17,53052338,"WhatsBot - WhatsApp Marketing, Bot, Chat & AI Personal Assistant Module for Perfex CRM",corbitaltech,59.0,399,4.69,36,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2026-05-06
-perfex ai,18,60345015,Open AI Agents & Workflows for Perfex CRM,lenzcreativee,69.0,31,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-10-16
+perfex ai,18,60345015,OpenAI Agents & Workflows for Perfex CRM,lenzcreativee,69.0,31,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-10-16
 perfex ai,19,60448824,ParsePilot - Lightning OCR & Auto-Fill Toolkit for Perfex CRM,lenzcreativee,69.0,30,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2025-11-04
 perfex ai,20,52034853,Swiss QR Bill Module For Perfex CRM,lenzcreativee,79.0,28,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, Stylus, SQL",2026-05-25
 perfex ai,21,49529560,StyleFlow - Invoice Templates For Perfex CRM,lenzcreativee,49.0,20,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2023-11-28
 perfex ai,22,23555097,Perfex CRM Chat,i-Dev,69.0,1800,4.64,77,php-scripts,add-ons,"PHP 8.x, MySQL 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-06-20
-perfex ai,23,63426906,D ai lyBrief — Staff D ai ly Digest for Perfex CRM,ticempresarial,25.0,4,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
+perfex ai,23,63426906,DailyBrief — Staff Daily Digest for Perfex CRM,ticempresarial,25.0,5,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-06-20
 perfex ai,24,53317745,Zapier module for Perfex CRM - Workflow Automation,themesic,59.0,176,5.0,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-09
-perfex ai,25,48680733,Synth AI - AI Module For Rise CRM,lenzcreativee,79.0,36,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2023-10-16
+perfex ai,25,48680733,SynthAI - AI Module For Rise CRM,lenzcreativee,79.0,36,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2023-10-16
 perfex ai,26,47633218,"LiveSmart Server Video - Online Conference and Streaming, Live AI",nicky75,69.0,205,5.0,26,javascript,social-networks,,,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-04-19
 perfex ai,27,58676259,FaceLogin for Perfex CRM – Facial Recognition Login,Hopperstack,39.0,13,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP",2025-06-25
 perfex ai,28,58630012,Project Management and Automation Bundle Modules for Perfex CRM,flexibyte88,149.0,2,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2025-06-21
@@ -693,16 +693,16 @@ perfex whatsapp,3,53052338,"WhatsBot - WhatsApp Marketing, Bot, Chat & AI Person
 perfex whatsapp,4,24915950,WhatsApp Chat Module - Internal Client & Staff Support for Perfex CRM,themesic,49.0,199,5.0,3,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-05-04
 perfex whatsapp,5,25269490,"Chat Support Module - WhatsApp, Messenger & Viber Integration for Perfex CRM",themesic,49.0,145,5.0,3,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, PHP",2026-05-04
 perfex whatsapp,6,29799509,Perfex CRM Chat & Tickets App for Support Board,Schiocco,9.0,978,4.76,21,php-scripts,help-and-support-tools,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-12-09
-perfex whatsapp,7,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,27,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
+perfex whatsapp,7,63599831,TrackChat - Inbox for Perfex CRM with AI Agents,alexispijp,32.0,28,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2026-07-12
 perfex whatsapp,8,62402925,PulseChat - OmniChannel AI Customer Service module for Perfex CRM,themesic,59.0,52,4.2,5,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x, Other",CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-08-06
 perfex whatsapp,9,62619212,Secure Messages for Perfex CRM,Joomill,39.0,5,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-06
 perfex whatsapp,10,54636335,WhatsBot REST API Module for Perfex CRM - Connect your WhatsBot with third party applications,corbitaltech,17.0,28,,,php-scripts,add-ons,"PHP 7.x - 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, CSS, PHP, SQL",2024-11-30
-perfex whatsapp,11,33392459,Lead Manager Module for Perfex CRM,zonvoir,42.0,580,4.45,20,php-scripts,add-ons,"PHP 7.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-09-22
+perfex whatsapp,11,33392459,Lead Manager  Module for Perfex CRM,zonvoir,42.0,580,4.45,20,php-scripts,add-ons,"PHP 7.x, MySQL 5.x",CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-09-22
 perfex whatsapp,12,24851275,Custom SMS & Email Notifications Automation for Perfex CRM,themesic,59.0,690,4.4,20,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-09
-perfex whatsapp,13,50406188,Marketing Business Module s Bundle - Perfex CRM Smart Tools,themesic,299.0,13,5.0,4,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
+perfex whatsapp,13,50406188,Marketing Business Modules Bundle - Perfex CRM Smart Tools,themesic,299.0,13,5.0,4,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, JavaScript JSON, HTML, CSS, PHP, SQL",2026-07-09
 perfex whatsapp,14,31483023,Multichannel Two Factor Authentication for Perfex CRM,GreenTech_Solutions,69.0,230,5.0,10,php-scripts,add-ons,PHP 7.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP, SQL",2021-04-18
 perfex whatsapp,15,51924816,Extra Settings Module For Perfex CRM,halilaltndg,39.0,144,4.9,10,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS",2025-12-03
-perfex whatsapp,16,63130507,"SmartDesk – The Complete CRM, HRM, Projects, and Analytics Management Solution",razinsoft,19.0,1,,,mobile,flutter/full-applications,Flutter 3.x,,"Dart, YAML, JavaScript JSON, .java, .kotlin, CSS, PHP",2026-08-03
+perfex whatsapp,16,63130507,"SmartDesk – The Complete CRM , HRM, Projects, and Analytics Management Solution",razinsoft,19.0,1,,,mobile,flutter/full-applications,Flutter 3.x,,"Dart, YAML, JavaScript JSON, .java, .kotlin, CSS, PHP",2026-08-03
 perfex whatsapp,17,58607295,LoginFlow – Otpless for Perfex CRM,Hopperstack,29.0,2,,,php-scripts,add-ons,PHP 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2025-06-19
 perfex webhook,1,38350010,Webhooks Automation Module for Perfex CRM,themesic,59.0,634,4.75,8,php-scripts,add-ons,PHP 7.x - 8.x,CodeIgniter,"JavaScript JS, HTML, CSS, PHP",2026-07-27
 perfex webhook,2,61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,corbitaltech,39.0,25,,,php-scripts,add-ons,"PHP 8.x, MySQL 5.x - 8.x",CodeIgniter,"JavaScript JS, JavaScript JSON, PHP",2026-05-09

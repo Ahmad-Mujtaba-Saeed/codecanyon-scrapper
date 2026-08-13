@@ -60,8 +60,15 @@ def export_products(conn, run_id, out_dir):
     """
     rows = []
     for group in stats.products_by_keyword(conn, run_id):
-        for product in group["products"]:
-            rows.append({**product, "keyword": group["keyword"]})
+        if group["products"]:
+            for product in group["products"]:
+                rows.append({**product, "keyword": group["keyword"]})
+        else:
+            # A keyword that found nothing still gets a line, with every
+            # other column blank. Leaving it out would make the file say
+            # the search was never run, when in fact it ran and returned
+            # nothing -- which is a competition signal in its own right.
+            rows.append({"keyword": group["keyword"]})
 
     return _write(
         os.path.join(out_dir, "products.csv"),

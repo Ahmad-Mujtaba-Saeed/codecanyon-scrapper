@@ -71,6 +71,7 @@
       <div id="run-keywords" class="hidden">
         <h2>Keywords used by this run</h2>
         <p class="sub" id="run-keywords-sub"></p>
+        <div id="failed-banner"></div>
         <div class="controls">
           <button id="reuse-btn">Reuse these keywords for a new run</button>
           <span class="meta" id="reuse-status"></span>
@@ -125,8 +126,11 @@
         <button id="start-btn">Start run</button>
         <span class="meta" id="collect-status"></span>
       </div>
-      <div id="log">Idle.</div>
       </div>
+
+      <!-- Outside the draft block so a retry's progress is visible while a
+           past run is being viewed. -->
+      <div id="log">Idle.</div>
 
       <div class="controls" style="margin-top:26px">
         <button id="analyze-btn">Build analysis bundle</button>

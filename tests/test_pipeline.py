@@ -217,15 +217,143 @@ class TestRobots(PipelineTestCase):
 
 
 class TestFailureHandling(PipelineTestCase):
+    URL = "https://codecanyon.net/search/perfex%20api"
+
     def test_http_error_stops_that_keyword_and_is_recorded(self):
-        url = "https://codecanyon.net/search/perfex%20api"
-        client = FakeClient({url: (503, b"")})
+        client = FakeClient({self.URL: (503, b"")})
         self.crawler(client, "r1").crawl(["perfex api"])
 
         row = self.store.conn.execute(
             "SELECT * FROM crawl_pages WHERE run_id='r1'").fetchone()
         self.assertEqual(row["error"], "HTTP 503")
         self.assertEqual(self.store.run_summary("r1")["pages_failed"], 1)
+
+    def test_failed_keyword_is_marked_failed_not_zero_result(self):
+        """A keyword that broke is not a keyword that found nothing. Filing
+        it as zero-result would turn a collection error into a false market
+        signal."""
+        client = FakeClient({self.URL: (503, b"")})
+        self.crawler(client, "r1").crawl(["perfex api"])
+
+        row = self.store.conn.execute(
+            "SELECT * FROM keyword_results WHERE run_id='r1'").fetchone()
+        self.assertEqual(row["status"], "failed")
+        self.assertIn("503", row["error"])
+        self.assertEqual([r["keyword"] for r in self.store.failed_keywords("r1")],
+                         ["perfex api"])
+        self.assertEqual(self.store.run_summary("r1")["failed_keywords"], 1)
+
+    def test_partial_failure_keeps_the_pages_it_managed_to_collect(self):
+        client = FakeClient({
+            self.URL: (200, make_page(range(1, 31), 90, True)),
+            self.URL + "?page=2": (200, make_page(range(31, 61), 90, True)),
+            self.URL + "?page=3": (500, b""),
+        })
+        self.crawler(client, "r1").crawl(["perfex api"])
+
+        row = self.store.conn.execute(
+            "SELECT * FROM keyword_results WHERE run_id='r1'").fetchone()
+        self.assertEqual(row["status"], "failed")
+        self.assertEqual(row["pages_crawled"], 2)
+        self.assertEqual(row["unique_products"], 60)
+        self.assertIn("page 3", row["error"])
+        # 60 of 90 collected, so it must not read as a completed search.
+        self.assertEqual(row["zero_result"], 0)
+
+    def test_a_successful_keyword_is_marked_completed(self):
+        client = FakeClient({self.URL: (200, make_page([1, 2], 2, False))})
+        self.crawler(client, "r1").crawl(["perfex api"])
+        row = self.store.conn.execute(
+            "SELECT * FROM keyword_results WHERE run_id='r1'").fetchone()
+        self.assertEqual(row["status"], "completed")
+        self.assertIsNone(row["error"])
+
+    def test_one_failure_does_not_stop_the_other_keywords(self):
+        client = FakeClient({
+            self.URL: (503, b""),
+            "https://codecanyon.net/search/perfex%20mcp":
+                (200, make_page([9], 1, False)),
+        })
+        self.crawler(client, "r1").crawl(["perfex api", "perfex mcp"])
+
+        rows = {r["keyword"]: r["status"] for r in self.store.conn.execute(
+            "SELECT keyword, status FROM keyword_results WHERE run_id='r1'")}
+        self.assertEqual(rows, {"perfex api": "failed",
+                                "perfex mcp": "completed"})
+
+    def test_retry_resumes_and_clears_the_failed_mark(self):
+        """The retry rides the resume path: collected pages are not refetched
+        and the crawl picks up from the page that broke."""
+        first = FakeClient({
+            self.URL: (200, make_page(range(1, 31), 46, True)),
+            self.URL + "?page=2": (503, b""),
+        })
+        self.crawler(first, "r1").crawl(["perfex api"])
+        self.assertEqual(len(self.store.failed_keywords("r1")), 1)
+
+        # Second attempt: page 2 now works.
+        second = FakeClient({
+            self.URL: (200, make_page(range(1, 31), 46, True)),
+            self.URL + "?page=2": (200, make_page(range(31, 47), 46, False)),
+        })
+        self.crawler(second, "r1").crawl(["perfex api"])
+
+        self.assertEqual(second.requests, [self.URL + "?page=2"],
+                         "page 1 already succeeded and must not be refetched")
+        row = self.store.conn.execute(
+            "SELECT * FROM keyword_results WHERE run_id='r1'").fetchone()
+        self.assertEqual(row["status"], "completed")
+        self.assertIsNone(row["error"])
+        self.assertEqual(row["unique_products"], 46)
+
+    def test_abort_still_records_the_keyword_as_failed(self):
+        """Three consecutive failures abort the run. The keyword must still
+        leave a trace, or it looks like it was never attempted."""
+        client = FakeClient({self.URL: (404, b"")})
+        self.crawler(client, "r1").crawl(["perfex api"])
+
+        row = self.store.conn.execute(
+            "SELECT * FROM keyword_results WHERE run_id='r1' "
+            "AND keyword='perfex api'").fetchone()
+        self.assertIsNotNone(row, "an aborted keyword must still be recorded")
+        self.assertEqual(row["status"], "failed")
+
+
+class TestSchemaMigration(PipelineTestCase):
+    def test_old_database_without_status_columns_is_upgraded(self):
+        """Existing databases hold the history the cross-run comparison
+        depends on, so they must survive a schema change."""
+        path = os.path.join(self.tmp, "legacy.sqlite")
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+
+        import sqlite3
+        legacy = sqlite3.connect(path)
+        legacy.executescript("""
+            CREATE TABLE keyword_results (
+                run_id TEXT NOT NULL, keyword TEXT NOT NULL,
+                sort TEXT NOT NULL, total_results INTEGER,
+                pages_crawled INTEGER, unique_products INTEGER,
+                zero_result INTEGER, completed_at TEXT,
+                PRIMARY KEY (run_id, keyword, sort));
+        """)
+        legacy.execute(
+            "INSERT INTO keyword_results (run_id, keyword, sort, "
+            "total_results, pages_crawled, unique_products, zero_result) "
+            "VALUES ('old','perfex api','relevance',46,2,46,0)")
+        legacy.commit()
+        legacy.close()
+
+        store = Store(path)
+        try:
+            row = store.conn.execute(
+                "SELECT * FROM keyword_results WHERE run_id='old'").fetchone()
+            self.assertEqual(row["total_results"], 46, "data preserved")
+            self.assertEqual(row["status"], "completed",
+                             "pre-existing rows had finished normally")
+            self.assertIsNone(row["error"])
+            self.assertEqual(store.failed_keywords("old"), [])
+        finally:
+            store.close()
 
 
 if __name__ == "__main__":

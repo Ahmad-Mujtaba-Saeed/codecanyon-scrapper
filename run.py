@@ -126,7 +126,20 @@ def cmd_scrape(args, cfg, log):
     log(f"unique products {summary['unique_products']}, "
         f"occurrences {summary['occurrences']}")
     log(f"keywords {summary['keywords']}, "
-        f"zero-result {summary['zero_result_keywords']}")
+        f"zero-result {summary['zero_result_keywords']}, "
+        f"failed {summary['failed_keywords']}")
+
+    failed = store.failed_keywords(crawler.run_id)
+    if failed:
+        log("")
+        log("FAILED KEYWORDS - these did not finish and their numbers are "
+            "incomplete:")
+        for row in failed:
+            log(f"  {row['keyword']:<24} {row['error']}")
+        log("")
+        log("retry them with:")
+        log(f"  python run.py scrape --resume {crawler.run_id} "
+            + " ".join(f'--keyword "{r["keyword"]}"' for r in failed))
     log(f"time spent waiting: {throttle.slept_total / 60:.1f} min")
     log(f"database: {cfg.resolve('db')}")
     store.close()
