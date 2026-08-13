@@ -287,6 +287,98 @@ accompanied by the same numbers in a table, so nothing is reachable only
 through the visual. The palette is validated for contrast and colour-vision
 deficiency in both light and dark modes.
 
+## Deploying on a VPS with pm2
+
+### Install
+
+```bash
+git clone <your-repo> codecanyon-scrapper && cd codecanyon-scrapper
+```
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install beautifulsoup4
+```
+
+Edit `ecosystem.config.js` and set `cwd` and `interpreter` to your real paths,
+then:
+
+```bash
+pm2 start ecosystem.config.js && pm2 save
+```
+
+```bash
+pm2 startup
+```
+
+`pm2 startup` prints a command to run with sudo; that is what survives a
+reboot. Logs are `pm2 logs codecanyon-research`.
+
+### Reaching it
+
+The dashboard binds **loopback only** by default, and it has no authentication
+by default either. That combination is safe locally and unsafe the moment it
+faces a network: this dashboard can **start crawls** and read every row you
+have collected. Anyone who found the port could scrape from your server's IP.
+
+So binding a public interface with no credentials is refused outright. Two
+supported ways in:
+
+**Option A — SSH tunnel (recommended).** Nothing is exposed at all. Leave pm2
+serving `127.0.0.1` and forward the port from your laptop:
+
+```bash
+ssh -L 8765:127.0.0.1:8765 user@your-vps
+```
+
+Then open `http://127.0.0.1:8765` locally. No passwords, no TLS, no open port.
+
+**Option B — reverse proxy with TLS and a password.** Set credentials in the
+pm2 `env` block:
+
+```bash
+export CCR_DASHBOARD_USER=you && export CCR_DASHBOARD_PASSWORD='a long random string'
+```
+
+Keep pm2 bound to `127.0.0.1` and let nginx or Caddy terminate TLS in front of
+it. Basic auth sends the password base64-encoded, not encrypted, so it is only
+meaningful behind HTTPS. A minimal Caddy config:
+
+```bash
+printf 'research.example.com {\n  reverse_proxy 127.0.0.1:8765\n}\n' | sudo tee /etc/caddy/Caddyfile
+```
+
+`--host 0.0.0.0 --allow-insecure` exists for deliberate use on a trusted
+private network. It is not a good idea on a public VPS.
+
+### Things that bite on a VPS specifically
+
+**Never enable pm2 `watch`.** A crawl runs in a background thread inside the
+server process, so a file-change restart kills it mid-run. `watch: false` is
+set in the config for this reason. If a restart does interrupt a crawl, it is
+resumable and no data is lost:
+
+```bash
+.venv/bin/python run.py scrape --resume <RUN_ID>
+```
+
+**Keep `instances: 1`.** Two workers would mean two crawlers and double the
+request rate, defeating the pacing config entirely.
+
+**Datacenter IPs are treated more harshly than home connections.** The default
+pacing was tuned from a residential address. On a VPS, consider slowing it
+down in `config.json` — raising `page_delay_min`/`max` and the session-break
+lengths costs you nothing but wall-clock time, and the crawler already stops
+itself after three consecutive failures rather than hammering.
+
+**Disk grows with the raw archive.** Every page is stored gzipped forever,
+which is what makes re-parsing possible. Roughly 40 KB per page, so a
+27-page run is about 1 MB. Prune old dates under `research/raw/` if it
+matters; the database and CSVs are unaffected.
+
+**Back up `research/db/research.sqlite`.** It is the source of truth; the CSVs
+regenerate from it. The `.sqlite-wal` file matters too, so stop the process or
+use `sqlite3 research.sqlite ".backup out.sqlite"` rather than copying it live.
+
 ## The AI layer
 
 Set the key in the environment; it is never written to disk, never logged and
