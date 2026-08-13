@@ -24,8 +24,8 @@ module.exports = {
 
       // Use the virtualenv's Python so beautifulsoup4 is importable.
       // Absolute path avoids surprises about pm2's working directory.
-      interpreter: "/home/YOUR_USER/codecanyon-scrapper/.venv/bin/python",
-      cwd: "/home/YOUR_USER/codecanyon-scrapper",
+      interpreter: "/var/www/html/codecanyon-scrapper/.venv/bin/python",
+      cwd: "/var/www/html/codecanyon-scrapper",
 
       args: "--host 127.0.0.1 --port 8765 --no-browser",
 
