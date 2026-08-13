@@ -1,0 +1,83 @@
+{
+  "base_url": "https://codecanyon.net",
+  "sorts": ["relevance"],
+  "respect_robots": true,
+  "max_pages_per_keyword": 40,
+  "items_per_page_expected": 30,
+
+  "throttle": {
+    "page_delay_min": 4.0,
+    "page_delay_max": 9.0,
+    "reading_pause_every_min": 5,
+    "reading_pause_every_max": 8,
+    "reading_pause_min": 30.0,
+    "reading_pause_max": 90.0,
+    "session_break_after_min": 45,
+    "session_break_after_max": 60,
+    "session_break_min": 180.0,
+    "session_break_max": 480.0,
+    "keyword_gap_min": 20.0,
+    "keyword_gap_max": 60.0
+  },
+
+  "http": {
+    "timeout": 40,
+    "max_retries": 3,
+    "backoff_base": 5.0,
+    "backoff_max": 120.0,
+    "consecutive_failure_abort": 3,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+
+  "parser": {
+    "min_parse_success_ratio": 0.9
+  },
+
+  "ai": {
+    "model": "gpt-4o-mini",
+    "api_base": "https://api.openai.com/v1",
+    "api_key_env": "OPENAI_API_KEY",
+    "temperature": 0.4,
+    "max_output_tokens": 4000,
+    "timeout": 180,
+    "keyword_count": 14,
+    "bundle_top_products": 60
+  },
+
+  "analysis": {
+    "stale_days": 365,
+    "fresh_days": 90,
+    "low_performer_sales": 5,
+    "features": [
+      {"name": "MCP",             "pattern": "\\bmcp\\b|model context protocol"},
+      {"name": "AI",              "pattern": "\\bai\\b|artificial intelligence|gpt|chatgpt|copilot|openai"},
+      {"name": "REST API",        "pattern": "rest api|restful"},
+      {"name": "API",             "pattern": "\\bapi\\b"},
+      {"name": "Webhook",         "pattern": "webhook"},
+      {"name": "Automation",      "pattern": "automation|automate|workflow"},
+      {"name": "Integration",     "pattern": "integrat"},
+      {"name": "WhatsApp",        "pattern": "whats\\s?app"},
+      {"name": "SMS",             "pattern": "\\bsms\\b|twilio"},
+      {"name": "Email Marketing", "pattern": "email marketing|mailchimp|newsletter"},
+      {"name": "Mobile App",      "pattern": "mobile app|flutter|android|ios\\b"},
+      {"name": "Inventory",       "pattern": "inventory|stock"},
+      {"name": "Accounting",      "pattern": "accounting|invoice|billing|payroll"},
+      {"name": "Payment Gateway", "pattern": "payment gateway|stripe|paypal|razorpay"},
+      {"name": "POS",             "pattern": "\\bpos\\b|point of sale"},
+      {"name": "Multi-branch",    "pattern": "multi[- ]?(branch|store|company|tenant)"},
+      {"name": "Reports",         "pattern": "report|analytic|dashboard"},
+      {"name": "Zapier",          "pattern": "zapier|make\\.com|n8n"},
+      {"name": "Two-way Sync",    "pattern": "two[- ]?way|2[- ]?way|sync"}
+    ]
+  },
+
+  "paths": {
+    "root": "research",
+    "raw": "research/raw",
+    "db": "research/db/research.sqlite",
+    "csv": "research/csv",
+    "reports": "research/reports",
+    "analysis": "research/analysis",
+    "keywords": "keywords.csv"
+  }
+}

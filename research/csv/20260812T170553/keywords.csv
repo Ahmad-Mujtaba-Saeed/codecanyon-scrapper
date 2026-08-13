@@ -1,0 +1,9 @@
+keyword,parent_topic,source,approved,priority,total_results,unique_products,pages_crawled,zero_result
+perfex module,Perfex CRM,manual,yes,medium,388,388,13,no
+perfex integration,Perfex CRM,manual,yes,high,150,150,5,no
+perfex automation,Perfex CRM,manual,yes,high,76,76,3,no
+perfex api,Perfex CRM,manual,yes,high,46,46,2,no
+perfex ai,Perfex CRM,manual,yes,medium,28,28,1,no
+perfex whatsapp,Perfex CRM,manual,yes,medium,17,17,1,no
+perfex webhook,Perfex CRM,manual,yes,medium,15,15,1,no
+perfex mcp,Perfex CRM,manual,yes,high,2,2,1,no

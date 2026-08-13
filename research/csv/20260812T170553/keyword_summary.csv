@@ -1,0 +1,9 @@
+keyword,sort,results,unique_products,pages_crawled,zero_result,total_sales,top_sales,avg_sales,median_sales,avg_price,median_price
+perfex module,relevance,388,388,13,no,53948,3000,139.0,39.0,53.2,49.0
+perfex integration,relevance,150,150,5,no,12794,1500,85.3,25.0,56.7,45.0
+perfex automation,relevance,76,76,3,no,17237,3000,226.8,59.0,60.2,59.0
+perfex api,relevance,46,46,2,no,10656,3000,231.7,36.5,52.3,54.0
+perfex ai,relevance,28,28,1,no,3645,1800,130.2,30.5,63.4,59.0
+perfex whatsapp,relevance,17,17,1,no,4352,978,256.0,145,58.1,49.0
+perfex webhook,relevance,15,15,1,no,5527,3000,368.5,70,58.3,59.0
+perfex mcp,relevance,2,2,1,no,31,27,15.5,15.5,101.5,101.5

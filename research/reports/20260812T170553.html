@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" class="viz-root">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfex CRM market research - 20260812T170553</title>
+<style>/* Shared styling for the dashboard and the standalone run report.
+   report.py inlines this file so an exported report is self-contained. */
+
+.viz-root {
+  color-scheme: light;
+  --surface-1: #fcfcfb;
+  --plane: #f9f9f7;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --gridline: #e1e0d9;
+  --baseline: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --series-1: #2a78d6;
+  --track: #e9e8e2;
+  --good: #0ca30c;
+  --warning: #fab219;
+  --critical: #d03b3b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --surface-1: #1a1a19;
+    --plane: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --gridline: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --series-1: #3987e5;
+    --track: #2c2c2a;
+  }
+}
+
+:root[data-theme="dark"] .viz-root {
+  color-scheme: dark;
+  --surface-1: #1a1a19;
+  --plane: #0d0d0d;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --gridline: #2c2c2a;
+  --baseline: #383835;
+  --border: rgba(255, 255, 255, 0.10);
+  --series-1: #3987e5;
+  --track: #2c2c2a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--plane);
+  color: var(--text-primary);
+  font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 20px 72px;
+}
+
+/* ------------------------------------------------------------- structure */
+
+header.page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+header.page h1 { font-size: 21px; font-weight: 600; margin: 0; }
+
+.meta { color: var(--text-muted); font-size: 13px; }
+.meta b { color: var(--text-secondary); font-weight: 500; }
+
+section { margin-top: 34px; }
+
+h2 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 4px;
+}
+
+.sub {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 0 0 16px;
+  max-width: 68ch;
+}
+
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+/* ------------------------------------------------------------- hero/tiles */
+
+.hero .value {
+  font-size: 52px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.hero .label { color: var(--text-secondary); font-size: 14px; }
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.tile {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.tile .label {
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  margin-bottom: 6px;
+}
+
+.tile .value { font-size: 25px; font-weight: 600; letter-spacing: -0.01em; }
+.tile .note { color: var(--text-muted); font-size: 12px; margin-top: 3px; }
+
+/* ------------------------------------------------------------------ bars */
+
+.bars { display: flex; flex-direction: column; gap: 9px; }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(96px, 168px) 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.bar-row .name {
+  color: var(--text-secondary);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar-track {
+  background: var(--track);
+  border-radius: 2px;
+  height: 10px;
+  overflow: visible;
+}
+
+.bar-fill {
+  background: var(--series-1);
+  height: 10px;
+  border-radius: 0 4px 4px 0;   /* 4px rounded data-end, square at baseline */
+  min-width: 2px;
+}
+
+.bar-row .val {
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--text-primary);
+  min-width: 92px;
+  text-align: right;
+}
+
+.bar-row .val small { color: var(--text-muted); }
+
+/* ---------------------------------------------------------------- tables */
+
+.scroll { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 12px 9px 0;
+  border-bottom: 1px solid var(--baseline);
+  white-space: nowrap;
+}
+
+th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+td {
+  padding: 9px 12px 9px 0;
+  border-bottom: 1px solid var(--gridline);
+  color: var(--text-secondary);
+}
+
+td.strong { color: var(--text-primary); }
+tr:last-child td { border-bottom: none; }
+
+a { color: var(--series-1); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.badge.zero { color: var(--critical); border-color: var(--critical); }
+.badge.fresh { color: var(--good); border-color: var(--good); }
+
+.muted { color: var(--text-muted); }
+
+/* Page-level methodology note. Deliberately not called .note -- that class
+   belongs to the stat tiles, and sharing it put a stray rule under every
+   tile value. */
+.footnote {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding-top: 16px;
+  max-width: 76ch;
+}
+
+/* ------------------------------------------------------------- dashboard */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+select, input[type="search"], button {
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 7px 11px;
+}
+
+input[type="search"] { min-width: 240px; }
+
+button { cursor: pointer; }
+button:hover { border-color: var(--baseline); }
+button[disabled] { opacity: 0.5; cursor: default; }
+
+.tabs { display: flex; gap: 4px; margin: 24px 0 18px; flex-wrap: wrap; }
+
+.tabs button {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  border-radius: 7px;
+}
+
+.tabs button[aria-selected="true"] {
+  background: var(--surface-1);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+th.sortable { cursor: pointer; user-select: none; }
+th.sortable:hover { color: var(--text-secondary); }
+th .arrow { opacity: 0.55; }
+
+#log {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  max-height: 320px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.hidden { display: none !important; }
+</style>
+</head>
+<body class="viz-root">
+<div class="wrap">
+  <header class="page">
+    <div>
+      <h1>Perfex CRM market research</h1>
+      <div class="meta">CodeCanyon search data &middot; collected
+        <b>2026-08-12</b></div>
+    </div>
+    <div class="meta">
+      run <b>20260812T170553</b> &middot;
+      status <b>completed</b> &middot;
+      report generated 2026-08-12 18:03
+    </div>
+  </header>
+
+  
+<section>
+  <div class="card hero">
+    <div class="label">Unique products found</div>
+    <div class="value">400</div>
+    <div class="label">across 8 keywords
+      &middot; Perfex CRM</div>
+  </div>
+  <div class="tiles"><div class="tile"><div class="label">Total sales</div><div class="value">55,926</div><div class="note">lifetime, across all products found</div></div><div class="tile"><div class="label">Revenue estimate</div><div class="value">$3,670,745</div><div class="note">sales x list price, gross</div></div><div class="tile"><div class="label">Median sales</div><div class="value">39</div><div class="note">average 139.8, skewed by the top</div></div><div class="tile"><div class="label">Top seller</div><div class="value">3,000</div><div class="note">single best-selling product</div></div><div class="tile"><div class="label">Top 10 share</div><div class="value">29.6%</div><div class="note">of all sales in this market</div></div><div class="tile"><div class="label">Never sold</div><div class="value">10</div><div class="note">of 400 products</div></div><div class="tile"><div class="label">Median price</div><div class="value">$49</div><div class="note">average $53</div></div><div class="tile"><div class="label">Authors</div><div class="value">56</div><div class="note">distinct sellers</div></div></div>
+</section>
+  
+<section>
+  <h2>Sales distribution</h2>
+  <p class="sub">How sales are spread across products. A market where most
+    products never sell is a different proposition from one where most find
+    buyers.</p>
+  <div class="card"><div class="bars"><div class="bar-row"><div class="name" title="no sales">no sales</div><div class="bar-track"><div class="bar-fill" style="width:7.1%"></div></div><div class="val">10 <small>2.5%</small></div></div><div class="bar-row"><div class="name" title="1-9">1-9</div><div class="bar-track"><div class="bar-fill" style="width:51.1%"></div></div><div class="val">72 <small>18.0%</small></div></div><div class="bar-row"><div class="name" title="10-49">10-49</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="val">141 <small>35.2%</small></div></div><div class="bar-row"><div class="name" title="50-199">50-199</div><div class="bar-track"><div class="bar-fill" style="width:75.9%"></div></div><div class="val">107 <small>26.8%</small></div></div><div class="bar-row"><div class="name" title="200-999">200-999</div><div class="bar-track"><div class="bar-fill" style="width:43.3%"></div></div><div class="val">61 <small>15.2%</small></div></div><div class="bar-row"><div class="name" title="1000+">1000+</div><div class="bar-track"><div class="bar-fill" style="width:6.4%"></div></div><div class="val">9 <small>2.2%</small></div></div></div></div>
+</section>
+  
+<section>
+  <h2>Keywords</h2>
+  <p class="sub">What was searched and what came back. Keywords returning
+    nothing are kept deliberately -- an empty search says something about
+    competition, and dropping it would erase that.</p>
+  <div class="card"><div class="scroll"><table><thead><tr><th class="">Keyword</th><th class="num">Results</th><th class="num">Unique</th><th class="num">Total sales</th><th class="num">Top</th><th class="num">Median</th><th class="num">Median price</th></tr></thead><tbody><tr><td class=""><span class="strong">perfex module</span> </td><td class="num">388</td><td class="num">388</td><td class="num">53,948</td><td class="num">3,000</td><td class="num">39</td><td class="num">$49</td></tr><tr><td class=""><span class="strong">perfex integration</span> </td><td class="num">150</td><td class="num">150</td><td class="num">12,794</td><td class="num">1,500</td><td class="num">25</td><td class="num">$45</td></tr><tr><td class=""><span class="strong">perfex automation</span> </td><td class="num">76</td><td class="num">76</td><td class="num">17,237</td><td class="num">3,000</td><td class="num">59</td><td class="num">$59</td></tr><tr><td class=""><span class="strong">perfex api</span> </td><td class="num">46</td><td class="num">46</td><td class="num">10,656</td><td class="num">3,000</td><td class="num">36.5</td><td class="num">$54</td></tr><tr><td class=""><span class="strong">perfex ai</span> </td><td class="num">28</td><td class="num">28</td><td class="num">3,645</td><td class="num">1,800</td><td class="num">30.5</td><td class="num">$59</td></tr><tr><td class=""><span class="strong">perfex whatsapp</span> </td><td class="num">17</td><td class="num">17</td><td class="num">4,352</td><td class="num">978</td><td class="num">145</td><td class="num">$49</td></tr><tr><td class=""><span class="strong">perfex webhook</span> </td><td class="num">15</td><td class="num">15</td><td class="num">5,527</td><td class="num">3,000</td><td class="num">70</td><td class="num">$59</td></tr><tr><td class=""><span class="strong">perfex mcp</span> </td><td class="num">2</td><td class="num">2</td><td class="num">31</td><td class="num">27</td><td class="num">15.5</td><td class="num">$102</td></tr></tbody></table></div></div>
+</section>
+  
+<section>
+  <h2>Features by product count</h2>
+  <p class="sub">Matched against product titles, so this measures what
+    vendors think is worth advertising -- close to, but not the same as,
+    what the products actually do.</p>
+  <div class="card"><div class="bars"><div class="bar-row"><div class="name" title="Integration">Integration</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="val">37</div></div><div class="bar-row"><div class="name" title="Payment Gateway">Payment Gateway</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="val">37</div></div><div class="bar-row"><div class="name" title="Automation">Automation</div><div class="bar-track"><div class="bar-fill" style="width:70.3%"></div></div><div class="val">26</div></div><div class="bar-row"><div class="name" title="AI">AI</div><div class="bar-track"><div class="bar-fill" style="width:56.8%"></div></div><div class="val">21</div></div><div class="bar-row"><div class="name" title="Accounting">Accounting</div><div class="bar-track"><div class="bar-fill" style="width:37.8%"></div></div><div class="val">14</div></div><div class="bar-row"><div class="name" title="Reports">Reports</div><div class="bar-track"><div class="bar-fill" style="width:35.1%"></div></div><div class="val">13</div></div><div class="bar-row"><div class="name" title="Two-way Sync">Two-way Sync</div><div class="bar-track"><div class="bar-fill" style="width:27.0%"></div></div><div class="val">10</div></div><div class="bar-row"><div class="name" title="SMS">SMS</div><div class="bar-track"><div class="bar-fill" style="width:27.0%"></div></div><div class="val">10</div></div><div class="bar-row"><div class="name" title="API">API</div><div class="bar-track"><div class="bar-fill" style="width:24.3%"></div></div><div class="val">9</div></div><div class="bar-row"><div class="name" title="Mobile App">Mobile App</div><div class="bar-track"><div class="bar-fill" style="width:24.3%"></div></div><div class="val">9</div></div><div class="bar-row"><div class="name" title="WhatsApp">WhatsApp</div><div class="bar-track"><div class="bar-fill" style="width:13.5%"></div></div><div class="val">5</div></div><div class="bar-row"><div class="name" title="REST API">REST API</div><div class="bar-track"><div class="bar-fill" style="width:10.8%"></div></div><div class="val">4</div></div><div class="bar-row"><div class="name" title="Inventory">Inventory</div><div class="bar-track"><div class="bar-fill" style="width:8.1%"></div></div><div class="val">3</div></div><div class="bar-row"><div class="name" title="Webhook">Webhook</div><div class="bar-track"><div class="bar-fill" style="width:5.4%"></div></div><div class="val">2</div></div></div></div>
+  <div class="card" style="margin-top:12px"><div class="scroll"><table><thead><tr><th class="">Feature</th><th class="num">Products</th><th class="num">Total sales</th><th class="num">Median</th><th class="num">Top</th><th class="num">Updated &lt;90d</th><th class="num">Avg price</th></tr></thead><tbody><tr><td class=""><span class="strong">Integration</span></td><td class="num">37</td><td class="num">2,500</td><td class="num">27</td><td class="num">434</td><td class="num">18</td><td class="num">$57</td></tr><tr><td class=""><span class="strong">Payment Gateway</span></td><td class="num">37</td><td class="num">736</td><td class="num">10</td><td class="num">116</td><td class="num">3</td><td class="num">$38</td></tr><tr><td class=""><span class="strong">Automation</span></td><td class="num">26</td><td class="num">10,052</td><td class="num">84</td><td class="num">3,000</td><td class="num">15</td><td class="num">$70</td></tr><tr><td class=""><span class="strong">AI</span></td><td class="num">21</td><td class="num">1,576</td><td class="num">35</td><td class="num">399</td><td class="num">8</td><td class="num">$60</td></tr><tr><td class=""><span class="strong">Accounting</span></td><td class="num">14</td><td class="num">3,118</td><td class="num">59</td><td class="num">1,600</td><td class="num">7</td><td class="num">$64</td></tr><tr><td class=""><span class="strong">Reports</span></td><td class="num">13</td><td class="num">1,157</td><td class="num">40</td><td class="num">543</td><td class="num">6</td><td class="num">$56</td></tr><tr><td class=""><span class="strong">Two-way Sync</span></td><td class="num">10</td><td class="num">1,216</td><td class="num">44</td><td class="num">617</td><td class="num">4</td><td class="num">$52</td></tr><tr><td class=""><span class="strong">SMS</span></td><td class="num">10</td><td class="num">1,182</td><td class="num">41.5</td><td class="num">690</td><td class="num">5</td><td class="num">$34</td></tr><tr><td class=""><span class="strong">API</span></td><td class="num">9</td><td class="num">4,295</td><td class="num">157</td><td class="num">3,000</td><td class="num">6</td><td class="num">$57</td></tr><tr><td class=""><span class="strong">Mobile App</span></td><td class="num">9</td><td class="num">472</td><td class="num">39</td><td class="num">159</td><td class="num">1</td><td class="num">$70</td></tr><tr><td class=""><span class="strong">WhatsApp</span></td><td class="num">5</td><td class="num">1,602</td><td class="num">399</td><td class="num">434</td><td class="num">2</td><td class="num">$55</td></tr><tr><td class=""><span class="strong">REST API</span></td><td class="num">4</td><td class="num">3,197</td><td class="num">92.5</td><td class="num">3,000</td><td class="num">3</td><td class="num">$54</td></tr><tr><td class=""><span class="strong">Inventory</span></td><td class="num">3</td><td class="num">2,536</td><td class="num">623</td><td class="num">1,900</td><td class="num">3</td><td class="num">$156</td></tr><tr><td class=""><span class="strong">Webhook</span></td><td class="num">2</td><td class="num">659</td><td class="num">329.5</td><td class="num">634</td><td class="num">1</td><td class="num">$49</td></tr><tr><td class=""><span class="strong">POS</span></td><td class="num">2</td><td class="num">636</td><td class="num">318</td><td class="num">623</td><td class="num">2</td><td class="num">$184</td></tr><tr><td class=""><span class="strong">Zapier</span></td><td class="num">2</td><td class="num">201</td><td class="num">100.5</td><td class="num">176</td><td class="num">1</td><td class="num">$49</td></tr><tr><td class=""><span class="strong">Email Marketing</span></td><td class="num">2</td><td class="num">123</td><td class="num">61.5</td><td class="num">79</td><td class="num">0</td><td class="num">$24</td></tr><tr><td class=""><span class="strong">MCP</span></td><td class="num">2</td><td class="num">31</td><td class="num">15.5</td><td class="num">27</td><td class="num">2</td><td class="num">$102</td></tr></tbody></table></div><p class="sub" style="margin-top:14px">No product title mentions: <b>Multi-branch</b>. Absence is a candidate gap, but only becomes an opportunity when demand exists elsewhere in this data.</p></div>
+</section>
+  
+<section>
+  <h2>Maintenance</h2>
+  <p class="sub">Search pages expose <b>last updated</b> but not a published
+    date, so this measures maintenance activity rather than product age.
+    Stale products that still outsell the median are the clearest sign of an
+    incumbent coasting.</p>
+  <div class="tiles"><div class="tile"><div class="label">Unmaintained</div><div class="value">139</div><div class="note">34.8% not updated in over a year</div></div><div class="tile"><div class="label">Old but still selling</div><div class="value">70</div><div class="note">stale yet above median sales</div></div><div class="tile"><div class="label">Fresh and selling</div><div class="value">143</div><div class="note">updated in 90 days, with sales</div></div><div class="tile"><div class="label">Low performers</div><div class="value">59</div><div class="note">5 sales or fewer</div></div></div>
+  <div class="card" style="margin-top:12px">
+    <p class="sub">Stale but outselling the median</p>
+    <div class="scroll"><table><thead><tr><th class="">Product</th><th class="num">Sales</th><th class="">Last updated</th></tr></thead><tbody><tr><td class="">Sales Commission Program for Perfex CRM</td><td class="num">585</td><td class="">2021-03-28</td></tr><tr><td class="">Products and services for Perfex CRM</td><td class="num">505</td><td class="">2025-03-04</td></tr><tr><td class="">Custom Links for Perfex CRM</td><td class="num">451</td><td class="">2024-02-04</td></tr><tr><td class="">Team Password for Perfex CRM</td><td class="num">444</td><td class="">2021-03-28</td></tr><tr><td class="">Staff Workload for Perfex CRM</td><td class="num">430</td><td class="">2021-01-29</td></tr></tbody></table></div>
+  </div>
+</section>
+  
+<section>
+  <h2>Author concentration</h2>
+  <p class="sub">Share of total sales by seller. <b>themesic</b> alone holds 29.1% of sales, which makes reputation, not features, the entry barrier.</p>
+  <div class="card"><div class="bars"><div class="bar-row"><div class="name" title="themesic">themesic</div><div class="bar-track"><div class="bar-fill" style="width:29.1%"></div></div><div class="val">16,266 <small>29.1%</small></div></div><div class="bar-row"><div class="name" title="GreenTech_Solutions">GreenTech_Solutions</div><div class="bar-track"><div class="bar-fill" style="width:28.2%"></div></div><div class="val">15,744 <small>28.2%</small></div></div><div class="bar-row"><div class="name" title="i-Dev">i-Dev</div><div class="bar-track"><div class="bar-fill" style="width:8.0%"></div></div><div class="val">4,459 <small>8.0%</small></div></div><div class="bar-row"><div class="name" title="sejalinfotech">sejalinfotech</div><div class="bar-track"><div class="bar-fill" style="width:4.4%"></div></div><div class="val">2,466 <small>4.4%</small></div></div><div class="bar-row"><div class="name" title="ulutfa">ulutfa</div><div class="bar-track"><div class="bar-fill" style="width:3.1%"></div></div><div class="val">1,720 <small>3.1%</small></div></div><div class="bar-row"><div class="name" title="Techy4m">Techy4m</div><div class="bar-track"><div class="bar-fill" style="width:2.5%"></div></div><div class="val">1,421 <small>2.5%</small></div></div><div class="bar-row"><div class="name" title="lenzcreativee">lenzcreativee</div><div class="bar-track"><div class="bar-fill" style="width:2.5%"></div></div><div class="val">1,381 <small>2.5%</small></div></div><div class="bar-row"><div class="name" title="zonvoir">zonvoir</div><div class="bar-track"><div class="bar-fill" style="width:2.3%"></div></div><div class="val">1,285 <small>2.3%</small></div></div><div class="bar-row"><div class="name" title="halilaltndg">halilaltndg</div><div class="bar-track"><div class="bar-fill" style="width:2.2%"></div></div><div class="val">1,254 <small>2.2%</small></div></div><div class="bar-row"><div class="name" title="qualifinic">qualifinic</div><div class="bar-track"><div class="bar-fill" style="width:1.9%"></div></div><div class="val">1,065 <small>1.9%</small></div></div></div></div>
+</section>
+  
+<section>
+  <h2>Products matching several keywords</h2>
+  <p class="sub">Breadth of match is its own signal: a product surfacing
+    under many different searches occupies more of the market's mental
+    space than its sales alone suggest.</p>
+  <div class="card"><div class="scroll"><table><thead><tr><th class="">Product</th><th class="num">Keywords</th><th class="num">Best rank</th><th class="num">Sales</th><th class="">Matched</th></tr></thead><tbody><tr><td class="">WhatsBot - WhatsApp Marketing, Bot, Chat &amp; AI Personal Assistant Module for Perfex CRM</td><td class="num">6</td><td class="num">#3</td><td class="num">399</td><td class=""><span class="muted">perfex ai,perfex api,perfex automation,perfex integration,perfex module,perfex whatsapp</span></td></tr><tr><td class="">Zapier module for Perfex CRM - Workflow Automation</td><td class="num">6</td><td class="num">#3</td><td class="num">176</td><td class=""><span class="muted">perfex ai,perfex api,perfex automation,perfex integration,perfex module,perfex webhook</span></td></tr><tr><td class="">Perfex MCP - AI Integration Bridge for Perfex CRM</td><td class="num">6</td><td class="num">#1</td><td class="num">4</td><td class=""><span class="muted">perfex ai,perfex api,perfex automation,perfex integration,perfex mcp,perfex webhook</span></td></tr><tr><td class="">Webhook s Automation Module for Perfex CRM</td><td class="num">5</td><td class="num">#1</td><td class="num">634</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module,perfex webhook</span></td></tr><tr><td class="">Facebook &amp; Instagram Leads Synchronization module for Perfex CRM - Marketing Automation for Meta Ads</td><td class="num">5</td><td class="num">#15</td><td class="num">617</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module,perfex webhook</span></td></tr><tr><td class="">WhatsApp Official Cloud API Chat &amp; Marketing Automation module for Perfex CRM</td><td class="num">5</td><td class="num">#2</td><td class="num">425</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module,perfex whatsapp</span></td></tr><tr><td class="">Google Workspace Integration module for Perfex CRM - Google Drive, Sheets, Docs, Forms &amp; Slides</td><td class="num">5</td><td class="num">#6</td><td class="num">268</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module,perfex webhook</span></td></tr><tr><td class="">WhatsApp Chat Module - Internal Client &amp; Staff Support for Perfex CRM</td><td class="num">5</td><td class="num">#4</td><td class="num">199</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module,perfex whatsapp</span></td></tr><tr><td class="">WhatsBot REST API Module for Perfex CRM - Connect your WhatsBot with third party applications</td><td class="num">5</td><td class="num">#9</td><td class="num">28</td><td class=""><span class="muted">perfex api,perfex integration,perfex module,perfex webhook,perfex whatsapp</span></td></tr><tr><td class="">Anna – AI Copilot &amp; MCP Integration for Perfex CRM</td><td class="num">5</td><td class="num">#2</td><td class="num">27</td><td class=""><span class="muted">perfex ai,perfex automation,perfex integration,perfex mcp,perfex module</span></td></tr><tr><td class="">Perfex CRM Webhook s &amp; n8n Automation Module – Real-Time Workflow Integration</td><td class="num">5</td><td class="num">#2</td><td class="num">25</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module,perfex webhook</span></td></tr><tr><td class="">REST API module for Perfex CRM - Connect Apps and Automate Workflows with third party applications</td><td class="num">4</td><td class="num">#4</td><td class="num">3,000</td><td class=""><span class="muted">perfex api,perfex automation,perfex module,perfex webhook</span></td></tr><tr><td class="">WhatsApp Cloud API Business Integration module for Perfex CRM</td><td class="num">4</td><td class="num">#1</td><td class="num">434</td><td class=""><span class="muted">perfex api,perfex integration,perfex module,perfex whatsapp</span></td></tr><tr><td class="">Zoom Meeting Manager</td><td class="num">4</td><td class="num">#14</td><td class="num">194</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module</span></td></tr><tr><td class="">Telegram Smart Notifications &amp; Automation Center for Perfex CRM</td><td class="num">4</td><td class="num">#11</td><td class="num">87</td><td class=""><span class="muted">perfex automation,perfex integration,perfex module,perfex webhook</span></td></tr><tr><td class="">PulseChat - OmniChannel AI Customer Service module for Perfex CRM</td><td class="num">4</td><td class="num">#8</td><td class="num">52</td><td class=""><span class="muted">perfex ai,perfex automation,perfex module,perfex whatsapp</span></td></tr><tr><td class="">FexCall – Smart AI Call Assistant &amp; Lead Automation Module for Perfex CRM</td><td class="num">4</td><td class="num">#16</td><td class="num">51</td><td class=""><span class="muted">perfex ai,perfex automation,perfex integration,perfex module</span></td></tr><tr><td class="">SAGE® Module for Perfex CRM</td><td class="num">4</td><td class="num">#28</td><td class="num">34</td><td class=""><span class="muted">perfex api,perfex automation,perfex integration,perfex module</span></td></tr><tr><td class="">FormSync – Automated Form to Lead, Customer &amp; Ticket Sync for Perfex CRM</td><td class="num">4</td><td class="num">#8</td><td class="num">31</td><td class=""><span class="muted">perfex automation,perfex integration,perfex module,perfex webhook</span></td></tr><tr><td class="">TrackChat - Inbox for Perfex CRM with AI Agents</td><td class="num">4</td><td class="num">#3</td><td class="num">27</td><td class=""><span class="muted">perfex ai,perfex api,perfex module,perfex whatsapp</span></td></tr></tbody></table></div></div>
+</section>
+  
+<section>
+  <h2>Top products</h2>
+  <div class="card"><div class="scroll"><table><thead><tr><th class="">Product</th><th class="">Author</th><th class="num">Price</th><th class="num">Sales</th><th class="num">Rating</th><th class="">Updated</th></tr></thead><tbody><tr><td class=""><a href="https://codecanyon.net/item/rest-api-for-perfex-crm/25278359">REST API module for Perfex CRM - Connect Apps and Automate Workflows with third party applications</a></td><td class="">themesic</td><td class="num">$79</td><td class="num">3,000</td><td class="num">4.91 <small class="muted">(45)</small></td><td class="">2026-08-06</td></tr><tr><td class=""><a href="https://codecanyon.net/item/inventory-management-for-perfex-crm/27465701">Inventory Management module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$99</td><td class="num">1,900</td><td class="num">4.89 <small class="muted">(100)</small></td><td class="">2026-07-22</td></tr><tr><td class=""><a href="https://codecanyon.net/item/perfex-crm-employee-chat/23555097">Perfex CRM Chat</a></td><td class="">i-Dev</td><td class="num">$69</td><td class="num">1,800</td><td class="num">4.64 <small class="muted">(77)</small></td><td class="">2026-06-20</td></tr><tr><td class=""><a href="https://codecanyon.net/item/mailbox-webmail-client-for-perfex-crm/25308081">Mailbox - Webmail Client &amp; Email Automation Module for Perfex CRM</a></td><td class="">themesic</td><td class="num">$59</td><td class="num">1,800</td><td class="num">4.78 <small class="muted">(41)</small></td><td class="">2026-08-06</td></tr><tr><td class=""><a href="https://codecanyon.net/item/purchase-management-for-perfex-crm/27462292">Purchase Management module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$99</td><td class="num">1,700</td><td class="num">4.91 <small class="muted">(109)</small></td><td class="">2026-07-22</td></tr><tr><td class=""><a href="https://codecanyon.net/item/accounting-and-bookkeeping-for-perfex-crm/31540126">Accounting and Bookkeeping module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$109</td><td class="num">1,600</td><td class="num">4.73 <small class="muted">(93)</small></td><td class="">2026-07-22</td></tr><tr><td class=""><a href="https://codecanyon.net/item/appointly-perfex-crm-appointments/25459077">Appointly - Perfex CRM Appointments</a></td><td class="">i-Dev</td><td class="num">$69</td><td class="num">1,500</td><td class="num">4.31 <small class="muted">(71)</small></td><td class="">2026-06-21</td></tr><tr><td class=""><a href="https://codecanyon.net/item/timesheets-and-leave-management-for-perfex-crm/28622550">Timesheets and Leave Management module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$99</td><td class="num">1,200</td><td class="num">4.8 <small class="muted">(56)</small></td><td class="">2026-08-01</td></tr><tr><td class=""><a href="https://codecanyon.net/item/perfex-crm-saas-module-transform-your-perfex-crm-into-a-powerful-multitenancy-solution/46070331">Perfex CRM SaaS Module - Transform Your Perfex CRM into a Powerful Multi-Tenancy Solution</a></td><td class="">ulutfa</td><td class="num">$99</td><td class="num">1,100</td><td class="num">4.98 <small class="muted">(273)</small></td><td class="">2026-03-29</td></tr><tr><td class=""><a href="https://codecanyon.net/item/perfex-crm-chat-tickets-app-for-support-board/29799509">Perfex CRM Chat &amp; Tickets App for Support Board</a></td><td class="">Schiocco</td><td class="num">$9</td><td class="num">978</td><td class="num">4.76 <small class="muted">(21)</small></td><td class="">2025-12-09</td></tr><tr><td class=""><a href="https://codecanyon.net/item/hr-records-for-perfex-crm/31317939">HR Records module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$99</td><td class="num">946</td><td class="num">4.95 <small class="muted">(40)</small></td><td class="">2026-08-01</td></tr><tr><td class=""><a href="https://codecanyon.net/item/hr-payroll-for-perfex-crm/31830634">HR Payroll module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$99</td><td class="num">786</td><td class="num">4.8 <small class="muted">(40)</small></td><td class="">2026-07-22</td></tr><tr><td class=""><a href="https://codecanyon.net/item/recruitment-management-for-perfex-crm/27260667">Recruitment Management module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$89</td><td class="num">697</td><td class="num">4.78 <small class="muted">(41)</small></td><td class="">2026-08-01</td></tr><tr><td class=""><a href="https://codecanyon.net/item/custom-sms-email-notifications-for-pefex/24851275">Custom SMS &amp; Email Notifications Automation for Perfex CRM</a></td><td class="">themesic</td><td class="num">$59</td><td class="num">690</td><td class="num">4.4 <small class="muted">(20)</small></td><td class="">2026-07-09</td></tr><tr><td class=""><a href="https://codecanyon.net/item/human-resources-management-hr-module-for-perfex-crm/26620578">Human Resources Management (HRM) &amp; Workforce Automation module for Perfex CRM</a></td><td class="">themesic</td><td class="num">$59</td><td class="num">644</td><td class="num">3.9 <small class="muted">(10)</small></td><td class="">2026-07-09</td></tr><tr><td class=""><a href="https://codecanyon.net/item/webhooks-module-for-perfex-crm/38350010">Webhook s Automation Module for Perfex CRM</a></td><td class="">themesic</td><td class="num">$59</td><td class="num">634</td><td class="num">4.75 <small class="muted">(8)</small></td><td class="">2026-07-27</td></tr><tr><td class=""><a href="https://codecanyon.net/item/perfex-shop-ecommerce-module-for-perfex-crm-products-services/27169285">Perfex Shop - eCommerce, POS &amp; Inventory Management Module for Products &amp; Services</a></td><td class="">themesic</td><td class="num">$69</td><td class="num">623</td><td class="num">4.86 <small class="muted">(14)</small></td><td class="">2026-08-05</td></tr><tr><td class=""><a href="https://codecanyon.net/item/facebook-leads-integration-sync-module-for-perfex-crm/25623248">Facebook &amp; Instagram Leads Synchronization module for Perfex CRM - Marketing Automation for Meta Ads</a></td><td class="">themesic</td><td class="num">$59</td><td class="num">617</td><td class="num">4.43 <small class="muted">(7)</small></td><td class="">2026-07-09</td></tr><tr><td class=""><a href="https://codecanyon.net/item/marketing-automation-module-for-perfex-crm/39897941">Marketing Automation module for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$99</td><td class="num">596</td><td class="num">4.7 <small class="muted">(33)</small></td><td class="">2026-07-24</td></tr><tr><td class=""><a href="https://codecanyon.net/item/sales-commission-program-for-perfex-crm/27597035">Sales Commission Program for Perfex CRM</a></td><td class="">GreenTech_Solutions</td><td class="num">$79</td><td class="num">585</td><td class="num">4.97 <small class="muted">(35)</small></td><td class="">2021-03-28</td></tr></tbody></table></div></div>
+</section>
+
+  <p class="footnote">
+    <b>How to read this.</b> Sales figures are lifetime totals published by
+    CodeCanyon, not rates, so an old product's total reflects years of
+    accumulation rather than current demand. Revenue is sales x list price
+    and ignores discounts, Envato's cut and refunds, so treat it as an order
+    of magnitude. Feature counts come from product titles only. Result counts
+    are what the site's search returned on the day of the run, and search
+    relevance is Envato's judgement, not a complete inventory of the market.
+    Paginating a live result set can show one item on two consecutive pages
+    and skip another, so the number of products captured for a keyword is
+    occasionally one or two short of the result count shown.
+  </p>
+</div>
+</body>
+</html>

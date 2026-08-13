@@ -1,0 +1,9 @@
+keyword,parent_topic,source,approved,priority
+perfex integration,Perfex CRM,manual,yes,high
+perfex api,Perfex CRM,manual,yes,high
+perfex automation,Perfex CRM,manual,yes,high
+perfex mcp,Perfex CRM,manual,yes,high
+perfex whatsapp,Perfex CRM,manual,yes,medium
+perfex module,Perfex CRM,manual,yes,medium
+perfex webhook,Perfex CRM,manual,yes,medium
+perfex ai,Perfex CRM,manual,yes,medium
