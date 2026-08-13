@@ -214,6 +214,7 @@ td {
 }
 
 td.strong { color: var(--text-primary); }
+td.nowrap { white-space: nowrap; }
 tr:last-child td { border-bottom: none; }
 
 a { color: var(--series-1); text-decoration: none; }
@@ -254,6 +255,41 @@ a:hover { text-decoration: underline; }
   align-items: center;
   margin-bottom: 26px;
 }
+
+textarea {
+  font: inherit;
+  font-size: 13.5px;
+  width: 100%;
+  color: var(--text-primary);
+  background: var(--plane);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin: 22px 0 8px;
+}
+
+.group-head .name { font-size: 15px; font-weight: 600; }
+.group-head .count { color: var(--text-muted); font-size: 12.5px; }
+
+.empty {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 34px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.empty b { color: var(--text-primary); }
+.empty p { margin: 6px 0 0; font-size: 13.5px; }
 
 select, input[type="search"], button {
   font: inherit;

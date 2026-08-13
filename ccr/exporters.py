@@ -20,8 +20,12 @@ from . import stats
 
 
 def _write(path, fieldnames, rows):
+    # utf-8-sig writes a BOM. Without it Excel opens these as ANSI and mangles
+    # every product title containing an en-dash or an accent, which on
+    # CodeCanyon is a lot of them. Python's csv reader strips the BOM when the
+    # file is read back with encoding="utf-8-sig".
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", newline="", encoding="utf-8") as f:
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
@@ -44,15 +48,27 @@ def export_keywords(conn, run_id, out_dir):
 
 
 def export_products(conn, run_id, out_dir):
-    """One row per unique product (spec section 15: master CSV)."""
-    rows = stats.products_in_run(conn, run_id)
+    """Products grouped by the keyword that found them.
+
+    Ordered keyword by keyword, and by search rank within each, so the file
+    reads as "here is what this search returned, in order".
+
+    A product matching several keywords therefore appears once per keyword.
+    That is the cost of the grouping: it is a results file, not a unique
+    product index. `product_id` still identifies a product across the whole
+    file, and search_occurrences.csv remains the exhaustive pairing.
+    """
+    rows = []
+    for group in stats.products_by_keyword(conn, run_id):
+        for product in group["products"]:
+            rows.append({**product, "keyword": group["keyword"]})
+
     return _write(
         os.path.join(out_dir, "products.csv"),
-        ["product_id", "title", "author_name", "price", "sales", "rating",
-         "review_count", "category", "subcategory", "software_version",
-         "framework", "compatible_with", "file_types", "last_updated", "url",
-         "first_seen_run", "last_seen_run"],
-        [dict(r) for r in rows])
+        ["keyword", "position", "product_id", "title", "author_name", "price",
+         "sales", "rating", "review_count", "category", "subcategory",
+         "software_version", "framework", "file_types", "last_updated"],
+        rows)
 
 
 def export_occurrences(conn, run_id, out_dir):

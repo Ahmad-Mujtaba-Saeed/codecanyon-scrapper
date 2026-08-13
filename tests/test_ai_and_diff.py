@@ -168,6 +168,33 @@ class TestKeywordFile(unittest.TestCase):
         self.assertTrue(rows["perfex api"]["approved"])
         self.assertFalse(rows["perfex mcp"]["approved"])
 
+    def test_parse_bulk_separators(self):
+        parsed = keyword_file.parse_bulk(
+            "perfex api, perfex mcp;perfex ai\nperfex webhook\tperfex module")
+        self.assertEqual(parsed, ["perfex api", "perfex mcp", "perfex ai",
+                                  "perfex webhook", "perfex module"])
+
+    def test_parse_bulk_never_splits_on_spaces(self):
+        self.assertEqual(keyword_file.parse_bulk("ultimate pos rest api"),
+                         ["ultimate pos rest api"])
+
+    def test_parse_bulk_normalises_and_deduplicates(self):
+        parsed = keyword_file.parse_bulk(
+            "  Perfex   API  ,\n\nperfex api,\nPERFEX API\n")
+        self.assertEqual(parsed, ["perfex api"])
+
+    def test_parse_bulk_strips_bullets_and_numbering(self):
+        parsed = keyword_file.parse_bulk("- perfex api\n* perfex ai\n1. perfex mcp")
+        self.assertEqual(parsed, ["perfex api", "perfex ai", "perfex mcp"])
+
+    def test_parse_bulk_ignores_empty_input(self):
+        for text in ("", "   ", ",,,\n;;\t", None):
+            self.assertEqual(keyword_file.parse_bulk(text), [])
+
+    def test_parse_bulk_drops_overlong_entries(self):
+        self.assertEqual(keyword_file.parse_bulk("a" * 200 + ", perfex api"),
+                         ["perfex api"])
+
     def test_approve_specific_and_all(self):
         keyword_file.set_approval(self.path, True, ["perfex mcp"])
         rows = {r["keyword"]: r for r in

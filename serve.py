@@ -296,18 +296,27 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             store.close()
 
-    def _run_id(self, query):
+    def _run_id(self, query, fall_back=True):
+        """Resolve ?run=. `run=` given but empty means 'none', not 'latest'.
+
+        The dashboard opens with nothing selected, so it needs a way to say
+        "show me no run" that is distinct from "pick a sensible default".
+        """
+        if "run" in query:
+            requested = (query.get("run") or [""])[0].strip()
+            return requested or None
+        if not fall_back:
+            return None
         store = self._store()
         try:
-            requested = (query.get("run") or [None])[0]
-            return requested or stats.latest_run_id(store.conn)
+            return stats.latest_run_id(store.conn)
         finally:
             store.close()
 
     def api_report(self, query):
         run_id = self._run_id(query)
         if not run_id:
-            return {"empty": True}
+            return {"empty": True, "message": "No run selected."}
         store = self._store()
         try:
             return stats.run_report(store.conn, run_id, self.cfg)
@@ -315,12 +324,14 @@ class Handler(BaseHTTPRequestHandler):
             store.close()
 
     def api_products(self, query):
+        """Products grouped under the keyword that found them."""
         run_id = self._run_id(query)
         if not run_id:
-            return []
+            return {"run_id": None, "groups": []}
         store = self._store()
         try:
-            return [dict(r) for r in stats.products_in_run(store.conn, run_id)]
+            return {"run_id": run_id,
+                    "groups": stats.products_by_keyword(store.conn, run_id)}
         finally:
             store.close()
 
@@ -427,6 +438,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, self.api_approve_keywords(payload))
             if url.path == "/api/keywords/add":
                 return self._send(200, self.api_add_keyword(payload))
+            if url.path == "/api/keywords/bulk":
+                return self._send(200, self.api_bulk_keywords(payload))
             if url.path == "/api/keywords/delete":
                 return self._send(200, self.api_delete_keyword(payload))
             return self._send(404, {"error": "unknown endpoint"})
@@ -521,6 +534,25 @@ class Handler(BaseHTTPRequestHandler):
         if skipped:
             return {"ok": False, "error": f"{keyword!r} is already in the list"}
         return {"ok": True, "added": added}
+
+    def api_bulk_keywords(self, payload):
+        """Add a pasted list of keywords in one go, ready to crawl."""
+        keywords = keyword_file.parse_bulk(payload.get("text") or "")
+        if not keywords:
+            return {"ok": False, "error": "no keywords found in that text"}
+
+        topic = (payload.get("topic") or "").strip() or None
+        added, skipped = keyword_file.merge(self.cfg.resolve("keywords"), [{
+            "keyword": keyword,
+            "parent_topic": topic,
+            "source": "manual",
+            "approved": True,      # typed by a person, so already approved
+            "priority": "medium",
+        } for keyword in keywords])
+
+        return {"ok": True, "added": [r["keyword"] for r in added],
+                "skipped": [r["keyword"] for r in skipped],
+                "parsed": len(keywords)}
 
     def api_delete_keyword(self, payload):
         wanted = {k.lower() for k in (payload.get("keywords") or [])}

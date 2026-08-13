@@ -196,8 +196,26 @@ class TestExports(StatsTestCase):
         base = self.cfg.resolve("csv")
         path = (os.path.join(base, self.RUN, name) if run_scoped
                 else os.path.join(base, name))
-        with open(path, newline="", encoding="utf-8") as f:
+        with open(path, newline="", encoding="utf-8-sig") as f:
             return list(csv.DictReader(f))
+
+    def test_csvs_carry_a_bom_so_excel_reads_them_as_utf8(self):
+        exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
+        path = os.path.join(self.cfg.resolve("csv"), self.RUN, "products.csv")
+        with open(path, "rb") as f:
+            self.assertEqual(f.read(3), b"\xef\xbb\xbf")
+
+    def test_non_ascii_titles_survive_the_round_trip(self):
+        self.conn.execute(
+            "UPDATE products SET title='ScreenCapture – Récord & Ännotation' "
+            "WHERE product_id='1'")
+        self.conn.commit()
+        exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
+
+        titles = [r["title"] for r in self.read("products.csv")]
+        self.assertIn("ScreenCapture – Récord & Ännotation", titles)
+        # The BOM must not end up glued to the first column name.
+        self.assertIn("keyword", self.read("products.csv")[0].keys())
 
     def test_all_five_files_are_written(self):
         paths = exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
@@ -205,12 +223,40 @@ class TestExports(StatsTestCase):
         for path in paths:
             self.assertTrue(os.path.exists(path), path)
 
-    def test_products_csv_has_one_row_per_product(self):
+    def test_products_csv_is_grouped_by_keyword(self):
         exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
         rows = self.read("products.csv")
         self.assertEqual(len(rows), 5)
-        self.assertEqual(len({r["product_id"] for r in rows}), 5)
+        self.assertEqual({r["keyword"] for r in rows}, {"ultimate pos"})
+        self.assertEqual([r["position"] for r in rows],
+                         ["1", "2", "3", "4", "5"])
         self.assertEqual(sum(int(r["sales"]) for r in rows), 1130)
+
+    def test_products_csv_columns(self):
+        exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
+        header = self.read("products.csv")[0].keys()
+
+        for dropped in ("compatible_with", "url", "first_seen_run",
+                        "last_seen_run"):
+            self.assertNotIn(dropped, header)
+        for kept in ("keyword", "position", "product_id", "title",
+                     "author_name", "price", "sales", "rating",
+                     "review_count", "category", "framework", "last_updated"):
+            self.assertIn(kept, header)
+
+    def test_product_under_two_keywords_appears_under_each(self):
+        """The file answers 'what did this search return', so a shared product
+        must not be missing from one of the lists."""
+        self.store.record_occurrences(self.RUN, [
+            Occurrence("1", "ultimate pos api", "relevance", 1, 1)])
+        self.store.record_keyword_result(self.RUN, "ultimate pos api",
+                                         "relevance", 1, 1, 1)
+        exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
+
+        rows = self.read("products.csv")
+        appearances = [r["keyword"] for r in rows if r["product_id"] == "1"]
+        self.assertEqual(sorted(appearances),
+                         ["ultimate pos", "ultimate pos api"])
 
     def test_occurrences_csv_keeps_position_data(self):
         exporters.export_all(self.conn, self.RUN, self.cfg.resolve("csv"))
@@ -244,6 +290,40 @@ class TestExports(StatsTestCase):
         self.assertTrue(os.path.isdir(os.path.join(base, self.RUN)))
         self.assertTrue(os.path.isdir(os.path.join(base, "run2")))
         self.assertEqual(len(self.read("products.csv")), 5)
+
+
+class TestProductsByKeyword(StatsTestCase):
+    def test_groups_are_ordered_by_result_count(self):
+        self.store.record_keyword_result(self.RUN, "big keyword", "relevance",
+                                         total_results=999, pages_crawled=1,
+                                         unique_products=0)
+        groups = stats.products_by_keyword(self.conn, self.RUN)
+        self.assertEqual(groups[0]["keyword"], "big keyword")
+
+    def test_products_are_in_search_order(self):
+        groups = {g["keyword"]: g for g in
+                  stats.products_by_keyword(self.conn, self.RUN)}
+        positions = [p["position"] for p in groups["ultimate pos"]["products"]]
+        self.assertEqual(positions, [1, 2, 3, 4, 5])
+
+    def test_zero_result_keyword_is_present_with_an_empty_list(self):
+        groups = {g["keyword"]: g for g in
+                  stats.products_by_keyword(self.conn, self.RUN)}
+        self.assertIn("ultimate pos quantum", groups)
+        self.assertEqual(groups["ultimate pos quantum"]["products"], [])
+        self.assertEqual(groups["ultimate pos quantum"]["count"], 0)
+
+    def test_shared_product_appears_under_every_keyword(self):
+        self.store.record_occurrences(self.RUN, [
+            Occurrence("1", "ultimate pos api", "relevance", 1, 4)])
+        self.store.record_keyword_result(self.RUN, "ultimate pos api",
+                                         "relevance", 1, 1, 1)
+        groups = {g["keyword"]: g for g in
+                  stats.products_by_keyword(self.conn, self.RUN)}
+        self.assertEqual([p["product_id"]
+                          for p in groups["ultimate pos api"]["products"]], ["1"])
+        self.assertIn("1", [p["product_id"]
+                            for p in groups["ultimate pos"]["products"]])
 
 
 class TestReport(StatsTestCase):

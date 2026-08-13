@@ -8,9 +8,35 @@ nothing is crawled until a human flips that to yes.
 
 import csv
 import os
+import re
 
 FIELDS = ["keyword", "parent_topic", "source", "approved", "priority"]
 TRUTHY = {"yes", "y", "true", "1", "approved"}
+
+# Commas, newlines, semicolons, tabs and pipes separate keywords. Spaces do
+# NOT: nearly every keyword here is a phrase ("perfex integration"), and
+# splitting on spaces would shred them into fragments that mean something
+# entirely different as searches.
+SEPARATORS = re.compile(r"[,\n\r;\t|]+")
+
+
+def parse_bulk(text, limit=500):
+    """Split pasted text into a clean, de-duplicated keyword list."""
+    out, seen = [], set()
+    for chunk in SEPARATORS.split(text or ""):
+        # Collapse runs of inner whitespace so "perfex   api" reads as one.
+        keyword = " ".join(chunk.split()).strip().lower()
+        if not keyword or len(keyword) > 80 or keyword in seen:
+            continue
+        # A pasted list sometimes carries bullets or numbering.
+        keyword = keyword.lstrip("-*•0123456789. ").strip()
+        if not keyword or keyword in seen:
+            continue
+        seen.add(keyword)
+        out.append(keyword)
+        if len(out) >= limit:
+            break
+    return out
 
 
 def load(path, include_unapproved=False):

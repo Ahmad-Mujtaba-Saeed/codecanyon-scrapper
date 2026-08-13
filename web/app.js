@@ -1,7 +1,15 @@
 /* Dashboard front end. No framework, no build step, no external requests. */
 
 const $ = (sel) => document.querySelector(sel);
-const state = { runId: null, report: null, products: [], sort: { key: "sales", dir: -1 }, poll: null };
+const state = { runId: null, report: null, groups: [],
+                sort: { key: "position", dir: 1 }, poll: null };
+
+const emptyState = (title) => `
+  <div class="empty">
+    <b>${esc(title)}</b>
+    <p>Pick a past run from the menu at the top right, or start a new one on
+       the <b>Collect</b> tab.</p>
+  </div>`;
 
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g,
   (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -31,7 +39,7 @@ function bars(rows, maxValue) {
   }).join("") + "</div>";
 }
 
-function table(headers, rows, numeric = [], sortable = false) {
+function table(headers, rows, numeric = [], sortable = false, nowrap = []) {
   if (!rows.length) return '<p class="muted">No data.</p>';
   const head = headers.map((h, i) => {
     const cls = [numeric.includes(i) ? "num" : "", sortable ? "sortable" : ""].join(" ").trim();
@@ -42,7 +50,11 @@ function table(headers, rows, numeric = [], sortable = false) {
     return `<th class="${cls}"${key}>${label} ${arrow}</th>`;
   }).join("");
   const body = rows.map((cells) =>
-    "<tr>" + cells.map((c, i) => `<td class="${numeric.includes(i) ? "num" : ""}">${c}</td>`).join("") + "</tr>"
+    "<tr>" + cells.map((c, i) => {
+      const cls = [numeric.includes(i) ? "num" : "",
+                   nowrap.includes(i) ? "nowrap" : ""].join(" ").trim();
+      return `<td class="${cls}">${c}</td>`;
+    }).join("") + "</tr>"
   ).join("");
   return `<div class="scroll"><table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
 }
@@ -59,8 +71,8 @@ function tiles(items) {
 function renderOverview() {
   const r = state.report;
   if (!r || r.empty) {
-    $("#panel-overview").innerHTML =
-      '<p class="muted">No runs yet. Open the Collect tab to start one.</p>';
+    $("#panel-overview").innerHTML = emptyState(
+      r?.message || "No run selected");
     return;
   }
   const o = r.overview;
@@ -129,7 +141,10 @@ function renderOverview() {
 
 function renderKeywords() {
   const r = state.report;
-  if (!r || r.empty) { $("#panel-keywords").innerHTML = ""; return; }
+  if (!r || r.empty) {
+    $("#panel-keywords").innerHTML = emptyState("No run selected");
+    return;
+  }
 
   const rows = r.keywords.map((k) => [
     `<span class="strong">${esc(k.keyword)}</span> ` +
@@ -154,7 +169,10 @@ function renderKeywords() {
 
 function renderFeatures() {
   const r = state.report;
-  if (!r || r.empty) { $("#panel-features").innerHTML = ""; return; }
+  if (!r || r.empty) {
+    $("#panel-features").innerHTML = emptyState("No run selected");
+    return;
+  }
 
   const present = r.features.filter((f) => f.products);
   const absent = r.features.filter((f) => !f.products).map((f) => f.feature);
@@ -180,14 +198,9 @@ function renderFeatures() {
     </section>`;
 }
 
-function renderProducts() {
-  const query = ($("#product-search").value || "").toLowerCase().trim();
-  const filtered = state.products.filter((p) => !query ||
-    [p.title, p.author_name, p.category, p.subcategory, p.framework]
-      .some((v) => (v || "").toLowerCase().includes(query)));
-
+function sortProducts(rows) {
   const { key, dir } = state.sort;
-  filtered.sort((a, b) => {
+  return [...rows].sort((a, b) => {
     const x = a[key], y = b[key];
     if (x === y) return 0;
     if (x === null || x === undefined) return 1;
@@ -195,11 +208,22 @@ function renderProducts() {
     return (typeof x === "number" && typeof y === "number")
       ? (x - y) * dir : String(x).localeCompare(String(y)) * dir;
   });
+}
 
-  $("#product-count").textContent =
-    `${filtered.length} of ${state.products.length} products`;
+function renderProducts() {
+  if (!state.runId) {
+    $("#product-groups").innerHTML = emptyState("No run selected");
+    $("#product-count").textContent = "";
+    return;
+  }
+
+  const query = ($("#product-search").value || "").toLowerCase().trim();
+  const match = (p) => !query ||
+    [p.title, p.author_name, p.category, p.subcategory, p.framework]
+      .some((v) => (v || "").toLowerCase().includes(query));
 
   const headers = [
+    { key: "position", label: "#" },
     { key: "title", label: "Product" }, { key: "author_name", label: "Author" },
     { key: "price", label: "Price" }, { key: "sales", label: "Sales" },
     { key: "rating", label: "Rating" }, { key: "review_count", label: "Reviews" },
@@ -207,16 +231,44 @@ function renderProducts() {
     { key: "last_updated", label: "Updated" },
   ];
 
-  $("#product-table").innerHTML = table(headers,
-    filtered.slice(0, 500).map((p) => [
-      `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>`,
-      esc(p.author_name), money(p.price), num(p.sales),
-      p.rating ?? "-", num(p.review_count),
-      `<span class="muted">${esc(p.subcategory || p.category || "")}</span>`,
-      esc(p.last_updated),
-    ]), [2, 3, 4, 5], true);
+  let shown = 0, total = 0;
+  const blocks = [];
 
-  $("#product-table").querySelectorAll("th.sortable").forEach((th) => {
+  for (const group of state.groups) {
+    total += group.products.length;
+    const rows = sortProducts(group.products.filter(match));
+    shown += rows.length;
+
+    // A keyword filtered down to nothing is hidden; one that genuinely found
+    // nothing stays visible, because an empty search is itself a result.
+    if (!rows.length && query) continue;
+
+    blocks.push(`
+      <div class="group-head">
+        <span class="name">${esc(group.keyword)}</span>
+        <span class="count">${num(rows.length)}
+          ${rows.length === group.products.length ? "" : `of ${num(group.products.length)} `}
+          product${rows.length === 1 ? "" : "s"}</span>
+      </div>
+      <div class="card">${rows.length ? table(headers, rows.map((p) => [
+        `<span class="muted">${num(p.position)}</span>`,
+        // The real URL, not one rebuilt from the id: CodeCanyon item paths
+        // carry a slug and a rebuilt guess could not be verified as valid.
+        `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>`,
+        esc(p.author_name), money(p.price), num(p.sales),
+        p.rating ?? "-", num(p.review_count),
+        `<span class="muted">${esc(p.subcategory || p.category || "")}</span>`,
+        esc(p.last_updated),
+      ]), [0, 3, 4, 5, 6], true, [8])
+      : '<p class="muted">This search returned nothing — a competition signal, not a gap in the data.</p>'}</div>`);
+  }
+
+  $("#product-count").textContent = query
+    ? `${num(shown)} of ${num(total)} rows` : `${num(total)} rows`;
+  $("#product-groups").innerHTML = blocks.join("")
+    || emptyState("Nothing matches that filter");
+
+  $("#product-groups").querySelectorAll("th.sortable").forEach((th) => {
     th.onclick = () => {
       const k = th.dataset.key;
       state.sort = { key: k, dir: state.sort.key === k ? -state.sort.dir : -1 };
@@ -375,7 +427,12 @@ const SIZE = (n) => n < 1024 ? `${n} B`
   : `${(n / 1024 / 1024).toFixed(1)} MB`;
 
 async function renderOutputs() {
-  const res = await api(`/api/outputs${state.runId ? `?run=${encodeURIComponent(state.runId)}` : ""}`);
+  if (!state.runId) {
+    $("#outputs").innerHTML = '<p class="muted">Select a run above, or finish ' +
+      'a new one, to see the files it produced.</p>';
+    return;
+  }
+  const res = await api(`/api/outputs?run=${encodeURIComponent(state.runId)}`);
   if (!res.files.length) {
     $("#outputs").innerHTML =
       '<p class="muted">Nothing generated yet. Use “Export CSVs + report” or ' +
@@ -405,45 +462,60 @@ async function pollProgress() {
   if (!p.busy && state.poll) {
     clearInterval(state.poll);
     state.poll = null;
-    await loadRuns();
+    // Select the run that just finished -- you asked for it, so show it.
+    state.runId = p.run_id || null;
+    await loadRuns({ keepSelection: true });
+    renderOutputs();
   }
 }
 
 /* --------------------------------------------------------------------- boot */
 
 async function loadReport(runId) {
-  state.runId = runId;
-  const suffix = runId ? `?run=${encodeURIComponent(runId)}` : "";
-  [state.report, state.products] = await Promise.all([
+  state.runId = runId || null;
+
+  if (!state.runId) {
+    // Nothing selected: show empty panels rather than silently presenting
+    // some previous run's numbers as if they were current.
+    state.report = { empty: true, message: "No run selected" };
+    state.groups = [];
+    $("#run-meta").innerHTML =
+      "no run selected &middot; choose one at the top right, or start a new one";
+    renderOverview(); renderKeywords(); renderFeatures(); renderProducts();
+    return;
+  }
+
+  // An explicit empty `run=` tells the server "none", not "pick a default".
+  const suffix = `?run=${encodeURIComponent(state.runId)}`;
+  const [report, products] = await Promise.all([
     api("/api/report" + suffix), api("/api/products" + suffix),
   ]);
+  state.report = report;
+  state.groups = products.groups || [];
 
-  const run = state.report.run || {};
-  $("#run-meta").innerHTML = state.report.empty ? "No runs yet"
+  const run = report.run || {};
+  $("#run-meta").innerHTML = report.empty ? "No run selected"
     : `run <b>${esc(run.run_id)}</b> &middot; ${esc(run.status || "")} &middot;
        started ${esc((run.started_at || "").replace("T", " ").slice(0, 16))}`;
 
   renderOverview(); renderKeywords(); renderFeatures(); renderProducts();
 }
 
-async function loadRuns() {
+async function loadRuns({ keepSelection = false } = {}) {
   const runs = await api("/api/runs");
   const options = runs.map((r) =>
     `<option value="${esc(r.run_id)}">${esc(r.run_id)} — ${esc(r.topic || "no topic")}
      (${r.unique_products} products)${r.status === "completed" ? "" : ` — ${esc(r.status)}`}
-     </option>`).join("") || '<option value="">no runs yet</option>';
+     </option>`).join("");
 
-  $("#run-picker").innerHTML = options;
-  $("#diff-from").innerHTML = options;
-  $("#diff-to").innerHTML = options;
+  // No run is selected on open. Past data is a deliberate choice, not the
+  // thing that greets you: the landing state is "start a new run".
+  $("#run-picker").innerHTML =
+    '<option value="">— select a run to view —</option>' + options;
+  $("#diff-from").innerHTML = options || '<option value="">no runs yet</option>';
+  $("#diff-to").innerHTML = options || '<option value="">no runs yet</option>';
 
-  // Default to the newest *completed* run. An interrupted crawl holds a
-  // partial slice of the market, and showing it by default would present
-  // those partial numbers as the current picture.
   const complete = runs.filter((r) => r.status === "completed");
-  const preferred = (complete[0] || runs[0] || {}).run_id || null;
-
-  if (preferred) $("#run-picker").value = preferred;
   if (complete.length > 1) {
     $("#diff-from").value = complete[complete.length - 1].run_id;
     $("#diff-to").value = complete[0].run_id;
@@ -452,7 +524,9 @@ async function loadRuns() {
     $("#diff-to").value = runs[0].run_id;
   }
 
-  await loadReport(preferred);
+  const selection = keepSelection && state.runId ? state.runId : "";
+  $("#run-picker").value = selection;
+  await loadReport(selection || null);
 }
 
 function initTabs() {
@@ -512,6 +586,30 @@ function initControls() {
 
   $("#add-keyword-btn").onclick = addKeyword;
   $("#new-keyword").onkeydown = (e) => { if (e.key === "Enter") addKeyword(); };
+
+  $("#bulk-add-btn").onclick = async () => {
+    const text = $("#bulk-text").value;
+    if (!text.trim()) { $("#bulk-status").textContent = "paste some keywords first"; return; }
+
+    $("#bulk-add-btn").disabled = true;
+    try {
+      const res = await api("/api/keywords/bulk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, topic: $("#bulk-topic").value.trim() }),
+      });
+      if (!res.ok) { $("#bulk-status").textContent = res.error; return; }
+
+      await renderKeywordList();
+      const skipped = res.skipped.length
+        ? `, ${res.skipped.length} already present` : "";
+      $("#bulk-status").textContent =
+        `added ${res.added.length} of ${res.parsed} keywords${skipped}`;
+      if (res.added.length) $("#bulk-text").value = "";
+    } finally {
+      $("#bulk-add-btn").disabled = false;
+    }
+  };
 
   $("#generate-btn").onclick = async () => {
     const topic = $("#gen-topic").value.trim();
@@ -580,7 +678,11 @@ function initControls() {
 
 initTabs();
 initControls();
-loadRuns().catch((err) => {
-  $("#run-meta").textContent = "Error: " + err.message;
-});
+
+// Opens on Collect with nothing selected: the landing state is "start a run",
+// not somebody else's numbers.
+loadRuns()
+  .then(() => { renderKeywordList(); renderOutputs(); })
+  .catch((err) => { $("#run-meta").textContent = "Error: " + err.message; });
+
 pollProgress().catch(() => {});

@@ -154,6 +154,50 @@ class TestKeywordEndpoints(ServeTestCase):
     def test_empty_keyword_is_rejected(self):
         self.assertFalse(self.post("/api/keywords/add", {"keyword": "  "})["ok"])
 
+    def test_bulk_paste_splits_on_commas_and_newlines(self):
+        res = self.post("/api/keywords/bulk", {
+            "text": "perfex integration, perfex api\nperfex mcp;perfex webhook",
+            "topic": "Perfex CRM"})
+        self.assertTrue(res["ok"])
+        self.assertEqual(sorted(res["added"]),
+                         ["perfex api", "perfex integration", "perfex mcp",
+                          "perfex webhook"])
+
+        rows = {r["keyword"]: r for r in
+                json.loads(self.get("/api/keywords")[1])}
+        # Pasted by a person, so ready to crawl immediately.
+        self.assertTrue(rows["perfex api"]["approved"])
+        self.assertEqual(rows["perfex api"]["parent_topic"], "Perfex CRM")
+
+    def test_bulk_paste_keeps_multi_word_keywords_intact(self):
+        """Splitting on spaces would turn one real search into two useless
+        ones, so spaces stay inside the keyword."""
+        res = self.post("/api/keywords/bulk",
+                        {"text": "ultimate pos integration"})
+        self.assertEqual(res["added"], ["ultimate pos integration"])
+
+    def test_bulk_paste_reports_duplicates_instead_of_adding_them(self):
+        self.post("/api/keywords/bulk", {"text": "perfex api"})
+        res = self.post("/api/keywords/bulk", {"text": "perfex api, perfex ai"})
+        self.assertEqual(res["added"], ["perfex ai"])
+        self.assertEqual(res["skipped"], ["perfex api"])
+
+    def test_bulk_paste_with_no_keywords_is_an_error(self):
+        self.assertFalse(self.post("/api/keywords/bulk", {"text": " ,,\n; "})["ok"])
+
+
+class TestProductsEndpoint(ServeTestCase):
+    def test_no_run_selected_returns_empty_groups(self):
+        status, body = self.get("/api/products?run=")
+        self.assertEqual(status, 200)
+        payload = json.loads(body)
+        self.assertIsNone(payload["run_id"])
+        self.assertEqual(payload["groups"], [])
+
+    def test_report_with_explicit_empty_run_is_empty(self):
+        payload = json.loads(self.get("/api/report?run=")[1])
+        self.assertTrue(payload["empty"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -1,4 +1,4 @@
-product_id,title,keyword,sort,page,position,sales,scraped_at
+﻿product_id,title,keyword,sort,page,position,sales,scraped_at
 61820857,FlexSocial - Perfex AI Social Media Management and Marketing Module,perfex ai,relevance,1,1,35,2026-08-12T12:17:01+00:00
 64257372,Perfex MCP - AI Integration Bridge for Perfex CRM,perfex ai,relevance,1,2,4,2026-08-12T12:17:01+00:00
 63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex ai,relevance,1,3,27,2026-08-12T12:17:01+00:00
@@ -45,9 +45,9 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 64257372,Perfex MCP - AI Integration Bridge for Perfex CRM,perfex api,relevance,1,16,4,2026-08-12T12:08:13+00:00
 63896621,Perfex CRM Guardian,perfex api,relevance,1,17,6,2026-08-12T12:08:13+00:00
 62619212,Secure Messages for Perfex CRM,perfex api,relevance,1,18,5,2026-08-12T12:08:13+00:00
-38350010,Webhook s Automation Module for Perfex CRM,perfex api,relevance,1,19,634,2026-08-12T12:08:13+00:00
+38350010,Webhooks Automation Module for Perfex CRM,perfex api,relevance,1,19,634,2026-08-12T12:08:13+00:00
 59065356,AI -Powered Natural-Language Reporting Module for Perfex CRM,perfex api,relevance,1,20,21,2026-08-12T12:08:13+00:00
-61450519,Perfex CRM Webhook s & n8n Automation Module – Real-Time Workflow Integration,perfex api,relevance,1,21,25,2026-08-12T12:08:13+00:00
+61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,perfex api,relevance,1,21,25,2026-08-12T12:08:13+00:00
 63426906,D ai lyBrief — Staff D ai ly Digest for Perfex CRM,perfex api,relevance,1,22,4,2026-08-12T12:08:13+00:00
 63599831,TrackChat - Inbox for Perfex CRM with AI Agents,perfex api,relevance,1,23,27,2026-08-12T12:08:13+00:00
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex api,relevance,1,24,176,2026-08-12T12:08:13+00:00
@@ -74,7 +74,7 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 46175176,Stripe SEPA Direct Debit Gateway Integration for Perfex,perfex api,relevance,2,45,79,2026-08-12T12:08:20+00:00
 25623248,Facebook & Instagram Leads Synchronization module for Perfex CRM - Marketing Automation for Meta Ads,perfex api,relevance,2,46,617,2026-08-12T12:08:20+00:00
 59910286,Workflow Automation module for Perfex CRM,perfex automation,relevance,1,1,81,2026-08-12T12:09:17+00:00
-38350010,Webhook s Automation Module for Perfex CRM,perfex automation,relevance,1,2,634,2026-08-12T12:09:17+00:00
+38350010,Webhooks Automation Module for Perfex CRM,perfex automation,relevance,1,2,634,2026-08-12T12:09:17+00:00
 39897941,Marketing Automation module for Perfex CRM,perfex automation,relevance,1,3,596,2026-08-12T12:09:17+00:00
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex automation,relevance,1,4,176,2026-08-12T12:09:17+00:00
 50079462,Workflow Rules and Automation Module for Perfex,perfex automation,relevance,1,5,145,2026-08-12T12:09:17+00:00
@@ -90,7 +90,7 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 26620578,Human Resources Management (HRM) & Workforce Automation module for Perfex CRM,perfex automation,relevance,1,15,644,2026-08-12T12:09:17+00:00
 52004114,WhatsApp Official Cloud API Chat & Marketing Automation module for Perfex CRM,perfex automation,relevance,1,16,425,2026-08-12T12:09:17+00:00
 58656663,FexCall – Smart AI Call Assistant & Lead Automation Module for Perfex CRM,perfex automation,relevance,1,17,51,2026-08-12T12:09:17+00:00
-61450519,Perfex CRM Webhook s & n8n Automation Module – Real-Time Workflow Integration,perfex automation,relevance,1,18,25,2026-08-12T12:09:17+00:00
+61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,perfex automation,relevance,1,18,25,2026-08-12T12:09:17+00:00
 25278359,REST API module for Perfex CRM - Connect Apps and Automate Workflows with third party applications,perfex automation,relevance,1,19,3000,2026-08-12T12:09:17+00:00
 25623248,Facebook & Instagram Leads Synchronization module for Perfex CRM - Marketing Automation for Meta Ads,perfex automation,relevance,1,20,617,2026-08-12T12:09:17+00:00
 58630012,Project Management and Automation Bundle Modules for Perfex CRM,perfex automation,relevance,1,21,2,2026-08-12T12:09:17+00:00
@@ -174,7 +174,7 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 60043797,Wasabi Cloud Storage Integration for Perfex CRM,perfex integration,relevance,1,23,2,2026-08-12T12:05:56+00:00
 27111428,"QuickBooks Integration module for Perfex CRM - Sync Invoices, Payments & Expenses",perfex integration,relevance,1,24,252,2026-08-12T12:05:56+00:00
 24625109,Mercado Pago Payment Gateway Integration for Perfex CRM,perfex integration,relevance,1,25,79,2026-08-12T12:05:56+00:00
-61450519,Perfex CRM Webhook s & n8n Automation Module – Real-Time Workflow Integration,perfex integration,relevance,1,26,25,2026-08-12T12:05:56+00:00
+61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,perfex integration,relevance,1,26,25,2026-08-12T12:05:56+00:00
 39375783,Email Marketing & SMS Marketing Integration For Perfex CRM,perfex integration,relevance,1,27,79,2026-08-12T12:05:56+00:00
 24211160,myPOS Payment Gateway Integration for Perfex CRM,perfex integration,relevance,1,28,22,2026-08-12T12:05:56+00:00
 24695112,BitPay Payment Gateway Integration for Perfex CRM,perfex integration,relevance,1,29,27,2026-08-12T12:05:56+00:00
@@ -191,7 +191,7 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex integration,relevance,2,40,176,2026-08-12T12:06:06+00:00
 56303965,Square Payment Gateway for Perfex CRM,perfex integration,relevance,2,41,22,2026-08-12T12:06:06+00:00
 55055074,Appointment Module for Perfex CRM,perfex integration,relevance,2,42,101,2026-08-12T12:06:06+00:00
-38350010,Webhook s Automation Module for Perfex CRM,perfex integration,relevance,2,43,634,2026-08-12T12:06:06+00:00
+38350010,Webhooks Automation Module for Perfex CRM,perfex integration,relevance,2,43,634,2026-08-12T12:06:06+00:00
 59910286,Workflow Automation module for Perfex CRM,perfex integration,relevance,2,44,81,2026-08-12T12:06:06+00:00
 60316494,Whiteboard Module for Perfex CRM,perfex integration,relevance,2,45,14,2026-08-12T12:06:06+00:00
 51098916,Purchase Order Module for Perfex CRM,perfex integration,relevance,2,46,55,2026-08-12T12:06:06+00:00
@@ -326,7 +326,7 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 31830634,HR Payroll module for Perfex CRM,perfex module,relevance,1,23,786,2026-08-12T12:12:29+00:00
 33455479,Reminder module for Perfex CRM,perfex module,relevance,1,24,212,2026-08-12T12:12:29+00:00
 24219858,Custom JavaScript module for Perfex,perfex module,relevance,1,25,132,2026-08-12T12:12:29+00:00
-38350010,Webhook s Automation Module for Perfex CRM,perfex module,relevance,1,26,634,2026-08-12T12:12:29+00:00
+38350010,Webhooks Automation Module for Perfex CRM,perfex module,relevance,1,26,634,2026-08-12T12:12:29+00:00
 33053316,Add-on Statuses Module for Perfex CRM,perfex module,relevance,1,27,363,2026-08-12T12:12:29+00:00
 37233985,Manufacturing Management module for Perfex CRM,perfex module,relevance,1,28,429,2026-08-12T12:12:29+00:00
 62255627,Repair Management Module for Perfex CRM,perfex module,relevance,1,29,10,2026-08-12T12:12:29+00:00
@@ -505,7 +505,7 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 53104107,NOWPayments Payment Gateway Module for Perfex CRM,perfex module,relevance,7,202,5,2026-08-12T12:13:59+00:00
 50412395,Flexible Lead Scoring and Lead Rating Module for Perfex,perfex module,relevance,7,203,38,2026-08-12T12:13:59+00:00
 38262219,Δωρεάν ηλεκτρονική τιμολόγηση - myDATA ΑΑΔΕ module for Perfex CRM,perfex module,relevance,7,204,61,2026-08-12T12:13:59+00:00
-61450519,Perfex CRM Webhook s & n8n Automation Module – Real-Time Workflow Integration,perfex module,relevance,7,205,25,2026-08-12T12:13:59+00:00
+61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,perfex module,relevance,7,205,25,2026-08-12T12:13:59+00:00
 51504146,BannerCraft - Dynamic Banner Management & News Ticker Module for Perfex CRM,perfex module,relevance,7,206,61,2026-08-12T12:13:59+00:00
 43436964,Cashfree Payment Gateway Module For Perfex CRM,perfex module,relevance,7,207,12,2026-08-12T12:13:59+00:00
 49001177,Moyasar Payment Gateway Module for Perfex CRM,perfex module,relevance,7,208,3,2026-08-12T12:13:59+00:00
@@ -689,8 +689,8 @@ product_id,title,keyword,sort,page,position,sales,scraped_at
 49952430,Flexible Keep In Touch For Perfex,perfex module,relevance,13,386,63,2026-08-12T12:15:32+00:00
 54473299,MeetLink Manager for Perfex CRM,perfex module,relevance,13,387,27,2026-08-12T12:15:32+00:00
 52358890,Xrise Admin/Staff Mobile App for Rise CRM,perfex module,relevance,13,388,27,2026-08-12T12:15:32+00:00
-38350010,Webhook s Automation Module for Perfex CRM,perfex webhook,relevance,1,1,634,2026-08-12T12:16:29+00:00
-61450519,Perfex CRM Webhook s & n8n Automation Module – Real-Time Workflow Integration,perfex webhook,relevance,1,2,25,2026-08-12T12:16:29+00:00
+38350010,Webhooks Automation Module for Perfex CRM,perfex webhook,relevance,1,1,634,2026-08-12T12:16:29+00:00
+61450519,Perfex CRM Webhooks & n8n Automation Module – Real-Time Workflow Integration,perfex webhook,relevance,1,2,25,2026-08-12T12:16:29+00:00
 53317745,Zapier module for Perfex CRM - Workflow Automation,perfex webhook,relevance,1,3,176,2026-08-12T12:16:29+00:00
 25278359,REST API module for Perfex CRM - Connect Apps and Automate Workflows with third party applications,perfex webhook,relevance,1,4,3000,2026-08-12T12:16:29+00:00
 64257372,Perfex MCP - AI Integration Bridge for Perfex CRM,perfex webhook,relevance,1,5,4,2026-08-12T12:16:29+00:00

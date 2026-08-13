@@ -21,28 +21,29 @@
   </header>
 
   <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true"  data-tab="overview">Overview</button>
+    <button role="tab" aria-selected="false" data-tab="overview">Overview</button>
     <button role="tab" aria-selected="false" data-tab="keywords">Keywords</button>
     <button role="tab" aria-selected="false" data-tab="products">Products</button>
     <button role="tab" aria-selected="false" data-tab="features">Features</button>
     <button role="tab" aria-selected="false" data-tab="compare">Compare</button>
-    <button role="tab" aria-selected="false" data-tab="collect">Collect</button>
+    <button role="tab" aria-selected="true"  data-tab="collect">Collect</button>
   </div>
 
-  <div id="panel-overview" class="panel"></div>
+  <div id="panel-overview" class="panel hidden"></div>
   <div id="panel-keywords" class="panel hidden"></div>
 
   <div id="panel-products" class="panel hidden">
     <section style="margin-top:0">
-      <h2>Products</h2>
-      <p class="sub">Every unique product found in this run. Click a column
-        heading to sort.</p>
+      <h2>Products by keyword</h2>
+      <p class="sub">Each keyword's results in search order. A product that
+        matched several keywords appears under each of them. Click a column
+        heading to sort within every group.</p>
       <div class="controls">
         <input type="search" id="product-search"
                placeholder="Filter by title, author or category…">
         <span class="meta" id="product-count"></span>
       </div>
-      <div class="card"><div id="product-table"></div></div>
+      <div id="product-groups"></div>
     </section>
   </div>
 
@@ -64,7 +65,7 @@
     </section>
   </div>
 
-  <div id="panel-collect" class="panel hidden">
+  <div id="panel-collect" class="panel">
     <section style="margin-top:0">
       <h2>Keywords</h2>
       <p class="sub">Nothing is crawled until a keyword is approved. Generated
@@ -74,6 +75,20 @@
         <input type="search" id="new-keyword" placeholder="Add a keyword, e.g. perfex mcp">
         <input type="search" id="new-topic" placeholder="Topic (optional)">
         <button id="add-keyword-btn">Add</button>
+      </div>
+
+      <div class="card" style="margin-bottom:14px">
+        <p class="sub" style="margin:0 0 10px">Or paste a whole list. Separate
+          with commas, semicolons or new lines — <b>spaces stay inside a
+          keyword</b>, so <code>perfex integration</code> remains one search
+          rather than two.</p>
+        <textarea id="bulk-text" rows="5"
+          placeholder="perfex integration, perfex api, perfex mcp&#10;ultimate pos automation&#10;worksuite webhook"></textarea>
+        <div class="controls" style="margin:10px 0 0">
+          <input type="search" id="bulk-topic" placeholder="Topic for all of these, e.g. Perfex CRM">
+          <button id="bulk-add-btn">Add all</button>
+          <span class="meta" id="bulk-status"></span>
+        </div>
       </div>
       <div class="controls">
         <input type="search" id="gen-topic" placeholder="Topic, e.g. Ultimate POS">

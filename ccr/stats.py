@@ -46,6 +46,40 @@ def products_in_run(conn, run_id):
     ).fetchall()
 
 
+def products_by_keyword(conn, run_id):
+    """Every product a run found, grouped under the keyword that found it.
+
+    A product matching several keywords appears under each of them. That is
+    deliberate: these lists answer "what did this search return", and removing
+    the repeats would leave holes in the middle of the rankings being read.
+    Use products_in_run() when you want each product exactly once.
+
+    Keywords come back in the same order as the Keywords view -- biggest
+    result set first -- and keywords that found nothing are included with an
+    empty list, since an empty search is itself a finding.
+    """
+    order = [r["keyword"] for r in conn.execute(
+        "SELECT keyword FROM keyword_results WHERE run_id=? "
+        "ORDER BY total_results DESC, keyword", (run_id,))]
+
+    grouped = {keyword: [] for keyword in order}
+    for row in conn.execute(
+            "SELECT o.keyword, o.page, o.position, p.* FROM occurrences o "
+            "JOIN products p USING(product_id) WHERE o.run_id=? "
+            "ORDER BY o.position", (run_id,)):
+        grouped.setdefault(row["keyword"], []).append(dict(row))
+
+    # setdefault above can introduce a keyword with no keyword_results row;
+    # keep those at the end rather than dropping their products.
+    for keyword in grouped:
+        if keyword not in order:
+            order.append(keyword)
+
+    return [{"keyword": keyword,
+             "products": grouped[keyword],
+             "count": len(grouped[keyword])} for keyword in order]
+
+
 def latest_run_id(conn):
     """The run to show by default.
 

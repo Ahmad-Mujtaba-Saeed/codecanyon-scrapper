@@ -78,14 +78,29 @@ network). From there:
 
 | Tab | What you can do |
 |---|---|
-| **Collect** | Add a keyword, generate keywords with AI, approve or remove them, start a crawl, watch live progress, build the analysis bundle, and open or download every file the run produced |
+| **Collect** | Add keywords one at a time or paste a whole list, generate them with AI, approve or remove them, start a crawl, watch live progress, build the analysis bundle, and open or download every file the run produced |
 | **Overview** | Hero count, market tiles, sales distribution, author concentration, maintenance |
 | **Keywords** | Result counts and per-keyword statistics |
-| **Products** | Every product, filterable and sortable by any column |
+| **Products** | Each keyword's results in rank order, filterable, sortable within every group |
 | **Features** | Which capabilities recur, and whether they sell |
 | **Compare** | Diff any two runs, with scope and coverage warnings |
 
 The header has a run picker and an **Export CSVs + report** button.
+
+**It opens empty.** No run is selected on load and the landing tab is Collect,
+so the dashboard greets you with "start a run" rather than with a previous
+run's numbers presented as if they were current. Pick a run from the header
+menu to look at past data; a run you start is selected automatically when it
+finishes.
+
+**Pasting a keyword list.** The Collect tab takes a whole list at once.
+Keywords separate on **commas, new lines, semicolons, tabs and pipes** —
+deliberately *not* spaces, because nearly every keyword here is a phrase and
+splitting `perfex integration` into two searches would ask a completely
+different question. Bullets and numbering are stripped, case is normalised,
+duplicates are dropped, and a topic entered alongside is applied to all of
+them. Pasted keywords arrive approved, since a person typing them is the
+approval step.
 
 A typical session without touching the terminal again: open **Collect**, type
 a keyword and press Add (or generate a set with AI and approve the ones you
@@ -219,10 +234,21 @@ fixed and historical runs re-parsed without re-scraping.
 | File | Contents |
 |---|---|
 | `csv/<run_id>/keywords.csv` | what was searched, and what it returned |
-| `csv/<run_id>/products.csv` | one unique row per product |
+| `csv/<run_id>/products.csv` | each keyword's results, in search order |
 | `csv/<run_id>/search_occurrences.csv` | where each product appeared |
 | `csv/<run_id>/keyword_summary.csv` | statistics per keyword |
 | `csv/research_runs.csv` | one row per run, across all runs |
+
+`products.csv` is grouped by keyword: all of the first keyword's results in
+rank order, then the next keyword, and so on. A product that matched several
+keywords therefore appears once **per keyword** — the file answers "what did
+this search return", and removing the repeats would leave holes in the middle
+of the rankings. `product_id` still identifies a product across the whole
+file, and `search_occurrences.csv` remains the exhaustive pairing.
+
+The CSVs are written UTF-8 **with a BOM** so Excel opens them correctly.
+Without it Excel assumes ANSI and mangles every title containing an en-dash
+or an accent, which on CodeCanyon is a great many of them.
 
 Per-run files sit in their own directory so a later run never overwrites an
 earlier one — that history is what makes growth analysis possible.
